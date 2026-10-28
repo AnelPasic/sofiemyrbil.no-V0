@@ -67,7 +67,7 @@
           "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, grundig tilstandsrapport og konkurransedyktig prisoverslag ved behov for utbedring.",
           "href": "/priser/",
           "label": "Se kontrollvilkår",
-          "boxVariant": "card",
+          "boxVariant": "default",
           "surface": "default"
         },
         {
