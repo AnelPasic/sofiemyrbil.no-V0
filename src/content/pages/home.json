@@ -58,7 +58,7 @@
       "heading": "Kvalitetsarbeid for et problemfritt bilhold",
       "headingAlign": "center",
       "layout": "three-columns",
-      "surface": "base-100",
+      "surface": "default",
       "items": [
         {
           "title": "EU-kontroll",
