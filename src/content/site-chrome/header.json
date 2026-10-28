@@ -57,7 +57,6 @@
     "href": "/bestilling/",
     "variant": "primary"
   },
-  "utilityLinks": [],
   "languages": [
     {
       "label": "NO",
@@ -69,7 +68,7 @@
   "headerOptions": {
     "sticky": true,
     "showLanguageSwitch": false,
-    "showSearch": false,
+    "showSearch": true,
     "showCta": true
   }
 }
