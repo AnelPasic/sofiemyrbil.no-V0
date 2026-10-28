@@ -1,0 +1,68 @@
+---
+import type { ChromeNavItem } from '../lib/site-chrome';
+import { navigationActive, navContainsCurrent } from '../lib/site-chrome';
+
+interface Props {
+  items: ChromeNavItem[];
+  placement: 'desktop' | 'mobile';
+  instanceId?: string;
+}
+const { items, placement, instanceId = 'site' } = Astro.props;
+const path = Astro.url.pathname;
+---
+<ul class:list={['menu', 'mws-chrome-nav-list', {
+  'menu-horizontal': placement === 'desktop',
+  'mws-chrome-nav-list--desktop': placement === 'desktop',
+  'mws-chrome-nav-list--mobile': placement === 'mobile',
+}]}>
+  {items.map(item => {
+    const expanded = item.kind !== 'link';
+    const panelId = 'mws-' + instanceId + '-' + placement + '-' + item.id;
+    return <li class:list={['mws-chrome-nav-item', { 'mws-chrome-nav-item--mega': item.kind === 'mega' }]}
+      data-mws-nav-item={expanded ? '' : undefined}
+      data-mws-active={navContainsCurrent(item, path) ? 'true' : undefined}>
+      <div class="mws-chrome-nav-trigger">
+        <a href={item.href} aria-current={navigationActive(item.href, path) ? 'page' : undefined}>{item.label}</a>
+        {expanded && <button
+          type="button"
+          class="btn btn-ghost btn-square mws-chrome-disclosure"
+          aria-label={item.toggleLabel}
+          aria-expanded="false"
+          aria-controls={panelId}
+          data-mws-disclosure
+        ><span aria-hidden="true" class="mws-chrome-chevron"></span></button>}
+      </div>
+      {item.kind === 'dropdown' && <div id={panelId} class="mws-chrome-panel mws-chrome-panel--dropdown" data-mws-panel hidden>
+        <ul class="menu mws-chrome-submenu">
+          {item.links.map(link => <li>
+            <a href={link.href} aria-current={navigationActive(link.href, path) ? 'page' : undefined}>
+              <span class="mws-chrome-link-title">{link.label}</span>
+              {link.description && <span class="mws-chrome-link-description">{link.description}</span>}
+            </a>
+          </li>)}
+        </ul>
+      </div>}
+      {item.kind === 'mega' && <div id={panelId} class="mws-chrome-panel mws-chrome-panel--mega" data-mws-panel hidden>
+        <div class="mws-chrome-mega-inner">
+          <div class="mws-chrome-mega-columns">
+            {item.columns.map(column => <section class="mws-chrome-mega-column" aria-label={column.heading}>
+              <h2 class="mws-chrome-mega-heading">{column.heading}</h2>
+              <ul class="menu mws-chrome-mega-links">
+                {column.links.map(link => <li><a href={link.href} aria-current={navigationActive(link.href, path) ? 'page' : undefined}>
+                  <span class="mws-chrome-link-title">{link.label}</span>
+                  {link.description && <span class="mws-chrome-link-description">{link.description}</span>}
+                </a></li>)}
+              </ul>
+            </section>)}
+          </div>
+          {item.promo && <aside class="mws-chrome-mega-promo">
+            {item.promo.eyebrow && <span class="mws-chrome-promo-eyebrow">{item.promo.eyebrow}</span>}
+            <h2>{item.promo.heading}</h2>
+            <p>{item.promo.body}</p>
+            <a class="btn btn-primary" href={item.promo.cta.href}>{item.promo.cta.label}</a>
+          </aside>}
+        </div>
+      </div>}
+    </li>;
+  })}
+</ul>

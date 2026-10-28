@@ -1,0 +1,60 @@
+{
+  "slug": "tjeneste",
+  "kind": "service",
+  "seo": {
+    "title": "Tjeneste | Sofiemyr Bil",
+    "description": "Eksempelmetabeskrivelse for en tjeneste."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "En tydelig tjeneste",
+    "support": "Hva får kunden, og hvordan kommer kunden videre?",
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "title": "Tjeneste",
+    "summary": "Et eksempel på tjenestebeskrivelse",
+    "order": 10,
+    "visible": true
+  },
+  "faq": [
+    {
+      "question": "Hva gjelder denne tjenesten?",
+      "answer": "Et lokalt, redigerbart demospørsmål."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "innhold",
+      "heading": "Kort om tjenesten",
+      "body": [
+        "Dette er et lokalt eksempel.",
+        "Denne tekstseksjonen kan bruke flere avsnitt, lenker og egne kort."
+      ],
+      "visibility": "visible",
+      "layout": "two-columns",
+      "items": [
+        {
+          "title": "Lokal",
+          "text": "Eies av siden.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Redigerbar",
+          "text": "Sorteres sammen med globale seksjoner.",
+          "surface": "base",
+          "boxVariant": "plain"
+        }
+      ]
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "felles-eksempel",
+      "visibility": "visible"
+    }
+  ]
+}

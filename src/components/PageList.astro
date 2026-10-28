@@ -1,0 +1,62 @@
+---
+import type { PageListConfig, PageListItem } from '../page-builder';
+import { presentationVisual } from '../page-builder';
+import ListingIcon from './ListingIcon.astro';
+interface Props { items: readonly PageListItem[]; layout: PageListConfig['layout']; heading?: string; }
+const { items, layout, heading } = Astro.props;
+const display = items.map(item => ({ ...item, media: presentationVisual(item, layout) }));
+---
+<section class="mws-list" data-layout={layout}>
+  {heading && <h2>{heading}</h2>}
+  <ul class:list={['mws-list-items', 'mws-list-' + layout]}>
+    {display.map(item =>
+      <li>
+        {layout === 'links'
+          ? (item.href ? <a href={item.href}>{item.title}</a> : <span>{item.title}</span>)
+          : <article class:list={['mws-list-entry', !item.media && 'no-media']} data-kind={item.media?.kind ?? 'none'}>
+              {(layout === 'mediaCards' || layout === 'alternating') && item.media && <div class="mws-list-media" data-kind={item.media.kind} aria-hidden={item.media.kind === 'icon' ? 'true' : undefined}>
+                {item.media.kind === 'image'
+                  ? <img src={item.media.src} alt={item.media.alt} loading="lazy" decoding="async" width="1200" height="800" style={{objectPosition:String(item.media.positionX)+'% '+String(item.media.positionY)+'%'}} />
+                  : <ListingIcon name={item.media.icon} />}
+              </div>}
+              <div class="mws-list-copy">
+                <h3>{item.title}</h3>
+                {item.summary && <p>{item.summary}</p>}
+                {item.href && <a href={item.href}>{item.label}</a>}
+              </div>
+            </article>}
+      </li>
+    )}
+  </ul>
+</section>
+<style>
+  .mws-list { --list-gap: clamp(1.5rem,3vw,3rem); min-width: 0; }
+  .mws-list-items { display: grid; gap: var(--list-gap); padding: 0; margin: 0; list-style: none; }
+  .mws-list-items li,.mws-list-entry,.mws-list-copy { min-width: 0; }
+  .mws-list-copy a { display: inline-block; margin-top: 1rem; }
+  .mws-list-media { width:100%; aspect-ratio:3/2; border-radius:var(--radius-box,1rem); overflow:hidden; }
+  .mws-list-media img { width:100%; height:100%; object-fit:cover; display:block; }
+  .mws-list-media[data-kind="icon"] { aspect-ratio:auto; height:clamp(170px,18vw,230px); display:grid; place-items:center; background:var(--color-base-200,#edf0f0); color:var(--color-base-content,#263238); }
+  .mws-list-media svg { width:clamp(60px,7vw,95px); height:auto; }
+  .mws-list-cards { grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); }
+  .mws-list-cards .mws-list-entry { padding:var(--list-gap); border:1px solid var(--color-base-300,#ddd); border-radius:var(--radius-box,1rem); }
+  .mws-list-mediaCards { grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); }
+  .mws-list-mediaCards .mws-list-entry { border:1px solid var(--color-base-300,#ddd); border-radius:var(--radius-box,1rem); overflow:hidden; }
+  .mws-list-mediaCards .mws-list-copy { padding:1.25rem; }
+  .mws-list-mediaCards .mws-list-media { border-radius:0; aspect-ratio:3/2; }
+  .mws-list-alternating { gap:clamp(3rem,5vw,5rem); }
+  .mws-list-alternating .mws-list-entry { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1.5rem,4vw,4rem); align-items:center; }
+  .mws-list-alternating .mws-list-entry[data-kind="icon"] { grid-template-columns:minmax(0,7fr) minmax(0,3fr); }
+  .mws-list-alternating > li:nth-child(even) .mws-list-entry[data-kind="icon"] { grid-template-columns:minmax(0,3fr) minmax(0,7fr); }
+  .mws-list-alternating > li:nth-child(odd) .mws-list-media { grid-column:2;grid-row:1; }
+  .mws-list-alternating > li:nth-child(odd) .mws-list-copy { grid-column:1;grid-row:1; }
+  .mws-list-alternating > li:nth-child(even) .mws-list-media { grid-column:1;grid-row:1; }
+  .mws-list-alternating > li:nth-child(even) .mws-list-copy { grid-column:2;grid-row:1; }
+  .mws-list-compact .mws-list-entry { border-bottom:1px solid var(--color-base-300,#ddd);padding-bottom:1rem; }
+  .mws-list-links a { display:block; padding:.75rem 0; }
+  @media(max-width:700px){
+    .mws-list-alternating .mws-list-entry,.mws-list-alternating .mws-list-entry[data-kind="icon"],.mws-list-alternating > li:nth-child(even) .mws-list-entry[data-kind="icon"] { grid-template-columns:minmax(0,1fr); gap:1rem; }
+    .mws-list-alternating .mws-list-copy,.mws-list-alternating .mws-list-media { grid-column:auto !important;grid-row:auto !important; }
+    .mws-list-alternating .mws-list-entry[data-kind="icon"] .mws-list-media { height:clamp(140px,40vw,180px); }
+  }
+</style>

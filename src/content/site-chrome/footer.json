@@ -1,0 +1,40 @@
+{
+  "footer": {
+    "about": "Nøytralt eksempelinnhold for å teste MedonWebSystem. Ikke en offentlig kundeside.",
+    "groups": [
+      {
+        "heading": "Utforsk",
+        "links": [
+          {
+            "label": "Tjeneste",
+            "href": "/tjeneste/"
+          },
+          {
+            "label": "Tilbud",
+            "href": "/priser/"
+          },
+          {
+            "label": "Innsikt",
+            "href": "/innsikt/artikkel/"
+          }
+        ]
+      },
+      {
+        "heading": "Prosjekt",
+        "links": [
+          {
+            "label": "Om",
+            "href": "/om/"
+          },
+          {
+            "label": "Kontakt",
+            "href": "/kontakt/"
+          }
+        ]
+      }
+    ],
+    "copyright": "Sofiemyr Bil",
+    "note": "Demonstrasjon. Ingen skjemaer eller kommersielle tilbud er aktive.",
+    "legalLinks": []
+  }
+}

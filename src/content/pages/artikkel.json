@@ -1,0 +1,24 @@
+{
+  "slug": "innsikt/artikkel",
+  "kind": "article",
+  "seo": {
+    "title": "Eksempelartikkel | Sofiemyr Bil",
+    "description": "En nøytral artikkel for å prøve innholdslister."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "Eksempelartikkel uten bilde",
+    "support": "PageList skal bruke automatisk ikon kun i alternerende visning.",
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "title": "Eksempelartikkel",
+    "summary": "Dette er et illustrerende CMS-innhold.",
+    "order": 5,
+    "visible": true
+  },
+  "faq": [],
+  "sections": []
+}

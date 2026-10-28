@@ -1,0 +1,69 @@
+{
+  "slug": "home",
+  "kind": "home",
+  "seo": {
+    "title": "Sofiemyr Bil | Forside",
+    "description": "Demometabeskrivelse som skal erstattes."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "Én struktur for flere nettstedstyper",
+    "support": "Denne nøytrale demonstrasjonen viser delt navigasjon, redigerbare sider, innholdsseksjoner og PageList.",
+    "primaryCta": {
+      "label": "Les om tjenesten",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "visible": true
+  },
+  "faq": [
+    {
+      "question": "Er dette en ferdig kundeside?",
+      "answer": "Nei. Dette er en teknisk demonstrasjon med fiktivt innhold."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "introduksjon",
+      "heading": "Dette leverer vi",
+      "body": "Demoinnhold – ikke et kundeløfte.",
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "felles-eksempel",
+      "visibility": "visible"
+    },
+    {
+      "_block": "global",
+      "id": "prosess",
+      "element": "process",
+      "visibility": "visible"
+    },
+    {
+      "_block": "global",
+      "id": "sporsmal",
+      "element": "faq",
+      "visibility": "visible"
+    },
+    {
+      "_block": "pageList",
+      "id": "artikler",
+      "heading": "Relevante artikler",
+      "visibility": "visible",
+      "pageList": {
+        "source": "articles",
+        "mode": "automatic",
+        "sort": "editorial",
+        "limit": 3,
+        "layout": "alternating",
+        "entries": []
+      }
+    }
+  ]
+}

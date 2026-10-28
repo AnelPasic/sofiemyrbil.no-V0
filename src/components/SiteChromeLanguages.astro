@@ -1,0 +1,17 @@
+---
+import type { SiteChrome } from '../lib/site-chrome';
+interface Props { languages: SiteChrome['languages']; placement: 'desktop' | 'mobile'; }
+const { languages, placement } = Astro.props;
+---
+<div class:list={['mws-chrome-languages', 'join',
+  placement === 'mobile' ? 'mws-chrome-mobile-languages' : 'mws-chrome-desktop-languages']}
+  role="group" aria-label="Språkvalg">
+  {languages.map(lang => lang.current
+    ? <span class="btn btn-sm join-item btn-active" aria-current="true" lang={lang.locale}>{lang.label}</span>
+    : lang.href
+      ? <a class="btn btn-sm join-item btn-ghost" href={lang.href} lang={lang.locale}
+        hreflang={lang.locale}>{lang.label}</a>
+      : <span class="btn btn-sm join-item btn-ghost mws-chrome-lang-disabled"
+          aria-disabled="true" lang={lang.locale}>{lang.label}</span>
+  )}
+</div>

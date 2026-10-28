@@ -1,0 +1,34 @@
+---
+import type { ChromeThemes } from '../lib/site-chrome-theme';
+import { chromeThemeSchema } from '../lib/site-chrome-theme';
+import { parseDaisyTheme, themeOverridesCss } from '../lib/site-chrome-theme';
+interface Props { themes: ChromeThemes; enabled?: boolean; }
+const themes = chromeThemeSchema.parse(Astro.props.themes);
+const enabled = Astro.props.enabled ?? true;
+const overrides = themeOverridesCss(themes);
+const defaultMode = themes.defaultMode;
+const lightName = parseDaisyTheme(themes.lightCss, 'light').name;
+const darkName = parseDaisyTheme(themes.darkCss, 'dark').name;
+---
+<style is:global set:html={overrides}/>
+<script is:inline define:vars={{ defaultMode, lightName, darkName, enabled }}>
+  // Head initialization runs before body paint; no artificial network requests.
+  const root = document.documentElement;
+  const mode = (() => {
+    if (enabled) {
+      try {
+        const saved = localStorage.getItem('mws-theme-mode');
+        if (saved === 'light' || saved === 'dark') return saved;
+      } catch { /* Browsers may disable storage; OS detection still works. */ }
+      if (typeof window.matchMedia === 'function') {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    }
+    return defaultMode; // CMS fallback when switching is disabled or OS detection unavailable.
+  })();
+  root.dataset.mwsLightTheme = lightName;
+  root.dataset.mwsDarkTheme = darkName;
+  root.dataset.mwsThemeSwitchEnabled = String(enabled);
+  root.dataset.mwsThemeMode = mode;
+  root.dataset.theme = mode === 'dark' ? darkName : lightName;
+</script>

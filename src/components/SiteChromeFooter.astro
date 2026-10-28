@@ -1,0 +1,37 @@
+---
+import type { SiteChrome } from '../lib/site-chrome';
+import { siteChromeSchema } from '../lib/site-chrome';
+import { resolveSiteChromeLogos } from '../lib/site-chrome-logos';
+import '../styles/site-chrome.css';
+interface Props { config: SiteChrome; }
+const config = siteChromeSchema.parse(Astro.props.config);
+const logos = resolveSiteChromeLogos(config);
+---
+<footer class="mws-chrome-footer">
+  <div class="mws-chrome-shell mws-chrome-footer-grid">
+    <div class="mws-chrome-footer-about">
+      <a class="mws-chrome-footer-brand" href={config.brand.homeHref}>
+        {logos.footerLight
+          ? <>
+            <img data-mws-logo-variant="light" src={logos.footerLight} alt={config.brand.logoAlt ?? config.brand.name} />
+            <img data-mws-logo-variant="dark" src={logos.footerDark} alt={config.brand.logoAlt ?? config.brand.name} />
+          </>
+          : <span>{config.brand.name}</span>}
+      </a>
+      <p>{config.footer.about}</p>
+    </div>
+    {config.footer.groups.map(group => <nav class="mws-chrome-footer-group" aria-label={group.heading}>
+      <h2>{group.heading}</h2>
+      <ul>
+        {group.links.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </nav>)}
+  </div>
+  <div class="mws-chrome-shell mws-chrome-footer-bottom">
+    <span>© {new Date().getFullYear()} {config.footer.copyright}</span>
+    {config.footer.note && <span>{config.footer.note}</span>}
+    {config.footer.legalLinks.length > 0 && <nav aria-label="Juridisk informasjon">
+      <ul>{config.footer.legalLinks.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+    </nav>}
+  </div>
+</footer>

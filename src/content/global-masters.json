@@ -1,0 +1,41 @@
+{
+  "faq": {
+    "type": "faq",
+    "items": []
+  },
+  "services": {
+    "type": "content",
+    "heading": "Tjenester",
+    "body": "Bytt til godkjent kundespesifikt innhold."
+  },
+  "process": {
+    "type": "content",
+    "heading": "Arbeidsprosess",
+    "body": "Rediger i globalt masterregister før lansering."
+  },
+  "benefits": {
+    "type": "content",
+    "heading": "Fordeler",
+    "body": "Skriv faktiske dokumenterbare fordeler."
+  },
+  "pricing": {
+    "type": "protected",
+    "renderKey": "pricing",
+    "publicationApproved": false
+  },
+  "proof": {
+    "type": "protected",
+    "renderKey": "proof",
+    "publicationApproved": false
+  },
+  "contact": {
+    "type": "protected",
+    "renderKey": "contact",
+    "publicationApproved": false
+  },
+  "calculator": {
+    "type": "protected",
+    "renderKey": "calculator",
+    "publicationApproved": false
+  }
+}

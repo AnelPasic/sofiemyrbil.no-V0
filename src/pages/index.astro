@@ -1,0 +1,6 @@
+---
+import PageView from '../components/PageView.astro';
+import { getPage } from '../lib/load-site';
+const page = getPage('home');
+---
+<PageView page={page} />

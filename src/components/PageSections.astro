@@ -1,0 +1,39 @@
+---
+import type { BuilderPage, GlobalMasters, CaseReference } from '../page-builder';
+import { resolveSections } from '../page-builder';
+import PageList from './PageList.astro';
+import Faq from './Faq.astro';
+import RichContentSection from './RichContentSection.astro';
+import type {SharedContentRegistry} from '../page-builder';
+
+interface Props {
+  page: BuilderPage;
+  pages: readonly BuilderPage[];
+  masters: GlobalMasters;
+  sharedContent?:SharedContentRegistry;
+  cases?: readonly CaseReference[];
+}
+const { page, pages, masters, cases = [], sharedContent={} } = Astro.props;
+const sections = resolveSections(page, masters, pages, cases, sharedContent);
+// Customer-specific price/proof/lead implementations MUST be installed explicitly.
+// Never quietly render an inaccurate marketing claim or an inert form.
+for (const item of sections) {
+  if (item.type === 'global' && item.master.type === 'protected') {
+    throw new Error('Project must supply an approved renderer for protected global: ' + item.master.renderKey);
+  }
+}
+---
+<div class="mws-page-sections">
+  {sections.map(item =>
+    item.type === 'content'
+      ? <RichContentSection section={item.section} />
+      : item.type === 'faq'
+        ? <Faq id={item.section.id} items={item.items} />
+        : item.type === 'pageList'
+          ? <section id={item.section.id}><PageList heading={item.section.heading} items={item.items} layout={item.section.pageList.layout} /></section>
+          : item.master.type === 'content'
+            ? <RichContentSection section={{id:item.section.id,heading:item.master.heading,body:item.master.body}} />
+            : null
+  )}
+</div>
+<style>.mws-page-sections{display:grid;gap:clamp(3rem,7vw,6rem);}.mws-page-sections>section{min-width:0;scroll-margin-top:6rem;}</style>

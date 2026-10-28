@@ -1,0 +1,30 @@
+{
+  "slug": "om",
+  "kind": "utility",
+  "seo": {
+    "title": "Om | Sofiemyr Bil",
+    "description": "Hva den tekniske nettstedstarteren består av."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "Om denne demonstrasjonen",
+    "support": "Innhold, farger, prisdata og eksempler er nøytrale og erstattes for hver kunde.",
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "title": "Om",
+    "visible": false
+  },
+  "faq": [],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "plattform",
+      "heading": "Teknisk grunnstruktur",
+      "body": "Astro, Pages CMS, delt Site Chrome, Page Builder og språkinnstillinger fra ett kildegrunnlag.",
+      "visibility": "visible"
+    }
+  ]
+}

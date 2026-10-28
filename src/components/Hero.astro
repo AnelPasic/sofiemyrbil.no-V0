@@ -1,0 +1,41 @@
+---
+import type { BuilderPage } from '../page-builder';
+import type {HeroProofCase} from '../lib/hero-proof';
+interface Props { hero: BuilderPage['hero']; featuredProof?:HeroProofCase; }
+const { hero,featuredProof } = Astro.props;
+const emphasisAt=hero.titleEmphasis==='first-sentence'?hero.title.indexOf('.'):-1;
+const image = hero.visual.kind === 'image' ? hero.visual.image : undefined;
+---
+<section class:list={['mws-starter-hero', image && 'has-image']} data-layout={hero.layout}>
+  <div class="mws-starter-hero-copy">
+    {hero.eyebrow && <p class="mws-starter-eyebrow">{hero.eyebrow}</p>}
+    <h1>{emphasisAt>=0?<><span class="hero-emphasis">{hero.title.slice(0,emphasisAt+1)}</span>{hero.title.slice(emphasisAt+1)}</>:hero.title}</h1>
+    <p>{hero.support}</p>
+    <div class="mws-starter-hero-actions">
+      {hero.primaryCta && <a class="btn btn-primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>}
+      {hero.secondaryCta && <a class="btn btn-outline" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>}
+    </div>
+  </div>
+  {image && <div class="mws-starter-hero-media"><img src={image.src} alt={image.alt} width="1200" height="900" decoding="async" style={{ objectPosition: image.positionX + '% ' + image.positionY + '%' }} />{featuredProof&&<aside class="hero-proof" aria-label="Dokumentert resultat"><strong>{featuredProof.metric}</strong><span>{featuredProof.displayName} – {featuredProof.context}</span></aside>}</div>}
+</section>
+<style>
+.mws-starter-hero { padding: clamp(3.5rem, 9vw, 7rem) 0; display:grid; align-items:center; gap:clamp(2rem,5vw,5rem); }
+.mws-starter-hero.has-image { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+.mws-starter-hero[data-layout="split-left"] .mws-starter-hero-media { grid-column:1;grid-row:1; }
+.mws-starter-hero[data-layout="split-left"] .mws-starter-hero-copy { grid-column:2;grid-row:1; }
+.mws-starter-hero[data-layout^="centered"] { text-align:center; }
+.mws-starter-hero[data-layout^="centered"] .mws-starter-hero-copy { max-width:48rem; margin-inline:auto; }
+.mws-starter-hero[data-layout="centered"] .mws-starter-hero-media { grid-column:1; max-width:50rem; width:100%;margin-inline:auto; }
+.mws-starter-hero h1 { font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.07;font-weight:750;letter-spacing:-.045em; }
+.mws-starter-hero-copy>p:not(.mws-starter-eyebrow) { font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.6;max-width:60ch;margin-block:1.3rem; }
+.mws-starter-hero[data-layout^="centered"] .mws-starter-hero-copy>p { margin-inline:auto; }
+.mws-starter-hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; justify-content:flex-start; }
+.mws-starter-hero[data-layout^="centered"] .mws-starter-hero-actions { justify-content:center; }
+.mws-starter-hero-media { min-width:0; }
+.mws-starter-hero-media img { width:100%; height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-box,1rem); }
+.hero-emphasis{color:var(--color-primary)}
+.hero-proof{position:relative;margin:-2rem 1rem 0 auto;z-index:1;max-width:18rem;display:grid;gap:.3rem;padding:1rem;border-radius:var(--radius-box,1rem);background:var(--color-base-100);color:var(--color-base-content);box-shadow:0 12px 40px color-mix(in srgb,var(--color-base-content) 15%,transparent)}
+.hero-proof strong{font-size:1.4rem}
+.mws-starter-eyebrow { font-size:.83rem; font-weight:700; text-transform:uppercase;letter-spacing:.1em; }
+@media(max-width:760px) { .mws-starter-hero.has-image {grid-template-columns:1fr;} .mws-starter-hero[data-layout="split-left"] .mws-starter-hero-media,.mws-starter-hero[data-layout="split-left"] .mws-starter-hero-copy {grid-column:1;grid-row:auto;} }
+</style>

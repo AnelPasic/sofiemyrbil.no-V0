@@ -1,0 +1,70 @@
+{
+  "brand": {
+    "name": "Sofiemyr Bil",
+    "homeHref": "/"
+  },
+  "skipLabel": "Hopp til innhold",
+  "navigationLabel": "Hovedmeny",
+  "mobileNavigationLabel": "Mobilmeny",
+  "openMenuLabel": "Åpne meny",
+  "closeMenuLabel": "Lukk meny",
+  "navigation": [
+    {
+      "kind": "dropdown",
+      "id": "tjenester",
+      "label": "Tjenester",
+      "href": "/tjeneste/",
+      "toggleLabel": "Vis tjenester",
+      "links": [
+        {
+          "label": "Eksempeltjeneste",
+          "href": "/tjeneste/",
+          "description": "Illustrerende tjeneste"
+        },
+        {
+          "label": "Om prosjektet",
+          "href": "/om/",
+          "description": "Hva denne starteren inneholder"
+        }
+      ]
+    },
+    {
+      "kind": "link",
+      "id": "pris",
+      "label": "Tilbud",
+      "href": "/priser/"
+    },
+    {
+      "kind": "link",
+      "id": "innsikt",
+      "label": "Innsikt",
+      "href": "/innsikt/artikkel/"
+    },
+    {
+      "kind": "link",
+      "id": "kontakt",
+      "label": "Kontakt",
+      "href": "/kontakt/"
+    }
+  ],
+  "primaryCta": {
+    "label": "Kontakt (demo)",
+    "href": "/kontakt/",
+    "variant": "primary"
+  },
+  "utilityLinks": [],
+  "languages": [
+    {
+      "label": "NO",
+      "locale": "nb",
+      "href": "/",
+      "current": true
+    }
+  ],
+  "headerOptions": {
+    "sticky": true,
+    "showLanguageSwitch": false,
+    "showSearch": false,
+    "showCta": true
+  }
+}

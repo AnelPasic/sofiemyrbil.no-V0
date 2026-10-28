@@ -1,0 +1,18 @@
+---
+import type { faqItemSchema } from '../page-builder';
+import type { z } from 'astro/zod';
+interface Props { items: readonly z.infer<typeof faqItemSchema>[]; id?: string; heading?: string; }
+const { items, id = 'sporsmal', heading = 'Ofte stilte spørsmål' } = Astro.props;
+---
+{items.length > 0 && <section id={id} class="mws-faq">
+  <h2>{heading}</h2>
+  {items.map(item=><details>
+    <summary>{item.question}</summary>
+    <p>{item.answer}</p>
+  </details>)}
+</section>}
+<style>
+  .mws-faq details { border-bottom:1px solid var(--color-base-300,#ddd); padding:.75rem 0; }
+  .mws-faq summary { cursor:pointer; font-weight:600; min-height:2.75rem; display:flex; align-items:center; }
+  .mws-faq summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+</style>

@@ -1,0 +1,11 @@
+---
+/** Mount once inside the global <head>, alongside SiteChromeThemeHead.
+ * Pagefind files must be generated at /pagefind/ by the site's build.
+ */
+import type { SiteChrome } from '../lib/site-chrome';
+interface Props { config: SiteChrome; }
+const { config } = Astro.props;
+const enabled = config.headerOptions.showSearch && config.search?.mode === 'pagefind';
+---
+{enabled && <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css" />}
+{enabled && <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>}

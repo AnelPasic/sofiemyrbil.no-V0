@@ -1,0 +1,26 @@
+{
+  "slug": "404",
+  "kind": "utility",
+  "seo": {
+    "title": "Siden finnes ikke | Sofiemyr Bil",
+    "description": "Eksempel på felles 404-presentasjon."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "Vi fant ikke siden",
+    "support": "Adressen finnes ikke i denne demonstrasjonen.",
+    "primaryCta": {
+      "label": "Til forsiden",
+      "href": "/"
+    },
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "title": "404",
+    "visible": false
+  },
+  "faq": [],
+  "sections": []
+}

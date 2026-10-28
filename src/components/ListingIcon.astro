@@ -1,0 +1,16 @@
+---
+import type { ListingVisual } from '../page-builder';
+interface Props { name: Extract<ListingVisual, {kind:'icon'}>['icon']; }
+const { name } = Astro.props;
+const paths: Record<Props['name'], string[]> = {
+  search: ['M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z','m16 16 5 5'],
+  conversion: ['M5 3v17l5-5 4 5 2.5-1.5-4-6L20 11 5 3Z'],
+  analytics: ['M3 3v18h18','M7 17v-5m5 5V8m5 9V5'],
+  trend: ['M3 17l7-7 4 4 7-9','M15 5h6v6'],
+  page: ['M5 2.5h14v19H5v-19Z','M9 8h6M9 12h6M9 16h4'],
+  route: ['M6 4h11a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h10','M16 17l3 3-3 3'],
+};
+---
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {paths[name].map(d => <path d={d}/>)}
+</svg>

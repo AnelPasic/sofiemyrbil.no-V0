@@ -1,0 +1,75 @@
+---
+import type { SiteChrome } from '../lib/site-chrome';
+import { siteChromeSchema } from '../lib/site-chrome';
+import { resolveSiteChromeLogos } from '../lib/site-chrome-logos';
+import SiteChromeNav from './SiteChromeNav.astro';
+import SiteChromeThemeSwitch from './SiteChromeThemeSwitch.astro';
+import SiteChromeLanguages from './SiteChromeLanguages.astro';
+import SiteChromeSearch from './SiteChromeSearch.astro';
+import '../styles/site-chrome.css';
+
+interface Props { config: SiteChrome; instanceId?: string; }
+const { config: input, instanceId = 'site' } = Astro.props;
+const config = siteChromeSchema.parse(input);
+const mobileId = 'mws-' + instanceId + '-mobile-nav';
+const options = config.headerOptions;
+const logos = resolveSiteChromeLogos(config);
+const ctaClasses = {
+  primary: 'btn-primary', secondary: 'btn-secondary', accent: 'btn-accent',
+  neutral: 'btn-neutral', info: 'btn-info', success: 'btn-success',
+  warning: 'btn-warning', error: 'btn-error',
+} as const;
+const ctaClass = config.primaryCta ? ctaClasses[config.primaryCta.variant] : '';
+---
+<a class="mws-chrome-skip" href="#main">{config.skipLabel}</a>
+<header class:list={['mws-chrome-header', {'mws-chrome-header--sticky': options.sticky}]} data-mws-chrome-header>
+  <div class="mws-chrome-shell navbar">
+    <a class="mws-chrome-brand" href={config.brand.homeHref} aria-label={config.brand.name}>
+      {logos.desktopLight
+        ? <>
+          <img data-mws-logo-variant="desktop-light" src={logos.desktopLight} alt={config.brand.logoAlt ?? config.brand.name} />
+          <img data-mws-logo-variant="desktop-dark" src={logos.desktopDark} alt={config.brand.logoAlt ?? config.brand.name} />
+          <img data-mws-logo-variant="mobile-light" src={logos.mobileLight} alt={config.brand.logoAlt ?? config.brand.name} />
+          <img data-mws-logo-variant="mobile-dark" src={logos.mobileDark} alt={config.brand.logoAlt ?? config.brand.name} />
+        </>
+        : <span>{config.brand.name}</span>}
+    </a>
+    <nav class="mws-chrome-desktop-nav" aria-label={config.navigationLabel}>
+      <SiteChromeNav items={config.navigation} placement="desktop" instanceId={instanceId} />
+    </nav>
+    <div class="mws-chrome-actions">
+      {options.showSearch && config.search && <SiteChromeSearch search={config.search} placement="desktop" />}
+      {options.showThemeSwitch && <SiteChromeThemeSwitch themes={config.themes} placement="desktop" />}
+      {options.showLanguageSwitch && config.languages.length > 1 && <SiteChromeLanguages languages={config.languages} placement="desktop" />}
+      {config.utilityLinks.map(link => <a class="mws-chrome-utility" href={link.href}>{link.label}</a>)}
+      {options.showCta && config.primaryCta && <a class:list={['btn', ctaClass, 'mws-chrome-primary-cta']}
+        href={config.primaryCta.href}>{config.primaryCta.label}</a>}
+      <button class="btn btn-ghost btn-square mws-chrome-mobile-toggle" type="button"
+        data-mws-mobile-toggle aria-expanded="false" aria-controls={mobileId}
+        aria-label={config.openMenuLabel}
+        data-open-label={config.openMenuLabel} data-close-label={config.closeMenuLabel}>
+        <span class="mws-chrome-burger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <nav id={mobileId} class="mws-chrome-mobile-nav" data-mws-mobile-nav
+    aria-label={config.mobileNavigationLabel} hidden>
+    <SiteChromeNav items={config.navigation} placement="mobile" instanceId={instanceId} />
+    {options.showSearch && config.search && <SiteChromeSearch search={config.search} placement="mobile" />}
+    {options.showThemeSwitch && <SiteChromeThemeSwitch themes={config.themes} placement="mobile" />}
+    {options.showLanguageSwitch && config.languages.length > 1 && <SiteChromeLanguages languages={config.languages} placement="mobile" />}
+    {options.showCta && config.primaryCta && <a href={config.primaryCta.href}
+      class:list={['btn', ctaClass, 'mws-chrome-mobile-panel-cta']}>{config.primaryCta.label}</a>}
+    {config.utilityLinks.length > 0 && <ul class="menu mws-chrome-mobile-utilities">
+      {config.utilityLinks.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+    </ul>}
+  </nav>
+  {options.showSearch && config.search?.mode === 'pagefind' && <pagefind-modal reset-on-close></pagefind-modal>}
+</header>
+<script>
+  import { mountSiteChromeHeaders } from '../lib/site-chrome-interactions';
+  import { mountChromeThemeSwitchers } from '../lib/site-chrome-theme-interactions';
+  function mountChrome() { mountSiteChromeHeaders(); mountChromeThemeSwitchers(); }
+  mountChrome();
+  document.addEventListener('astro:page-load', mountChrome);
+</script>

@@ -1,0 +1,9 @@
+---
+import PageView from '../components/PageView.astro';
+import { pages, getPage } from '../lib/load-site';
+export function getStaticPaths() {
+  return pages.filter(p => p.slug !== 'home' && p.slug !== '404').map(p => ({ params: { slug: p.slug } }));
+}
+const page = getPage(Astro.params.slug ?? '');
+---
+<PageView page={page} />

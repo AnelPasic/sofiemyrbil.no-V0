@@ -1,0 +1,42 @@
+{
+  "_block": "content",
+  "uid": "f4a35ce8-828d-4c62-ab14-7c3a56092532",
+  "id": "felles-eksempel",
+  "name": "Felles eksempel",
+  "heading": "Én seksjon – flere sider",
+  "eyebrow": "GJENBRUK",
+  "headingAlign": "center",
+  "layout": "three-columns",
+  "surface": "soft",
+  "body": [
+    "Globalt innhold har én kilde.",
+    "Hver side styrer rekkefølgen selv.",
+    "Endringer i kilden oppdaterer alle sider."
+  ],
+  "items": [
+    {
+      "title": "Kilde",
+      "text": "Én JSON-fil.",
+      "surface": "mint",
+      "boxVariant": "plain"
+    },
+    {
+      "title": "Referanse",
+      "text": "Ingen kopier av teksten.",
+      "surface": "lavender",
+      "boxVariant": "card"
+    },
+    {
+      "title": "Synlighet",
+      "text": "Skjul per side.",
+      "surface": "base",
+      "boxVariant": "plain"
+    }
+  ],
+  "links": [
+    {
+      "label": "Se tjenesteeksemplet",
+      "href": "/tjeneste/"
+    }
+  ]
+}

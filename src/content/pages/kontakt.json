@@ -1,0 +1,30 @@
+{
+  "slug": "kontakt",
+  "kind": "utility",
+  "seo": {
+    "title": "Kontakt | Sofiemyr Bil",
+    "description": "Teknisk demonstrasjon uten aktivt kontaktskjema."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "title": "Kontakt",
+    "support": "Denne demonstrasjonen sender ikke inn skjemaer eller kundeopplysninger.",
+    "visual": {
+      "kind": "none"
+    }
+  },
+  "listing": {
+    "title": "Kontakt",
+    "visible": false
+  },
+  "faq": [],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "kontaktinfo",
+      "heading": "Skjema er ikke tilkoblet",
+      "body": "Et fungerende skjema, databehandling og meldingslevering må installeres og verifiseres separat før kundelansering.",
+      "visibility": "visible"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+/** The same 16px search affordance as the accepted Optimalisering Oslo header.
+ * Pagefind mode needs generated /pagefind assets and SiteChromeSearchHead in
+ * the shared layout. Link mode remains a working, accessible alternative.
+ */
+import type { SiteChrome } from '../lib/site-chrome';
+interface Props {
+  search: NonNullable<SiteChrome['search']>;
+  placement: 'desktop' | 'mobile';
+}
+const { search, placement } = Astro.props;
+const classes = ['mws-chrome-search', placement === 'mobile'
+  ? 'mws-chrome-search--mobile' : 'mws-chrome-search--desktop'];
+---
+{search.mode === 'pagefind'
+  ? <pagefind-modal-trigger
+      class:list={classes}
+      compact={placement === 'desktop'}
+      placeholder={search.label}
+      hide-shortcut
+      aria-label={search.label}
+    ></pagefind-modal-trigger>
+  : <a class:list={classes} href={search.href} aria-label={search.label}>
+      <svg class="mws-chrome-search-svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-4-4"></path>
+      </svg>
+      {placement === 'mobile' && <span>{search.label}</span>}
+    </a>}
