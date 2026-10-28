@@ -11,6 +11,7 @@
     "check": "astro check",
     "build": "astro build",
     "test": "node --test tests/*.test.mjs",
+    "test:responsive": "node tests/responsive-acceptance.mjs",
     "sync:choices": "node scripts/sync-page-options.mjs --pages src/content/pages --config .pages.yml --write",
     "check:choices": "node scripts/sync-page-options.mjs --pages src/content/pages --config .pages.yml --check",
     "verify": "npm run check:choices && npm test && npm run check && npm run build",
