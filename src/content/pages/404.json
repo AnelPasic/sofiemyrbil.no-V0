@@ -2,13 +2,13 @@
   "slug": "404",
   "kind": "utility",
   "seo": {
-    "title": "Siden finnes ikke | Sofiemyr Bil",
-    "description": "Eksempel på felles 404-presentasjon."
+    "title": "404 – Siden finnes ikke | Sofiemyr Bil AS",
+    "description": "Siden du leter etter finnes ikke eller er flyttet. Gå til forsiden eller kontakt Sofiemyr Bil AS på Kolbotn."
   },
   "hero": {
     "layout": "centered-none",
-    "title": "Vi fant ikke siden",
-    "support": "Adressen finnes ikke i denne demonstrasjonen.",
+    "title": "404 – Siden finnes ikke",
+    "support": "Beklager, men adressen du forsøkte å nå finnes ikke eller har blitt flyttet. Gå tilbake til forsiden eller ta kontakt med oss på telefon 66 81 37 00.",
     "primaryCta": {
       "label": "Til forsiden",
       "href": "/"

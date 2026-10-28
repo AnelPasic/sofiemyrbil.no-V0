@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui" { themes: light, dark; }
-:root { font-family: system-ui, sans-serif; }
+:root { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
 body { margin: 0; color: var(--color-base-content); background: var(--color-base-100); }
 main { min-height: 65vh; }
 .mws-main-shell { width: min(100% - 2.5rem, 75rem); margin-inline: auto; }
 .mws-page-content { display: grid; gap: clamp(2.5rem, 6vw, 5rem); padding-block: 2.5rem 6rem; }
 .mws-page-content h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.2; font-weight: 700; }
 .mws-page-content p { line-height: 1.65; }
-.mws-starter-warning { font-size: .83rem; padding: .55rem 1rem; background: var(--color-warning); color: var(--color-warning-content); }

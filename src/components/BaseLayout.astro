@@ -24,7 +24,6 @@ const canonical = new URL(publicPath(page.slug), Astro.site);
   <SiteChromeSearchHead config={chrome} />
 </head>
 <body>
-  <p class="mws-starter-warning">Teknisk demonstrasjon — ikke en publisert kundeside.</p>
   <SiteChromeHeader config={chrome} />
   <main id="main"><slot /></main>
   <SiteChromeFooter config={chrome} />
