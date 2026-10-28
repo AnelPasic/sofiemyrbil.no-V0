@@ -67,7 +67,7 @@
           "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, grundig tilstandsrapport og konkurransedyktig prisoverslag ved behov for utbedring.",
           "href": "/priser/",
           "label": "Se kontrollvilkår",
-          "boxVariant": "default",
+          "boxVariant": "card",
           "surface": "default"
         },
         {
@@ -76,8 +76,8 @@
           "text": "Intervallservice etter fabrikkens retningslinjer for Ford og alle øvrige bilmerker. Vi stempler i serviceheftet og bevarer nybilgarantien.",
           "href": "/tjeneste/",
           "label": "Les om bilservice",
-          "boxVariant": "card",
-          "surface": "base-100"
+          "boxVariant": "default",
+          "surface": "base-200"
         },
         {
           "title": "Diagnose & Feilsøking",
@@ -94,7 +94,7 @@
           "text": "Skifte av bremser, hjuloppheng, fjærer, clutch, registerreim og eksosanlegg utført med presisjon og kvalitetsdeler.",
           "href": "/tjeneste/",
           "label": "Mekanisk arbeid",
-          "boxVariant": "card",
+          "boxVariant": "default",
           "surface": "base-300"
         },
         {
@@ -103,8 +103,8 @@
           "text": "Spesialisert service, forberedelse til sesongen og reparasjon av bobiler og campingbiler. Vi har riktig løfteutstyr og god plass.",
           "href": "/tjeneste/",
           "label": "Les om bobilservice",
-          "boxVariant": "card",
-          "surface": "primary"
+          "boxVariant": "default",
+          "surface": "base-300"
         },
         {
           "title": "Flåteavtaler for Bedrifter",
@@ -112,8 +112,8 @@
           "text": "Effektiv oppfølging og serviceavtaler for varebiler og firmabiler med prioritert håndtering og forutsigbare kostnader.",
           "href": "/tjeneste/",
           "label": "Firmabilavtaler",
-          "boxVariant": "card",
-          "surface": "secondary"
+          "boxVariant": "default",
+          "surface": "base-300"
         }
       ],
       "visibility": "visible"
