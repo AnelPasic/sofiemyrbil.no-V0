@@ -1,40 +1,40 @@
 {
   "footer": {
-    "about": "Nøytralt eksempelinnhold for å teste MedonWebSystem. Ikke en offentlig kundeside.",
+    "about": "Sofiemyr Bil AS – Autorisert bilverksted i Skiveien 42 på Kolbotn. Spesialkompetanse på Ford, godkjent for alle bilmerker opptil 3 500 kg, EU-kontroll til fastpris kr 1 450,- og bobilservice. Etablert 1997.",
     "groups": [
       {
-        "heading": "Utforsk",
+        "heading": "Tjenester",
         "links": [
           {
-            "label": "Tjeneste",
+            "label": "Verkstedtjenester & Service",
             "href": "/tjeneste/"
           },
           {
-            "label": "Tilbud",
+            "label": "Priser & Bestilling",
             "href": "/priser/"
           },
           {
-            "label": "Innsikt",
+            "label": "Innsikt & Bilhold",
             "href": "/innsikt/artikkel/"
           }
         ]
       },
       {
-        "heading": "Prosjekt",
+        "heading": "Verkstedet",
         "links": [
           {
-            "label": "Om",
+            "label": "Om Sofiemyr Bil",
             "href": "/om/"
           },
           {
-            "label": "Kontakt",
+            "label": "Kontakt & Veibeskrivelse",
             "href": "/kontakt/"
           }
         ]
       }
     ],
-    "copyright": "Sofiemyr Bil",
-    "note": "Demonstrasjon. Ingen skjemaer eller kommersielle tilbud er aktive.",
+    "copyright": "Sofiemyr Bil AS – Org.nr: 977 351 030",
+    "note": "Skiveien 42, 1410 Kolbotn · Tlf: +47 66 81 37 00 · E-post: firma@sofiemyrbil.no · Åpningstider: Man–Tor 07:30–16:30, Fre 07:30–16:00",
     "legalLinks": []
   }
 }

@@ -247,12 +247,12 @@ components:
       values:
 # PAGE_BUILDER_CHOICES_BEGIN
         - { name: "404", label: "Siden finnes ikke | Sofiemyr Bil" }
-        - { name: "home", label: "Sofiemyr Bil | Forside" }
-        - { name: "innsikt/artikkel", label: "Eksempelartikkel | Sofiemyr Bil" }
-        - { name: "kontakt", label: "Kontakt | Sofiemyr Bil" }
-        - { name: "om", label: "Om | Sofiemyr Bil" }
-        - { name: "priser", label: "Tilbud | Sofiemyr Bil" }
-        - { name: "tjeneste", label: "Tjeneste | Sofiemyr Bil" }
+        - { name: "home", label: "Sofiemyr Bil AS | Autorisert bilverksted på Kolbotn – Ford-spesialist" }
+        - { name: "innsikt/artikkel", label: "Slik sjekker du fristen for EU-kontroll | Sofiemyr Bil AS" }
+        - { name: "kontakt", label: "Kontakt oss & Bestill time | Sofiemyr Bil AS – Skiveien 42" }
+        - { name: "om", label: "Om oss | Sofiemyr Bil AS – Bilverksted i Skiveien siden 1997" }
+        - { name: "priser", label: "Priser & Bestilling | Sofiemyr Bil AS – EU-kontroll kr 1 450,-" }
+        - { name: "tjeneste", label: "Verkstedtjenester & Service | Sofiemyr Bil AS Kolbotn" }
 # PAGE_BUILDER_CHOICES_END
   builderSections:
     type: block

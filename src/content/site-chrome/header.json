@@ -17,38 +17,38 @@
       "toggleLabel": "Vis tjenester",
       "links": [
         {
-          "label": "Eksempeltjeneste",
+          "label": "Verkstedtjenester & Service",
           "href": "/tjeneste/",
-          "description": "Illustrerende tjeneste"
+          "description": "EU-kontroll, service, feilsøking og bobilservice"
         },
         {
-          "label": "Om prosjektet",
+          "label": "Om Sofiemyr Bil",
           "href": "/om/",
-          "description": "Hva denne starteren inneholder"
+          "description": "Erfaring siden 1997 i Skiveien 42"
         }
       ]
     },
     {
       "kind": "link",
-      "id": "pris",
-      "label": "Tilbud",
+      "id": "priser",
+      "label": "Priser & Bestilling",
       "href": "/priser/"
     },
     {
       "kind": "link",
       "id": "innsikt",
-      "label": "Innsikt",
+      "label": "Bilråd & Innsikt",
       "href": "/innsikt/artikkel/"
     },
     {
       "kind": "link",
       "id": "kontakt",
-      "label": "Kontakt",
+      "label": "Kontakt & Kart",
       "href": "/kontakt/"
     }
   ],
   "primaryCta": {
-    "label": "Kontakt (demo)",
+    "label": "Bestill time",
     "href": "/kontakt/",
     "variant": "primary"
   },

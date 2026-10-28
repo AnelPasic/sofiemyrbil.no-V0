@@ -1,29 +1,64 @@
 {
   "slug": "om",
-  "kind": "utility",
+  "kind": "service",
   "seo": {
-    "title": "Om | Sofiemyr Bil",
-    "description": "Hva den tekniske nettstedstarteren består av."
+    "title": "Om oss | Sofiemyr Bil AS – Bilverksted i Skiveien siden 1997",
+    "description": "Lær mer om Sofiemyr Bil AS. Etablert i 1997, 5 dyktige mekanikere og moderne lokaler i Skiveien 42 på Kolbotn. Ford-spesialist og autorisert for alle merker."
   },
   "hero": {
     "layout": "centered-none",
-    "title": "Om denne demonstrasjonen",
-    "support": "Innhold, farger, prisdata og eksempler er nøytrale og erstattes for hver kunde.",
+    "eyebrow": "Historikk og verdier",
+    "title": "Personlig service og solid bilfaglig håndverk siden 1997",
+    "support": "Sofiemyr Bil AS ble etablert i mai 1997 og har i over 27 år levert pålitelig verkstedarbeid til bileiere i Kolbotn, Sofiemyr, Oppegård og Oslo Syd.",
+    "primaryCta": {
+      "label": "Kontakt verkstedet",
+      "href": "/kontakt/"
+    },
     "visual": {
       "kind": "none"
     }
   },
   "listing": {
-    "title": "Om",
-    "visible": false
+    "title": "Om Sofiemyr Bil AS",
+    "summary": "Over 27 års erfaring, 5 faste mekanikere og moderne lokaler i Skiveien 42.",
+    "visible": true
   },
   "faq": [],
   "sections": [
     {
       "_block": "content",
-      "id": "plattform",
-      "heading": "Teknisk grunnstruktur",
-      "body": "Astro, Pages CMS, delt Site Chrome, Page Builder og språkinnstillinger fra ett kildegrunnlag.",
+      "id": "historikk-og-folk",
+      "eyebrow": "Vår historie",
+      "heading": "Fra oppstart i 1997 til moderne verksted i Skiveien 42",
+      "body": "Sofiemyr Bil startet opp i mai 1997. I 2012 flyttet vi inn i dagens romslige og moderne verkstedlokaler i Skiveien 42 på Kolbotn.\n\nHer har vi 5 erfarne bilmekanikere som brenner for faget sitt. Vi har bred erfaring fra eldre klassiske biler til det aller nyeste innen elbil- og hybridteknologi.\n\nVi er primært kjent som spesialist på Ford, men våre mekanikere utfører alle typer vedlikehold og reparasjoner på samtlige bilmerker.",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Direkte kontakt",
+          "text": "Hos oss får du snakke direkte med bilmekanikeren som skrur på bilen din. Ingen fordyrende mellomledd.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Konkurransedyktige priser",
+          "text": "Vårt mål er å levere førsteklasses arbeid til fornuftige, ærlige priser du kan stole på.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Godkjent hos Statens vegvesen",
+          "text": "Autorisert bilverksted for kjøretøy inntil 3 500 kg, med moderne måle- og testutstyr.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Finn veien og ta kontakt",
+          "href": "/kontakt/"
+        }
+      ],
       "visibility": "visible"
     }
   ]

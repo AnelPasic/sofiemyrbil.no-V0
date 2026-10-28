@@ -2,28 +2,61 @@
   "slug": "kontakt",
   "kind": "utility",
   "seo": {
-    "title": "Kontakt | Sofiemyr Bil",
-    "description": "Teknisk demonstrasjon uten aktivt kontaktskjema."
+    "title": "Kontakt oss & Bestill time | Sofiemyr Bil AS – Skiveien 42",
+    "description": "Kontakt Sofiemyr Bil AS i Skiveien 42, Kolbotn. Tlf: 66 81 37 00. Bestill EU-kontroll (kr 1 450,-) eller service med vårt enkle bestillingsskjema."
   },
   "hero": {
     "layout": "centered-none",
-    "title": "Kontakt",
-    "support": "Denne demonstrasjonen sender ikke inn skjemaer eller kundeopplysninger.",
+    "eyebrow": "Skiveien 42, 1410 Kolbotn",
+    "title": "Kontakt oss eller bestill verkstedtime",
+    "support": "Bruk skjemaet nedenfor for å bestille time eller be om et pristilbud. Du kan også ringe oss direkte i åpningstiden på 66 81 37 00.",
     "visual": {
       "kind": "none"
     }
   },
   "listing": {
-    "title": "Kontakt",
+    "title": "Kontakt & Bestilling",
     "visible": false
   },
-  "faq": [],
+  "faq": [
+    {
+      "question": "Hvor lang tid i forveien må jeg bestille?",
+      "answer": "Vi har normalt kort ventetid og kan ofte finne en ledig time i løpet av få dager. Ta kontakt så finner vi et tidspunkt som passer din timeplan."
+    },
+    {
+      "question": "Kan jeg levere bilen før åpningstid?",
+      "answer": "Ja, vi har nøkkelinnkast for trygg levering av bil og nøkler utenom ordinær åpningstid etter avtale."
+    }
+  ],
   "sections": [
     {
       "_block": "content",
-      "id": "kontaktinfo",
-      "heading": "Skjema er ikke tilkoblet",
-      "body": "Et fungerende skjema, databehandling og meldingslevering må installeres og verifiseres separat før kundelansering.",
+      "id": "praktisk-informasjon",
+      "eyebrow": "Finn frem til verkstedet",
+      "heading": "Praktisk informasjon & Åpningstider",
+      "body": "Sofiemyr Bil AS holder til i lyse og moderne lokaler i Skiveien 42, 1410 Kolbotn. Vi har romslig parkering rett utenfor verkstedet.\n\nÅpningstider:\nMandag – torsdag: 07:30 – 16:30\nFredag: 07:30 – 16:00\nLørdag og søndag: Stengt\n\nTelefon: +47 66 81 37 00 · E-post: firma@sofiemyrbil.no",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Adresse & Adkomst",
+          "text": "Skiveien 42, 1410 Kolbotn. Enkel adkomst via Skiveien (fylkesvei 152) fra Kolbotn, Sofiemyr, Oppegård og Oslo Syd.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Telefon & E-post",
+          "text": "Tlf: +47 66 81 37 00\nE-post: firma@sofiemyrbil.no\nVi besvarer henvendelser fortløpende i åpningstiden.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Nøkkelinnkast",
+          "text": "Har du behov for å levere bilen tidlig om morgenen eller kvelden før? Bruk vårt trygge nøkkelinnkast ved inngangen.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
       "visibility": "visible"
     }
   ]

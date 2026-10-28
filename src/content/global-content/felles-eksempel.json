@@ -2,41 +2,41 @@
   "_block": "content",
   "uid": "f4a35ce8-828d-4c62-ab14-7c3a56092532",
   "id": "felles-eksempel",
-  "name": "Felles eksempel",
-  "heading": "Én seksjon – flere sider",
-  "eyebrow": "GJENBRUK",
+  "name": "Verkstedgaranti og kvalitetsløfte",
+  "heading": "Vår kvalitetsgaranti – Trygt bilhold på Kolbotn",
+  "eyebrow": "KVALITET & TRYGGHET",
   "headingAlign": "center",
   "layout": "three-columns",
   "surface": "soft",
   "body": [
-    "Globalt innhold har én kilde.",
-    "Hver side styrer rekkefølgen selv.",
-    "Endringer i kilden oppdaterer alle sider."
+    "Full garanti på alle deler og utført arbeid i henhold til forbrukerkjøpsloven.",
+    "Godkjente originaldeler sikrer at bilens fabrikkgaranti forblir 100 % intakt.",
+    "Elektronisk oppføring i serviceheftet og direkte innmelding til Statens vegvesen."
   ],
   "items": [
     {
-      "title": "Kilde",
-      "text": "Én JSON-fil.",
+      "title": "Nybilgaranti bevares",
+      "text": "Service utføres alltid etter bilprodusentens spesifikasjoner og serviceplan.",
       "surface": "mint",
       "boxVariant": "plain"
     },
     {
-      "title": "Referanse",
-      "text": "Ingen kopier av teksten.",
+      "title": "Kvalitetsdeler",
+      "text": "Vi benytter kun sertifiserte deler fra anerkjente europeiske leverandører.",
       "surface": "lavender",
       "boxVariant": "card"
     },
     {
-      "title": "Synlighet",
-      "text": "Skjul per side.",
+      "title": "Fagutdannede mekanikere",
+      "text": "Fast team med 5 erfarne bilmekanikere som kjenner bilen din.",
       "surface": "base",
       "boxVariant": "plain"
     }
   ],
   "links": [
     {
-      "label": "Se tjenesteeksemplet",
-      "href": "/tjeneste/"
+      "label": "Bestill time hos oss",
+      "href": "/kontakt/"
     }
   ]
 }

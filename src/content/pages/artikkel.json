@@ -2,23 +2,65 @@
   "slug": "innsikt/artikkel",
   "kind": "article",
   "seo": {
-    "title": "Eksempelartikkel | Sofiemyr Bil",
-    "description": "En nøytral artikkel for å prøve innholdslister."
+    "title": "Slik sjekker du fristen for EU-kontroll | Sofiemyr Bil AS",
+    "description": "Lurer du på når bilen din skal på EU-kontroll? Les om reglene for periodisk kjøretøykontroll og hvordan du unngår bruksforbud."
   },
   "hero": {
     "layout": "centered-none",
-    "title": "Eksempelartikkel uten bilde",
-    "support": "PageList skal bruke automatisk ikon kun i alternerende visning.",
+    "eyebrow": "Bilhold & Råd",
+    "title": "Når må bilen din på EU-kontroll? Dette må du vite om kontrollfristen",
+    "support": "Tidligere ble kontrollmåneden bestemt av det siste sifferet på bilskiltet. I dag beregnes kontrollfristen med et fast 2-års intervall.",
+    "primaryCta": {
+      "label": "Bestill EU-kontroll (kr 1 450,-)",
+      "href": "/kontakt/"
+    },
     "visual": {
       "kind": "none"
     }
   },
   "listing": {
-    "title": "Eksempelartikkel",
-    "summary": "Dette er et illustrerende CMS-innhold.",
-    "order": 5,
+    "title": "Når må bilen på EU-kontroll?",
+    "summary": "Full oversikt over kontrollfrister, nye regler og hva som sjekkes på en periodisk kjøretøykontroll.",
+    "order": 1,
     "visible": true
   },
   "faq": [],
-  "sections": []
+  "sections": [
+    {
+      "_block": "content",
+      "id": "eu-regler-forklart",
+      "eyebrow": "Regelverk fra Statens vegvesen",
+      "heading": "Slik fungerer dagens kontrollintervall",
+      "body": "Nye personbiler skal til sin første EU-kontroll (periodisk kjøretøykontroll / PKK) innen fire år etter førstegangsregistrering. Deretter skal kjøretøyet kontrolleres hvert andre år.\n\nDu kan ta kontrollen når som helst før fristen utløper. Vi anbefaler å gjennomføre kontrollen 1–2 måneder i forveien, slik at du har god tid til eventuelle feilrettinger.",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Første kontroll: 4 år",
+          "text": "For personbiler inntreffer første lovpålagte kontroll fire år etter datoen bilen ble førstegangsregistrert.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Deretter: Hvert 2. år",
+          "text": "Neste kontrollfrist settes nøyaktig to år frem i tid fra datoen du sist fikk bilen godkjent.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Unngå avskilting",
+          "text": "Overskrides fristen uten godkjenning eller innvilget utsettelse, ilegger Statens vegvesen automatisk bruksforbud.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Bestill EU-kontroll hos oss",
+          "href": "/kontakt/"
+        }
+      ],
+      "visibility": "visible"
+    }
+  ]
 }

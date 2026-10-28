@@ -1,12 +1,13 @@
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const flag = process.argv.includes('--write') ? '--write' : '--check';
 const option = name => {
   const index = process.argv.indexOf(name);
   return index === -1 ? undefined : process.argv[index+1];
 };
-const base = resolve(new URL('../', import.meta.url).pathname);
+const base = fileURLToPath(new URL('../', import.meta.url));
 const pagesDir = resolve(option('--pages') ?? join(base, 'templates/pages'));
 const configPath = resolve(option('--config') ?? join(base, 'templates/PAGES-CMS-PAGE-BUILDER.yml'));
 const paths = readdirSync(pagesDir).filter(name => name.endsWith('.json'));

@@ -1,29 +1,103 @@
 {
   "slug": "priser",
-  "kind": "utility",
+  "kind": "service",
   "seo": {
-    "title": "Tilbud | Sofiemyr Bil",
-    "description": "Eksempel på CMS-redigerbar tilbudsside."
+    "title": "Priser & Bestilling | Sofiemyr Bil AS – EU-kontroll kr 1 450,-",
+    "description": "Se priser på EU-kontroll (fastpris kr 1 450,-) og service hos Sofiemyr Bil på Kolbotn. Konkurransedyktige priser for alle bilmerker. Ring 66 81 37 00."
   },
   "hero": {
     "layout": "centered-none",
-    "title": "Tilbud og priser",
-    "support": "Prisene er ikke definert i denne demonstrasjonen.",
+    "eyebrow": "Transparente verkstedpriser",
+    "title": "Priser og bestilling hos Sofiemyr Bil AS",
+    "support": "Hos oss får du forutsigbare priser og klare avtaler. EU-kontroll utføres til fastpris kr 1 450,- for alle kjøretøy opptil 3 500 kg.",
+    "primaryCta": {
+      "label": "Gå til timebestilling",
+      "href": "/kontakt/"
+    },
     "visual": {
       "kind": "none"
     }
   },
   "listing": {
-    "title": "Tilbud",
-    "visible": false
+    "title": "Priser & Bestilling",
+    "summary": "EU-kontroll til fastpris kr 1 450,- og prisoverslag på service og mekanisk arbeid.",
+    "visible": true
   },
-  "faq": [],
+  "faq": [
+    {
+      "question": "Er det noen skjulte kostnader på EU-kontroll?",
+      "answer": "Nei. Fastprisen på kr 1 450,- dekker hele den lovpålagte periodiske kjøretøykontrollen og innsending av godkjenning til Statens vegvesen."
+    },
+    {
+      "question": "Får jeg pristilbud før dere starter på en reparasjon?",
+      "answer": "Ja, vi kontakter deg alltid med et klart prisoverslag dersom det kreves deler eller arbeid utover det som opprinnelig er avtalt."
+    }
+  ],
   "sections": [
     {
       "_block": "content",
-      "id": "tilbud",
-      "heading": "Ingen kundepakker er aktivert",
-      "body": "Kundepriser og pakker krever eksplisitt godkjenning. Dette er kun eksempelinnhold.",
+      "id": "fastpris-eu",
+      "eyebrow": "Lovpålagt periodisk kontroll",
+      "heading": "Fastpris på EU-kontroll: kr 1 450,-",
+      "body": "Gjelder personbiler, varebiler og bobiler opp til 3 500 kg.\n\nKontrollen omfatter full gjennomgang av bremser, lys, forstilling, avgasser, karosseri og sikkerhetsutstyr. Skulle bilen ha anmerkninger, gir vi deg et uforpliktende pristilbud på utbedring.",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Statens vegvesen godkjenning",
+          "text": "Full elektronisk innmelding umiddelbart etter godkjent kontroll.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Grundig rapport",
+          "text": "Du mottar en utfyllende tilstandsrapport med oversikt over eventuelle feil og slitasjepunkter.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Rask etterkontroll",
+          "text": "Fikser vi anmerkningene hos oss, ordner vi rask og smidig etterkontroll til lav kostnad.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "service-priser",
+      "eyebrow": "Bilservice & Mekanisk",
+      "heading": "Prisoverslag på service og reparasjoner",
+      "body": "Kostnad for service varierer med bilmodell, kilometerstand og motorisering. Ta kontakt med bilens registreringsnummer, så gir vi deg et nøyaktig prisoverslag.",
+      "layout": "three-columns",
+      "surface": "default",
+      "items": [
+        {
+          "title": "Periodisk Service",
+          "text": "Inkluderer motorolje av riktig spesifikasjon, oljefilter, sikkerhetssjekk og stempel i serviceheftet. Bevarer garantien.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Feilsøking & Diagnose",
+          "text": "Oppkobling av diagnoseverktøy og feilkodelesing for motorlys, feilmeldinger og elektriske avvik.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Bremser & Forstilling",
+          "text": "Skifte av bremseklosser, bremseskiver, støtdempere, hjullager og forstillingsdeler til avtalt pris.",
+          "surface": "soft",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Gå til timebestilling",
+          "href": "/kontakt/"
+        }
+      ],
       "visibility": "visible"
     }
   ]
