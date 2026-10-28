@@ -6,7 +6,7 @@
     "description": "Autorisert bilverksted i Skiveien 42, Kolbotn. EU-kontroll til fastpris kr 1 450,-, service, feilsøking og bobilservice for alle bilmerker. Ring 66 81 37 00."
   },
   "hero": {
-    "layout": "centered-none",
+    "layout": "split-right",
     "eyebrow": "Autorisert bilverksted på Kolbotn",
     "title": "Ditt lokale bilverksted i Skiveien – spesialist på Ford, godkjent for alle merker",
     "support": "Hos Sofiemyr Bil AS får du personlig service fra 5 erfarne mekanikere. Vi utfører EU-kontroll til fastpris kr 1 450,-, periodisk service, feilsøking og bobilservice opptil 3,5 tonn.",
@@ -65,7 +65,7 @@
           "href": "/priser/",
           "label": "Se kontrollvilkår",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "lavender"
         },
         {
           "title": "Service & Vedlikehold",
