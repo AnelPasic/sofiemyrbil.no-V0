@@ -74,7 +74,7 @@
           "href": "/tjeneste/",
           "label": "Les om bilservice",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "base"
         },
         {
           "title": "Diagnose & Feilsøking",
@@ -82,7 +82,7 @@
           "href": "/tjeneste/",
           "label": "Les om diagnose",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "soft"
         },
         {
           "title": "Mekaniske Reparasjoner",
@@ -90,7 +90,7 @@
           "href": "/tjeneste/",
           "label": "Mekanisk arbeid",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "mint"
         },
         {
           "title": "Bobilservice opptil 3,5t",
@@ -98,7 +98,7 @@
           "href": "/tjeneste/",
           "label": "Les om bobilservice",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "dark"
         },
         {
           "title": "Flåteavtaler for Bedrifter",
