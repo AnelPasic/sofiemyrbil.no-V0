@@ -62,58 +62,58 @@
       "items": [
         {
           "title": "EU-kontroll",
+          "badge": "Fastpris",
+          "price": "kr 1 450,-",
           "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, grundig tilstandsrapport og konkurransedyktig prisoverslag ved behov for utbedring.",
           "href": "/priser/",
           "label": "Se kontrollvilkår",
           "boxVariant": "card",
-          "surface": "base-100",
-          "badge": "Fastpris",
-          "price": "kr 1 450,-"
+          "surface": "default"
         },
         {
           "title": "Service & Vedlikehold",
+          "badge": "Vedlikehold",
           "text": "Intervallservice etter fabrikkens retningslinjer for Ford og alle øvrige bilmerker. Vi stempler i serviceheftet og bevarer nybilgarantien.",
           "href": "/tjeneste/",
           "label": "Les om bilservice",
           "boxVariant": "card",
-          "surface": "base-200",
-          "badge": "Vedlikehold"
+          "surface": "base-100"
         },
         {
           "title": "Diagnose & Feilsøking",
+          "badge": "Diagnose",
           "text": "Moderne diagnoseverktøy for rask og nøyaktig identifisering av elektroniske og mekaniske feil, motorlamper og varsellys.",
           "href": "/tjeneste/",
           "label": "Les om diagnose",
           "boxVariant": "card",
-          "surface": "base-100",
-          "badge": "Diagnose"
+          "surface": "base-200"
         },
         {
           "title": "Mekaniske Reparasjoner",
+          "badge": "Reparasjoner",
           "text": "Skifte av bremser, hjuloppheng, fjærer, clutch, registerreim og eksosanlegg utført med presisjon og kvalitetsdeler.",
           "href": "/tjeneste/",
           "label": "Mekanisk arbeid",
           "boxVariant": "card",
-          "surface": "base-100",
-          "badge": "Reparasjoner"
+          "surface": "base-300"
         },
         {
           "title": "Bobilservice opptil 3,5t",
+          "badge": "Inntil 3,5 t",
           "text": "Spesialisert service, forberedelse til sesongen og reparasjon av bobiler og campingbiler. Vi har riktig løfteutstyr og god plass.",
           "href": "/tjeneste/",
           "label": "Les om bobilservice",
           "boxVariant": "card",
-          "surface": "base-200",
-          "badge": "Inntil 3,5 t"
+          "surface": "primary"
         },
         {
           "title": "Flåteavtaler for Bedrifter",
+          "badge": "Bedriftsavtale",
           "text": "Effektiv oppfølging og serviceavtaler for varebiler og firmabiler med prioritert håndtering og forutsigbare kostnader.",
           "href": "/tjeneste/",
           "label": "Firmabilavtaler",
           "boxVariant": "card",
-          "surface": "base-100",
-          "badge": "Bedriftsavtale"
+          "surface": "secondary"
         }
       ],
       "visibility": "visible"
