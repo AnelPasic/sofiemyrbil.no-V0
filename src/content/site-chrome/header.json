@@ -70,5 +70,9 @@
     "showLanguageSwitch": true,
     "showSearch": true,
     "showCta": true
+  },
+  "search": {
+    "label": "Søk",
+    "mode": "pagefind"
   }
 }
