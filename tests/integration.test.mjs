@@ -124,7 +124,7 @@ test('Sofiemyr issue #28 semantic design-system cards, Pages CMS and existing co
  assert.equal(service.items.length,6);
  assert.equal(service.items[0].badge,'Fastpris');
  assert.equal(service.items[0].price,'kr 1 450,-');
- assert.ok(service.items.every(c=>c.href && c.surface.startsWith('base-')));
+ assert.ok(service.items.every(c=>c.href && surfaces.includes(c.surface)),'CMS-chosen service colors must be valid and links remain');
  const renderer=read('src/components/RichContentSection.astro');
  for(const primitive of ['card-body','card-title','badge-primary','btn-outline','btn-primary'])assert.ok(renderer.includes(primitive),primitive);
  for(const color of ['primary','secondary','accent','neutral','info','success','warning','error'])assert.ok(renderer.includes('var(--color-'+color+'-content)'),color+' text contrast');
@@ -149,4 +149,13 @@ test('design-system lists every Pages CMS surface and previews actual section/ca
   assert.ok(ordinaryFields.surface.safeParse(choice.value).success,'Invalid builder surface '+choice.value);
   if(choice.value!=='default')assert.ok(renderer.includes('data-surface="'+choice.value+'"'),'No actual renderer for '+choice.value);
  }
+});
+
+test('default RichContentSection has no section framing; explicit colored surfaces keep it',()=>{
+ const component=read('src/components/RichContentSection.astro');
+ assert.match(component,/\.mws-rich-section\{padding:0;border:0;border-radius:0;background:transparent;color:var\(--rich-fg\);\}/);
+ assert.match(component,/\.mws-rich-section:not\(\[data-surface="default"\]\)\{padding:clamp\(2rem,4vw,3\.5rem\);border-radius:var\(--radius-box,1rem\);background:var\(--rich-bg\);border:1px solid var\(--color-base-300\);\}/);
+ assert.match(component,/\.rich-card\.card\{[^\n]*background:var\(--rich-bg\)/,'Card backgrounds remain independent of section');
+ const noSurface=home.sections.find(x=>x.id==='hovedtjenester');
+ assert.ok(noSurface,'Homepage section remains CMS-controlled');
 });
