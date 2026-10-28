@@ -23,7 +23,24 @@ components:
     type: select
     default: default
     options:
-      values: [ { name: default, label: Standard }, { name: base, label: Hvit }, { name: soft, label: Lys }, { name: mint, label: Mint }, { name: lavender, label: Lavendel }, { name: dark, label: Mørk } ]
+      values:
+        - { name: default, label: "Standard (arver)" }
+        - { name: base-100, label: "base-100 (grunnflate)" }
+        - { name: base-200, label: "base-200 (dempet flate)" }
+        - { name: base-300, label: "base-300 (kontrastflate)" }
+        - { name: primary, label: "primary (hovedfarge)" }
+        - { name: secondary, label: "secondary (sekundærfarge)" }
+        - { name: accent, label: "accent (aksent)" }
+        - { name: neutral, label: "neutral (nøytral)" }
+        - { name: info, label: "info" }
+        - { name: success, label: "success" }
+        - { name: warning, label: "warning" }
+        - { name: error, label: "error" }
+        - { name: base, label: "Eldre: Hvit" }
+        - { name: soft, label: "Eldre: Lys" }
+        - { name: mint, label: "Eldre: Mint" }
+        - { name: lavender, label: "Eldre: Lavendel" }
+        - { name: dark, label: "Eldre: Mørk" }
   richLayout:
     type: select
     default: default
@@ -38,7 +55,7 @@ components:
     type: select
     default: default
     options:
-      values: [ { name: default, label: Standard }, { name: plain, label: Åpen boks }, { name: card, label: Kort } ]
+      values: [ { name: default, label: Standardkort }, { name: plain, label: Uten kortbakgrunn }, { name: card, label: Kort med skygge } ]
   builderSharedPlacement:
     type: object
     fields:
@@ -61,12 +78,14 @@ components:
     list:
       collapsible: { collapsed: true, summary: "{title}" }
     fields:
-      - { name: title, label: Tittel, type: string, required: true }
-      - { name: text, label: Tekst, type: text, required: true }
+      - { name: title, label: Korttittel, type: string, required: true }
+      - { name: badge, label: Merke (f.eks. Fastpris), type: string }
+      - { name: price, label: Fremhevet pris (valgfritt), type: string }
+      - { name: text, label: Beskrivelse, type: text, required: true }
       - { name: href, label: Intern lenke, type: string, pattern: '^/' }
       - { name: label, label: Lenketekst, type: string }
-      - { name: boxVariant, label: Boksvariant, component: richBoxVariant }
-      - { name: surface, label: Boksfarge, component: richSurface }
+      - { name: boxVariant, label: Kortstil (daisyUI), component: richBoxVariant }
+      - { name: surface, label: Kortbakgrunn (daisyUI), component: richSurface }
   richLinks:
     type: object
     list:
@@ -82,9 +101,9 @@ components:
       - { name: heading, label: Overskrift, type: string, required: true }
       - { name: headingAlign, label: Overskriftsjustering, component: richAlign }
       - { name: layout, label: Avsnitt og bokser - layout, component: richLayout }
-      - { name: surface, label: Seksjonsfarge, component: richSurface }
+      - { name: surface, label: Seksjonsbakgrunn (daisyUI), component: richSurface }
       - { name: body, label: Avsnitt, component: richBody }
-      - { name: items, label: Alternativer eller steg, component: richItems }
+      - { name: items, label: Kort / innholdsbokser, component: richItems }
       - { name: links, label: Lenker, component: richLinks }
       - { name: visibility, label: Visning, component: builderVisibility }
   standardPageHero:
@@ -666,9 +685,9 @@ content:
           - { name: heading, label: Overskrift, type: string, required: true }
           - { name: headingAlign, label: Overskriftsjustering, component: richAlign }
           - { name: layout, label: Seksjonsoppsett, component: richLayout }
-          - { name: surface, label: Seksjonsfarge, component: richSurface }
+          - { name: surface, label: Seksjonsbakgrunn (daisyUI), component: richSurface }
           - { name: body, label: Avsnitt, component: richBody }
-          - { name: items, label: Alternativer eller steg, component: richItems }
+          - { name: items, label: Kort / innholdsbokser, component: richItems }
           - { name: links, label: Lenker, component: richLinks }
       - name: builderGlobalMasters
         label: Beskyttede og faste elementer
