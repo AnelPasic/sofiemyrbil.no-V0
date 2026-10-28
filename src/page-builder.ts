@@ -52,12 +52,13 @@ export type PageListConfig = z.infer<typeof pageListSchema>;
 
 const visibility=z.enum(['visible','hidden']).default('visible');
 const sharedVisibility=z.enum(['visible','hidden']).optional();
-const surface=z.enum(['default','base','soft','mint','lavender','dark']).default('default');
+// Semantic daisyUI v5 surfaces; retain legacy options so saved Pages CMS content roundtrips.
+const surface=z.enum(['default','base-100','base-200','base-300','primary','secondary','accent','neutral','info','success','warning','error','base','soft','mint','lavender','dark']).default('default');
 const layout=z.enum(['default','two-columns','three-columns','stacked']).default('default');
 const alignment=z.enum(['center','left']).default('center');
 const variant=z.enum(['default','plain','card']).default('default');
 const bodySchema=z.union([z.string(),z.array(z.string())]).default([]);
-const contentItem=z.object({title:text,text:z.string(),href:internalHref.optional(),label:z.string().optional(),surface,boxVariant:variant}).strict();
+const contentItem=z.object({title:text,badge:z.string().trim().max(80).optional(),price:z.string().trim().max(120).optional(),text:z.string(),href:internalHref.optional(),label:z.string().optional(),surface,boxVariant:variant}).strict();
 const contentLink=z.object({label:text,href:internalHref}).strict();
 /** Same authored fields for local and global ordinary content; not commercial masters. */
 export const ordinaryFields={eyebrow:z.string().optional(),heading:text,body:bodySchema,headingAlign:alignment,layout,surface,items:z.array(contentItem).optional(),links:z.array(contentLink).optional()};

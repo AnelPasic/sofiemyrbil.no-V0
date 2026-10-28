@@ -111,3 +111,21 @@ test('single CMS section fields retain local/global rich shape, independent para
  assert.match(read('src/components/RichContentSection.astro'),/rich-paragraphs\[data-layout="three-columns"\]/);
  assert.match(read('src/components/RichContentSection.astro'),/rich-items\[data-layout="three-columns"\]/);
 });
+
+test('Sofiemyr issue #28 semantic design-system cards, Pages CMS and existing content stay compatible',()=>{
+ const cms=YAML.parse(read('.pages.yml'));
+ const surfaces=cms.components.richSurface.options.values.map(v=>v.name);
+ for(const token of ['default','base-100','base-200','base-300','primary','secondary','accent','neutral','info','success','warning','error'])assert.ok(surfaces.includes(token),token);
+ for(const token of ['base','soft','mint','lavender','dark'])assert.ok(surfaces.includes(token),'Legacy CMS value '+token);
+ const richFields=cms.components.richItems.fields.map(f=>f.name);
+ for(const name of ['title','badge','price','text','surface','boxVariant'])assert.ok(richFields.includes(name),name);
+ const service=home.sections.find(x=>x.id==='hovedtjenester');
+ assert.equal(service.items.length,6);
+ assert.equal(service.items[0].badge,'Fastpris');
+ assert.equal(service.items[0].price,'kr 1 450,-');
+ assert.ok(service.items.every(c=>c.href && c.surface.startsWith('base-')));
+ const renderer=read('src/components/RichContentSection.astro');
+ for(const primitive of ['card-body','card-title','badge-primary','btn-outline','btn-primary'])assert.ok(renderer.includes(primitive),primitive);
+ for(const color of ['primary','secondary','accent','neutral','info','success','warning','error'])assert.ok(renderer.includes('var(--color-'+color+'-content)'),color+' text contrast');
+ assert.doesNotMatch(renderer,/String\(i\+1\)\.padStart/);
+});

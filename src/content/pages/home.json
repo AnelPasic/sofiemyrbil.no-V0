@@ -58,15 +58,17 @@
       "heading": "Kvalitetsarbeid for et problemfritt bilhold",
       "headingAlign": "center",
       "layout": "three-columns",
-      "surface": "soft",
+      "surface": "base-100",
       "items": [
         {
-          "title": "EU-kontroll (Fastpris kr 1 450,-)",
+          "title": "EU-kontroll",
           "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, grundig tilstandsrapport og konkurransedyktig prisoverslag ved behov for utbedring.",
           "href": "/priser/",
           "label": "Se kontrollvilkår",
           "boxVariant": "card",
-          "surface": "lavender"
+          "surface": "base-100",
+          "badge": "Fastpris",
+          "price": "kr 1 450,-"
         },
         {
           "title": "Service & Vedlikehold",
@@ -74,7 +76,8 @@
           "href": "/tjeneste/",
           "label": "Les om bilservice",
           "boxVariant": "card",
-          "surface": "base"
+          "surface": "base-200",
+          "badge": "Vedlikehold"
         },
         {
           "title": "Diagnose & Feilsøking",
@@ -82,7 +85,8 @@
           "href": "/tjeneste/",
           "label": "Les om diagnose",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "base-100",
+          "badge": "Diagnose"
         },
         {
           "title": "Mekaniske Reparasjoner",
@@ -90,7 +94,8 @@
           "href": "/tjeneste/",
           "label": "Mekanisk arbeid",
           "boxVariant": "card",
-          "surface": "mint"
+          "surface": "base-100",
+          "badge": "Reparasjoner"
         },
         {
           "title": "Bobilservice opptil 3,5t",
@@ -98,7 +103,8 @@
           "href": "/tjeneste/",
           "label": "Les om bobilservice",
           "boxVariant": "card",
-          "surface": "dark"
+          "surface": "base-200",
+          "badge": "Inntil 3,5 t"
         },
         {
           "title": "Flåteavtaler for Bedrifter",
@@ -106,7 +112,8 @@
           "href": "/tjeneste/",
           "label": "Firmabilavtaler",
           "boxVariant": "card",
-          "surface": "default"
+          "surface": "base-100",
+          "badge": "Bedriftsavtale"
         }
       ],
       "visibility": "visible"
