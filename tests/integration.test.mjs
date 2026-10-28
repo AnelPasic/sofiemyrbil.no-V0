@@ -4,7 +4,8 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
-import { builderPageSchema, publicPath, resolveSections, validateSharedContentEntries } from '../src/page-builder.ts';
+import { surfaceChoices, semanticSurfaces, legacySurfaces } from '../src/lib/surface-catalog.ts';
+import { builderPageSchema, publicPath, resolveSections, validateSharedContentEntries, ordinaryFields } from '../src/page-builder.ts';
 import { resolveHeroProof } from '../src/lib/hero-proof.ts';
 import { composeSiteChrome } from '../src/lib/site-chrome-content.ts';
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -128,4 +129,24 @@ test('Sofiemyr issue #28 semantic design-system cards, Pages CMS and existing co
  for(const primitive of ['card-body','card-title','badge-primary','btn-outline','btn-primary'])assert.ok(renderer.includes(primitive),primitive);
  for(const color of ['primary','secondary','accent','neutral','info','success','warning','error'])assert.ok(renderer.includes('var(--color-'+color+'-content)'),color+' text contrast');
  assert.doesNotMatch(renderer,/String\(i\+1\)\.padStart/);
+});
+
+test('design-system lists every Pages CMS surface and previews actual section/card renderer',()=>{
+ const cms=YAML.parse(read('.pages.yml'));
+ const cmsValues=cms.components.richSurface.options.values.map(item=>item.name);
+ assert.deepEqual(surfaceChoices.map(surface=>surface.value),cmsValues,'Design-system catalog must not drift from CMS choices');
+ assert.equal(semanticSurfaces.length,12);
+ assert.equal(legacySurfaces.length,5);
+ const page=read('src/pages/design-system.astro');
+ assert.match(page,/Alle overflater i Pages CMS/);
+ assert.match(page,/semanticSurfaces\.map/);
+ assert.match(page,/legacySurfaces\.map/);
+ assert.match(page,/RichContentSection section=/);
+ assert.match(page,/surface: choice\.value/g);
+ assert.match(page,/Light og Dark/);
+ const renderer=read('src/components/RichContentSection.astro');
+ for(const choice of surfaceChoices){
+  assert.ok(ordinaryFields.surface.safeParse(choice.value).success,'Invalid builder surface '+choice.value);
+  if(choice.value!=='default')assert.ok(renderer.includes('data-surface="'+choice.value+'"'),'No actual renderer for '+choice.value);
+ }
 });

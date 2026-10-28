@@ -2,6 +2,8 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import BookingForm from '../components/BookingForm.astro';
 import Faq from '../components/Faq.astro';
+import RichContentSection from '../components/RichContentSection.astro';
+import { semanticSurfaces, legacySurfaces } from '../lib/surface-catalog';
 import type { BuilderPage } from '../page-builder';
 
 // Synthetic page object for BaseLayout so design-system inherits the exact Site Chrome
@@ -108,31 +110,15 @@ const sampleFaq = [
         <span class="text-xs font-mono opacity-60">sofiemyr-light & sofiemyr-dark</span>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div class="p-4 rounded-lg bg-primary text-primary-content shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Primary</span>
-          <span class="text-xs opacity-80 font-mono">Dyp marineblå</span>
-        </div>
-        <div class="p-4 rounded-lg bg-secondary text-secondary-content shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Secondary</span>
-          <span class="text-xs opacity-80 font-mono">Stål skifergrå</span>
-        </div>
-        <div class="p-4 rounded-lg bg-accent text-accent-content shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Accent</span>
-          <span class="text-xs opacity-80 font-mono">Varm oransje CTA</span>
-        </div>
-        <div class="p-4 rounded-lg bg-neutral text-neutral-content shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Neutral</span>
-          <span class="text-xs opacity-80 font-mono">Koksgrå</span>
-        </div>
-        <div class="p-4 rounded-lg bg-base-100 text-base-content border border-base-300 shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Base-100</span>
-          <span class="text-xs opacity-80 font-mono">Ren hvit bakgrunn</span>
-        </div>
-        <div class="p-4 rounded-lg bg-base-200 text-base-content border border-base-300 shadow-sm flex flex-col justify-between h-28">
-          <span class="font-bold text-sm">Base-200</span>
-          <span class="text-xs opacity-80 font-mono">Kjølig kortgrå</span>
-        </div>
+      <p class="text-sm text-base-content/75">Disse 12 semantiske overflatene er tilgjengelige både som seksjonsbakgrunn og kortbakgrunn i Pages CMS. Fargene følger nettstedets aktive Light/Dark-tema.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        {semanticSurfaces.map((surface) => (
+          <div class="min-h-32 p-4 rounded-xl border border-base-300 shadow-sm flex flex-col justify-between gap-4"
+            style={`background-color: var(--color-${surface.backgroundToken}); color: var(--color-${surface.foregroundToken});`}>
+            <span class="font-bold text-sm break-words">{surface.value}</span>
+            <span class="text-xs leading-relaxed opacity-90">{surface.description}</span>
+          </div>
+        ))}
       </div>
     </section>
 
@@ -217,6 +203,69 @@ const sampleFaq = [
               <a href="/kontakt/" class="btn btn-outline btn-sm w-full">Les mer om bobil</a>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Both section and card previews use the SAME renderer as the customer-facing pages. -->
+      <div class="mt-12 space-y-6" id="alle-overflater">
+        <div class="border-b border-base-300 pb-3 flex flex-wrap items-baseline justify-between gap-2">
+          <h3 class="text-xl font-bold">Alle overflater i Pages CMS</h3>
+          <span class="text-xs font-mono opacity-65">12 semantiske + 5 eldre = 17 valg</span>
+        </div>
+        <p class="text-base text-base-content/80 max-w-4xl">
+          Eksemplene nedenfor bruker nøyaktig samme komponent som innholdsseksjonene på nettstedet.
+          Hver prøve viser valgt farge både på <strong>seksjonen</strong> og et <strong>kort</strong>.
+          Bruk tema-knappen i toppmenyen for å sammenligne Light og Dark.
+        </p>
+
+        <h4 class="text-lg font-bold">Semantiske farger – anbefalt for nye seksjoner</h4>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+          {semanticSurfaces.map((choice) => (
+            <RichContentSection section={{
+              id: `demo-${choice.value}`,
+              heading: choice.label,
+              eyebrow: choice.value,
+              headingAlign: 'left',
+              surface: choice.value,
+              body: [choice.description],
+              items: [{
+                title: 'Eksempelkort',
+                badge: 'Kort',
+                text: 'Slik ser tekst og handlingsknapp ut på denne overflaten.',
+                href: '/kontakt/',
+                label: 'Eksempelknapp',
+                boxVariant: 'card',
+                surface: choice.value,
+              }],
+            }} />
+          ))}
+        </div>
+
+        <h4 class="text-lg font-bold pt-4">Eldre overflatevalg – beholdt for eksisterende innhold</h4>
+        <p class="text-sm text-base-content/75 max-w-3xl">
+          Disse fem verdiene er fortsatt tilgjengelige i CMS slik at lagret innhold kan redigeres uten
+          å endre utseende utilsiktet. Velg de semantiske fargene ovenfor når du lager nytt innhold.
+        </p>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+          {legacySurfaces.map((choice) => (
+            <RichContentSection section={{
+              id: `demo-${choice.value}`,
+              heading: choice.label,
+              eyebrow: choice.value,
+              headingAlign: 'left',
+              surface: choice.value,
+              body: [choice.description],
+              items: [{
+                title: 'Eksempelkort',
+                badge: 'Eldre valg',
+                text: 'Eksisterende kort med lagret fargeverdi og fungerende tekstkontrast.',
+                href: '/kontakt/',
+                label: 'Eksempelknapp',
+                boxVariant: 'card',
+                surface: choice.value,
+              }],
+            }} />
+          ))}
         </div>
       </div>
     </section>
