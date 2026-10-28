@@ -17,20 +17,20 @@
     {
       "title": "Nybilgaranti bevares",
       "text": "Service utføres alltid etter bilprodusentens spesifikasjoner og serviceplan.",
-      "surface": "mint",
-      "boxVariant": "plain"
+      "surface": "default",
+      "boxVariant": "card"
     },
     {
       "title": "Kvalitetsdeler",
       "text": "Vi benytter kun sertifiserte deler fra anerkjente europeiske leverandører.",
-      "surface": "lavender",
+      "surface": "default",
       "boxVariant": "card"
     },
     {
       "title": "Fagutdannede mekanikere",
       "text": "Fast team med 5 erfarne bilmekanikere som kjenner bilen din.",
-      "surface": "base",
-      "boxVariant": "plain"
+      "surface": "default",
+      "boxVariant": "card"
     }
   ],
   "links": [
