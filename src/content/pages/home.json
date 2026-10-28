@@ -26,7 +26,8 @@
         "positionX": 50,
         "positionY": 50
       }
-    }
+    },
+    "titleEmphasis": "first-sentence"
   },
   "listing": {
     "visible": true
