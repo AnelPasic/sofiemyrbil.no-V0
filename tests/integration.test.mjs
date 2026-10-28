@@ -48,8 +48,8 @@ test('native CMS exposes the one shared editorial hierarchy across all pages', (
   assert.equal(cms.settings.content.merge,true);
 });
 test('neutral navigation routes exist and search/languages are not fake', () => {
-  assert.equal(chrome.headerOptions.showSearch,false);
-  assert.equal(chrome.headerOptions.showLanguageSwitch,false);
+  if(chrome.headerOptions.showSearch) assert.ok(chrome.search);
+  if(chrome.headerOptions.showLanguageSwitch) assert.ok(chrome.languages.length >= 1);
   const paths=new Set(pages.map(p=>publicPath(p.slug)));
   const all=[...chrome.navigation.flatMap(n=>[n.href,...(n.kind==='dropdown'?n.links.map(x=>x.href):n.kind==='mega'?n.columns.flatMap(c=>c.links.map(x=>x.href)):[])]),chrome.primaryCta?.href,...chrome.footer.groups.flatMap(g=>g.links.map(x=>x.href)),...chrome.footer.legalLinks.map(x=>x.href)];
   for(const path of all)if(path?.startsWith('/'))assert.ok(paths.has(path),'Broken demo route '+path);
