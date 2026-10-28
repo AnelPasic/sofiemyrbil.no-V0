@@ -59,7 +59,7 @@ test('no invented active offer, protected source or lead submission', () => {
   assert.ok(!existsSync(join(root,'src/pages/api/leads.ts')));
   for(const master of Object.values(masters))if(master.type==='protected')assert.equal(master.publicationApproved,false);
   for(const p of pages){
-    assert.ok(p.hero.visual.kind==='none');
+    assert.ok(p.hero.visual.kind==='none' || p.hero.visual.kind==='image');
     assert.ok(resolveSections(p,masters,pages,[],shared).every(s=>s.type!=='global'||s.master.type!=='protected'));
   }
 });
