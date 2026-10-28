@@ -6,16 +6,20 @@
         "heading": "Tjenester",
         "links": [
           {
+            "label": "EU-kontroll – Fastpris",
+            "href": "/eu-kontroll/"
+          },
+          {
             "label": "Verkstedtjenester & Service",
             "href": "/tjeneste/"
           },
           {
-            "label": "Priser & Bestilling",
+            "label": "Priser & Oversikt",
             "href": "/priser/"
           },
           {
-            "label": "Innsikt & Bilhold",
-            "href": "/innsikt/artikkel/"
+            "label": "Bestill verkstedtime",
+            "href": "/bestilling/"
           }
         ]
       },
@@ -29,12 +33,21 @@
           {
             "label": "Kontakt & Veibeskrivelse",
             "href": "/kontakt/"
+          },
+          {
+            "label": "Innsikt & Bilhold",
+            "href": "/innsikt/artikkel/"
           }
         ]
       }
     ],
     "copyright": "Sofiemyr Bil AS – Org.nr: 977 351 030",
     "note": "Skiveien 42, 1410 Kolbotn · Tlf: +47 66 81 37 00 · E-post: firma@sofiemyrbil.no · Åpningstider: Man–Tor 07:30–16:30, Fre 07:30–16:00",
-    "legalLinks": []
+    "legalLinks": [
+      {
+        "label": "Personvernerklæring",
+        "href": "/personvern/"
+      }
+    ]
   }
 }

@@ -1,0 +1,44 @@
+{
+  "slug": "bestilling",
+  "kind": "utility",
+  "seo": {
+    "title": "Bestill verkstedtime | Sofiemyr Bil AS Kolbotn",
+    "description": "Bestill time for EU-kontroll, service, diagnose, dekkskifte eller reparasjon hos Sofiemyr Bil i Kolbotn. Fyll ut skjemaet, så kontakter vi deg."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Verkstedbestilling",
+    "title": "Bestill time hos Sofiemyr Bil",
+    "support": "Fyll ut skjemaet nedenfor med bilens registreringsnummer og ønsket tjeneste, så tar vi kontakt for å avtale tidspunkt. Du kan også ringe oss direkte på 66 81 37 00.",
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Bestill time",
+    "visible": false
+  },
+  "faq": [
+    {
+      "question": "Hvor raskt får jeg svar på henvendelsen?",
+      "answer": "Vi kontakter deg normalt samme virkedag dersom forespørselen er mottatt innenfor åpningstiden."
+    },
+    {
+      "question": "Kan jeg avbestille timen?",
+      "answer": "Ja, vi ber om at du gir beskjed så snart som mulig, helst minst 24 timer i forveien, slik at vi kan tilby timen til en annen kunde."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "bestillingsskjema",
+      "heading": "Fyll ut bestillingsskjemaet",
+      "body": "Alle felt merket med * er obligatoriske. Vi behandler dine opplysninger konfidensielt og bruker dem kun til å behandle din forespørsel.",
+      "layout": "default",
+      "surface": "soft",
+      "items": [],
+      "visibility": "visible"
+    }
+  ]
+}

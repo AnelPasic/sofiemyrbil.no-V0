@@ -1,0 +1,146 @@
+{
+  "slug": "eu-kontroll",
+  "kind": "service",
+  "seo": {
+    "title": "EU-kontroll Kolbotn – Fastpris kr 1 450,- | Sofiemyr Bil AS",
+    "description": "Bestill EU-kontroll til fastpris kr 1 450,- hos Sofiemyr Bil i Kolbotn. Autorisert PKK-kontrollør for personbiler og varebiler opp til 3 500 kg. Ring 66 81 37 00."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Godkjent kontrollverksted · PKK",
+    "title": "EU-kontroll til fastpris kr 1 450,-",
+    "support": "Sofiemyr Bil AS er offentlig godkjent som PKK-kontrollsted av Statens vegvesen. Vi utfører periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg — effektivt, grundig og til en forutsigbar pris.",
+    "primaryCta": {
+      "label": "Bestill EU-kontroll nå",
+      "href": "/kontakt/"
+    },
+    "secondaryCta": {
+      "label": "Se alle priser",
+      "href": "/priser/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "EU-kontroll",
+    "summary": "Fastpris kr 1 450,- for periodisk kjøretøykontroll på Kolbotn.",
+    "visible": true,
+    "order": 1
+  },
+  "faq": [
+    {
+      "question": "Hva koster EU-kontroll hos Sofiemyr Bil?",
+      "answer": "EU-kontroll utføres til fastpris kr 1 450,- for alle personbiler og varebiler opp til 3 500 kg. Prisen inkluderer full kontroll og elektronisk innmelding til Statens vegvesen."
+    },
+    {
+      "question": "Hvor ofte må bilen min gjennom EU-kontroll?",
+      "answer": "Fra 2019 erstattet myndighetene det gamle systemet basert på siste siffer i registreringsnummeret. Nye biler kontrolleres først etter 4 år, deretter hvert 2. år. Sjekk din frist i vognkortet eller på Statens vegvesens nettsider."
+    },
+    {
+      "question": "Hva skjer hvis bilen ikke består kontrollen?",
+      "answer": "Hvis bilen har mangler, får du en frist til å utbedre disse. Vi gir deg et uforpliktende pristilbud på reparasjonen. Utbedrer du mangelen hos oss, ordner vi rask etterkontroll til gunstig pris."
+    },
+    {
+      "question": "Kan jeg levere bilen dagen før kontrollen?",
+      "answer": "Ja, vi har nøkkelinnkast for trygg levering utenom åpningstiden etter avtale. Ring oss på 66 81 37 00 for å avtale."
+    },
+    {
+      "question": "Utfører dere EU-kontroll på bobiler?",
+      "answer": "Ja, vi har utstyr og takhøyde for bobiler og campingbiler inntil 3 500 kg totalvekt."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "hva-inngaar",
+      "eyebrow": "Full gjennomgang",
+      "heading": "Hva inngår i EU-kontrollen?",
+      "body": "EU-kontroll (periodisk kjøretøykontroll / PKK) er en lovpålagt teknisk kontroll av kjøretøyets sikkerhet og miljøegenskaper. Kontrollen dekker hele bilen – fra bremser og lys til karosseri og avgasser.\n\nResultatet rapporteres elektronisk direkte til Statens vegvesen umiddelbart etter godkjent kontroll.",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Bremser og hjuloppheng",
+          "text": "Kontroll av bremsekraft, bremseskiver og klosser, bremselinjer, støtdempere, hjullager og drivaksler.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Lys, sikt og signaler",
+          "text": "Alle kjørelys, bremselys, blinklys, reflekser og vindusvisker. Siktforhold gjennom frontrute og speil.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Avgass og miljø",
+          "text": "Utslippsmåling (bensin og diesel), eksosanlegg, katalysator og OBD-avlesning for moderne motorer.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Karosseri og understell",
+          "text": "Rustskader, bæringer, råte og strukturell integritet. Understellet sjekkes for korrosjon og slitasje.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Sikkerhetsutstyr",
+          "text": "Bilbelter, airbag-kontroll, nakkestøtter, barnelås og eventuelt faste barneseter.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Forstilling og styring",
+          "text": "Kontroll av styreledd, styrepumpe/servostyring, sportstag og styrelager. Rattslark og spill i ledder.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "slik-forbereder-du",
+      "eyebrow": "Tips fra verkstedet",
+      "heading": "Slik forbereder du bilen til EU-kontroll",
+      "body": "Et par enkle tiltak kan spare deg for en kostbar etterkontroll. Sjekk disse punktene selv før du leverer bilen:",
+      "layout": "two-columns",
+      "surface": "default",
+      "items": [
+        {
+          "title": "Sjekk alle lyspærer",
+          "text": "Slå på alle lys og gå rundt bilen. Defekte lyspærer er en vanlig grunn til anmerkning.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Vindusviskerblader",
+          "text": "Slitte eller sprukne vindusviskere gir dårlig sikt og fører til underkjenning.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Dekk og mønsterdybde",
+          "text": "Sjekk at alle dekk har minimum 1,6 mm mønsterdybde. Ujevn slitasje kan tyde på feil forstilling.",
+          "surface": "soft",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Feillamper i dashbord",
+          "text": "Lysende motorlys eller ABS-lampe kan føre til underkjenning. Få feilsøkt dette i forkant.",
+          "surface": "soft",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Bestill EU-kontroll",
+          "href": "/kontakt/"
+        }
+      ],
+      "visibility": "visible"
+    }
+  ]
+}

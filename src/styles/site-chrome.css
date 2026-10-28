@@ -11,8 +11,8 @@
 }
 .mws-chrome-shell { width: min(100% - 2.5rem, 80rem); margin-inline: auto; }
 .mws-chrome-header .mws-chrome-shell.navbar {
-  display: flex; align-items: center; min-height: 4.75rem; gap: clamp(1rem, 2.5vw, 2.5rem);
-  padding: 0; width: min(100% - 2.5rem, 80rem);
+  display: flex; align-items: center; min-height: 5.25rem; gap: clamp(1rem, 2.5vw, 2.5rem);
+  padding-block: 0.75rem; padding-inline: 0; width: min(100% - 2.5rem, 80rem);
 }
 .mws-chrome-brand, .mws-chrome-footer-brand {
   flex: 0 0 auto; color: inherit; font-weight: 750; font-size: 1.12rem;
@@ -27,10 +27,10 @@
   color: var(--color-base-content, #172434); border: 2px solid currentColor;
 }
 .mws-chrome-skip:focus { top: 1rem; }
-.mws-chrome-desktop-nav { align-self: stretch; display: flex; align-items: center; flex: 1; min-width: 0; }
+.mws-chrome-desktop-nav { align-self: center; display: flex; align-items: center; flex: 1; min-width: 0; }
 .mws-chrome-nav-list.mws-chrome-nav-list--desktop {
-  display: flex; align-items: stretch; flex-wrap: nowrap; gap: .15rem;
-  padding: 0; height: 100%; max-width: 100%; background: transparent;
+  display: flex; align-items: center; flex-wrap: nowrap; gap: .35rem;
+  padding: 0; height: auto; max-width: 100%; background: transparent;
 }
 .mws-chrome-nav-item { list-style: none; }
 .mws-chrome-nav-list--desktop > .mws-chrome-nav-item { position: relative; display: flex; align-items: center; }

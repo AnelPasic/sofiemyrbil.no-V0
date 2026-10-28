@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import BookingForm from '../components/BookingForm.astro';
+import Faq from '../components/Faq.astro';
+import type { BuilderPage } from '../page-builder';
+
+// Synthetic page object for BaseLayout so design-system inherits the exact Site Chrome
+const designSystemPage: BuilderPage = {
+  slug: 'design-system' as any,
+  kind: 'utility',
+  seo: {
+    title: 'Design System & Primitives | Sofiemyr Bil AS',
+    description: 'Intern oversikt over typografi, farger, komponenter, knapper og skjemafelt for Sofiemyr Bil AS.',
+  },
+  hero: {
+    layout: 'centered-none',
+    eyebrow: 'MedonWebSystem v3.4 – Design Primitives',
+    title: 'Design System & Komponentlaboratorium',
+    support: 'Levende oversikt over alle semantiske primitives, typografi, knapper, kort, skjemafelt og fargetemaer for Sofiemyr Bil AS.',
+    visual: { kind: 'none' },
+    titleEmphasis: 'none',
+  },
+  listing: { visible: false, visual: { kind: 'none' } },
+  faq: [],
+  sections: [],
+};
+
+const sampleFaq = [
+  {
+    question: "Hvordan bestiller kunden EU-kontroll?",
+    answer: "EU-kontroll kan bestilles direkte via skjemaet med bilens registreringsnummer, eller ved direkte oppringning til 66 81 37 00."
+  },
+  {
+    question: "Hvilke bilmerker støttes?",
+    answer: "Sofiemyr Bil er godkjent for alle bilmerker inntil 3 500 kg, med spisskompetanse på Ford."
+  }
+];
+---
+<BaseLayout page={designSystemPage}>
+  <div class="mws-main-shell py-12 space-y-16">
+    
+    <!-- Header intro -->
+    <header class="border-b border-base-300 pb-8">
+      <div class="badge badge-primary font-mono text-xs uppercase tracking-wider mb-3">MWS Design Lab</div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight">Sofiemyr Bil AS – Design System</h1>
+      <p class="mt-3 text-lg text-base-content/80 max-w-3xl">
+        Denne siden visualiserer hele det visuelle systemet: typografiske roller, fargepalett i lys/mørk modus, knapper, kortvarianter, bestillingsskjema og avstander i henhold til <code>AGENTS.md</code>.
+      </p>
+    </header>
+
+    <!-- SECTION 1: TYPOGRAFI & SKRIFTROLLER -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">1. Typografihierarki & Skriftstørrelser</h2>
+        <span class="text-xs font-mono opacity-60">System Sans / Inter / Plus Jakarta</span>
+      </div>
+
+      <div class="grid gap-6 p-6 bg-base-200/60 rounded-xl border border-base-300">
+        <div>
+          <span class="text-xs uppercase font-mono text-primary font-bold tracking-widest block mb-1">Hero Eyebrow (0.83rem / 13px / bold / uppercase)</span>
+          <p class="text-xs font-bold uppercase tracking-widest text-primary">Autorisert bilverksted i Skiveien 42 · Kolbotn</p>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Display H1 (clamp 2.5rem – 4.5rem / 40px–72px / 750 weight)</span>
+          <h1 class="text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+            Ditt lokale Ford- og bilverksted på Kolbotn
+          </h1>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Section Heading H2 (clamp 1.6rem – 2.25rem / 26px–36px / bold)</span>
+          <h2 class="text-3xl font-bold tracking-tight">Kvalitetsarbeid for et problemfritt bilhold</h2>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Card Title H3 (1.1rem – 1.3rem / 18px–21px / semibold)</span>
+          <h3 class="text-xl font-bold">EU-kontroll til fastpris kr 1 450,-</h3>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Ingress / Lead support (1.125rem – 1.25rem / line-height 1.6)</span>
+          <p class="text-lg text-base-content/85 leading-relaxed max-w-3xl">
+            Hos Sofiemyr Bil AS får du personlig service fra 5 erfarne bilmekanikere. Vi utfører EU-kontroll, fabrikkspesifisert service og feilsøking på alle bilmerker.
+          </p>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Brødtekst / Body Paragraph (1rem / 16px min. iht. MWS-030 / line-height 1.65)</span>
+          <p class="text-base text-base-content leading-relaxed max-w-3xl">
+            Som offentlig godkjent bilverksted følger vi bilprodusentens serviceprogram til punkt og prikke. Vi benytter godkjente originaldeler eller deler av tilsvarende kvalitet, slik at nybilgarantien din forblir 100 % intakt. Du får alltid et klart prisoverslag før vi starter på eventuelt utbedringsarbeid.
+          </p>
+        </div>
+
+        <div>
+          <span class="text-xs uppercase font-mono opacity-60 block mb-1">Liten skrift / Meta & Noter (0.875rem / 14px)</span>
+          <p class="text-sm opacity-70">
+            * Prisen gjelder personbiler og varebiler opp til 3 500 kg. Etterkontroll tilbys til gunstig fastpris.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FARGER & TEMA-TOKENS (daisyUI) -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">2. Fargetema & Semantiske Tokens (daisyUI)</h2>
+        <span class="text-xs font-mono opacity-60">sofiemyr-light & sofiemyr-dark</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="p-4 rounded-lg bg-primary text-primary-content shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Primary</span>
+          <span class="text-xs opacity-80 font-mono">Dyp marineblå</span>
+        </div>
+        <div class="p-4 rounded-lg bg-secondary text-secondary-content shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Secondary</span>
+          <span class="text-xs opacity-80 font-mono">Stål skifergrå</span>
+        </div>
+        <div class="p-4 rounded-lg bg-accent text-accent-content shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Accent</span>
+          <span class="text-xs opacity-80 font-mono">Varm oransje CTA</span>
+        </div>
+        <div class="p-4 rounded-lg bg-neutral text-neutral-content shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Neutral</span>
+          <span class="text-xs opacity-80 font-mono">Koksgrå</span>
+        </div>
+        <div class="p-4 rounded-lg bg-base-100 text-base-content border border-base-300 shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Base-100</span>
+          <span class="text-xs opacity-80 font-mono">Ren hvit bakgrunn</span>
+        </div>
+        <div class="p-4 rounded-lg bg-base-200 text-base-content border border-base-300 shadow-sm flex flex-col justify-between h-28">
+          <span class="font-bold text-sm">Base-200</span>
+          <span class="text-xs opacity-80 font-mono">Kjølig kortgrå</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: KNAPPER & HANDLINGER -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">3. Knapper & Handlingshierarki (CRO)</h2>
+        <span class="text-xs font-mono opacity-60">Buttons / Touch targets min 44px</span>
+      </div>
+
+      <div class="p-6 bg-base-100 rounded-xl border border-base-300 space-y-6">
+        <div>
+          <span class="text-xs font-mono uppercase opacity-60 block mb-2">Varianter (Primary CTA, Secondary CTA, Telefon)</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="/kontakt/" class="btn btn-primary btn-md">Bestill time (Primary CTA)</a>
+            <a href="/priser/" class="btn btn-outline btn-md">Se priser (Secondary)</a>
+            <a href="tel:+4766813700" class="btn btn-accent btn-md text-white">Ring 66 81 37 00</a>
+            <button type="button" class="btn btn-secondary btn-md">Sekundær knapp</button>
+            <button type="button" class="btn btn-ghost btn-md">Tekstlenkeknapp</button>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-xs font-mono uppercase opacity-60 block mb-2">Størrelser</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <button type="button" class="btn btn-primary btn-lg">Large (48px)</button>
+            <button type="button" class="btn btn-primary btn-md">Medium (40px)</button>
+            <button type="button" class="btn btn-primary btn-sm">Small (32px)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: KORTVARIANTER & OVERFLATER -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">4. Kortvarianter & Overflater (MWS-030)</h2>
+        <span class="text-xs font-mono opacity-60">1rem min brødtekst / 1-3 kolonner</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Kort 1: Fastpris -->
+        <div class="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
+          <div class="card-body">
+            <span class="badge badge-primary text-xs font-semibold">Fastpris</span>
+            <h3 class="card-title text-xl font-bold mt-1">EU-kontroll</h3>
+            <p class="text-3xl font-extrabold text-primary my-2">kr 1 450,-</p>
+            <p class="text-base text-base-content/80 leading-relaxed">
+              Lovpålagt periodisk kjøretøykontroll for personbiler og varebiler inntil 3 500 kg. Inkluderer umiddelbar registrering hos Vegvesenet.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="/kontakt/" class="btn btn-primary btn-sm w-full">Bestill kontroll</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kort 2: Service -->
+        <div class="card bg-base-200 border border-base-300 shadow-sm">
+          <div class="card-body">
+            <span class="badge badge-secondary text-xs font-semibold">Vedlikehold</span>
+            <h3 class="card-title text-xl font-bold mt-1">Periodisk Service</h3>
+            <p class="text-sm font-semibold text-secondary my-2">Prisoverslag etter bilmodell</p>
+            <p class="text-base text-base-content/80 leading-relaxed">
+              Intervallservice for Ford, elbil, hybrid og alle merker. Vi skifter olje, filter og slitedeler etter fabrikkens serviceplan.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="/kontakt/" class="btn btn-outline btn-sm w-full">Be om prisoverslag</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kort 3: Bobilservice -->
+        <div class="card bg-base-100 border border-base-300 shadow-sm">
+          <div class="card-body">
+            <span class="badge badge-neutral text-xs font-semibold">Inntil 3,5t</span>
+            <h3 class="card-title text-xl font-bold mt-1">Bobilservice</h3>
+            <p class="text-sm font-semibold opacity-70 my-2">Tilpasset verkstedbukk</p>
+            <p class="text-base text-base-content/80 leading-relaxed">
+              Vi har spesialtilpasset utstyr og takhøyde for bobiler og campingbiler opptil 3 500 kg for både service, bremser og EU-kontroll.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="/kontakt/" class="btn btn-outline btn-sm w-full">Les mer om bobil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: BESTILLINGSSKJEMA & INNTAK -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">5. Timebestillingsskjema (Full primitiv)</h2>
+        <span class="text-xs font-mono opacity-60">Låste felter: Regnr, Tlf, Epost, Tjenester, Melding</span>
+      </div>
+
+      <BookingForm />
+    </section>
+
+    <!-- SECTION 6: FAQ ACCORDION -->
+    <section class="space-y-6">
+      <div class="border-b border-base-300 pb-3 flex items-baseline justify-between">
+        <h2 class="text-2xl font-bold tracking-tight">6. FAQ / Spørsmål & Svar (Accordion)</h2>
+        <span class="text-xs font-mono opacity-60">&lt;details&gt; native accessible toggle</span>
+      </div>
+
+      <div class="p-6 bg-base-100 rounded-xl border border-base-300">
+        <Faq id="design-faq" items={sampleFaq} />
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

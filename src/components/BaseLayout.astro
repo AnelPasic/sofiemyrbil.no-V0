@@ -19,6 +19,9 @@ const canonical = new URL(publicPath(page.slug), Astro.site);
   <meta name="robots" content="noindex,nofollow" />
   <meta name="description" content={page.seo.description} />
   <link rel="canonical" href={canonical.href} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
   <title>{page.seo.title}</title>
   <SiteChromeThemeHead themes={chrome.themes} enabled={chrome.headerOptions.showThemeSwitch} />
   <SiteChromeSearchHead config={chrome} />

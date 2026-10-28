@@ -19,7 +19,7 @@ const home=pages.find(p=>p.slug==='home'),service=pages.find(p=>p.slug==='tjenes
 const chrome = composeSiteChrome(json('src/content/site-chrome/header.json'),json('src/content/site-chrome/footer.json'),json('src/content/site-chrome/appearance.json'));
 test('one canonical page per actual route, no missing component', () => {
   assert.equal(new Set(pages.map(p=>publicPath(p.slug))).size,pages.length);
-  assert.equal(pages.length,7);
+  assert.equal(pages.length,10);
   assert.equal(pages.find(p=>p.slug==='home')?.kind,'home');
   assert.equal(pages.find(p=>p.slug==='404')?.kind,'utility');
   for(const path of ['src/components/BaseLayout.astro','src/components/PageView.astro','src/components/Hero.astro','src/components/SiteChromeHeader.astro','src/components/PageSections.astro']) assert.ok(existsSync(join(root,path)),path);

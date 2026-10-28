@@ -14,7 +14,7 @@ const featuredProof=resolveHeroProof(page.hero,masters,heroProofCases);
   <div class="mws-main-shell">
     <Hero hero={page.hero} featuredProof={featuredProof} />
     <div class="mws-page-content">
-      {page.slug === 'kontakt' && <BookingForm />}
+      {(page.slug === 'kontakt' || page.slug === 'bestilling') && <BookingForm />}
       <PageSections page={page} pages={pages} masters={masters} sharedContent={sharedContent} />
     </div>
   </div>

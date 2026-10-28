@@ -1,0 +1,104 @@
+{
+  "slug": "personvern",
+  "kind": "utility",
+  "seo": {
+    "title": "Personvernerklæring | Sofiemyr Bil AS",
+    "description": "Les personvernerklæringen til Sofiemyr Bil AS. Vi beskytter dine personopplysninger i henhold til norsk lov og GDPR."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Ditt personvern",
+    "title": "Personvernerklæring",
+    "support": "Sofiemyr Bil AS behandler personopplysninger i samsvar med personopplysningsloven og EUs personvernforordning (GDPR). Her kan du lese om hvilke opplysninger vi samler inn og hvordan vi behandler dem.",
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Personvern",
+    "visible": false
+  },
+  "faq": [],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "behandlingsansvarlig",
+      "heading": "Behandlingsansvarlig",
+      "body": "Sofiemyr Bil AS (org.nr. 940 345 894) er behandlingsansvarlig for personopplysninger som samles inn via dette nettstedet.\n\nKontaktinformasjon:\nAdresse: Skiveien 42, 1410 Kolbotn\nTelefon: +47 66 81 37 00\nE-post: firma@sofiemyrbil.no",
+      "layout": "default",
+      "surface": "default",
+      "items": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "opplysninger-vi-samler",
+      "heading": "Hvilke opplysninger samler vi inn?",
+      "body": "Vi samler bare inn personopplysninger som du frivillig oppgir til oss gjennom bestillingsskjemaet på nettsiden:",
+      "layout": "three-columns",
+      "surface": "soft",
+      "items": [
+        {
+          "title": "Kontaktopplysninger",
+          "text": "E-postadresse og telefonnummer du oppgir i skjemaet, slik at vi kan kontakte deg om verkstedtimen.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Kjøretøyinformasjon",
+          "text": "Registreringsnummer som du oppgir for at vi skal kunne identifisere kjøretøyet og forberede arbeidet.",
+          "surface": "default",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Meldingsinnhold",
+          "text": "Eventuell fritekstmelding du skriver i bestillingsskjemaet med beskrivelse av ønsket arbeid.",
+          "surface": "default",
+          "boxVariant": "card"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "formaal-og-grunnlag",
+      "heading": "Formål og rettslig grunnlag",
+      "body": "Opplysningene du oppgir brukes utelukkende til å behandle din forespørsel om verkstedtime, gi deg pristilbud og utføre avtalt arbeid på ditt kjøretøy.\n\nDet rettslige grunnlaget for behandlingen er GDPR art. 6 nr. 1 bokstav b) – oppfyllelse av avtale eller tiltak forut for avtaleinngåelse.\n\nVi selger, deler eller videreformidler aldri dine personopplysninger til tredjeparter for markedsføringsformål.",
+      "layout": "default",
+      "surface": "default",
+      "items": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "lagring-og-sletting",
+      "heading": "Lagring og sletting",
+      "body": "Personopplysninger knyttet til verkstedbestillinger lagres i vårt verkstedsystem så lenge det er nødvendig for å fullføre oppdraget og oppfylle eventuelle garantiforpliktelser.\n\nOpplysningene slettes når de ikke lenger er nødvendige for formålet de ble samlet inn for, med mindre lengre oppbevaring er pålagt av regnskapsloven eller andre rettslige forpliktelser.",
+      "layout": "default",
+      "surface": "soft",
+      "items": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "dine-rettigheter",
+      "heading": "Dine rettigheter",
+      "body": "Du har rett til å be om innsyn i, korrigering av eller sletting av personopplysninger vi behandler om deg. Du har også rett til å begrense behandlingen, protestere mot den eller be om dataportabilitet.\n\nFor å utøve dine rettigheter, kontakt oss på firma@sofiemyrbil.no eller ring 66 81 37 00.\n\nDersom du mener at vår behandling av personopplysninger er i strid med regelverket, kan du klage til Datatilsynet (www.datatilsynet.no).",
+      "layout": "default",
+      "surface": "default",
+      "items": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "informasjonskapsler",
+      "heading": "Informasjonskapsler (cookies)",
+      "body": "Dette nettstedet bruker kun teknisk nødvendige informasjonskapsler for å sikre grunnleggende funksjonalitet. Vi bruker ingen sporings- eller markedsføringskapsler og benytter ingen tredjeparts analyse- eller annonseverktøy uten ditt samtykke.",
+      "layout": "default",
+      "surface": "soft",
+      "items": [],
+      "visibility": "visible"
+    }
+  ]
+}
