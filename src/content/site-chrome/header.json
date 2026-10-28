@@ -67,7 +67,7 @@
   ],
   "headerOptions": {
     "sticky": true,
-    "showLanguageSwitch": false,
+    "showLanguageSwitch": true,
     "showSearch": true,
     "showCta": true
   }
