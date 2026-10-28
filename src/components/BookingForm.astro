@@ -13,7 +13,7 @@
       <p>Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris.</p>
     </div>
 
-    <form class="mws-booking-form" onsubmit="event.preventDefault(); document.getElementById('mws-form-feedback').classList.remove('hidden');">
+    <form class="mws-booking-form" id="mws-booking-form">
       <div class="mws-form-grid">
         <div class="form-control">
           <label class="label font-semibold" for="booking-regnr">
@@ -233,3 +233,17 @@
     }
   }
 </style>
+
+<script>
+  const bookingForms = document.querySelectorAll<HTMLFormElement>('#mws-booking-form');
+  bookingForms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const feedback = form.querySelector('#mws-form-feedback');
+      if (feedback) {
+        feedback.classList.remove('hidden');
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+</script>
