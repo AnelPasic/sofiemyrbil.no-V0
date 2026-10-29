@@ -1,6 +1,0 @@
-wrangler.jsonc
-.dev.vars
-.dev.vars.*
-.env
-.env.*
-.wrangler/

@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "status": "SOURCE_CANDIDATE",
+  "source_revision": "4025e49c7041f6657a7c90d99b5f4a9e1dabfd77",
+  "site_id": "sofiemyrbil.no",
+  "backend_managed_by": "sofiemyrbil-intake",
+  "files": {
+    "src/frontend.mjs": "51696377aa81ff8c0c291f880cfdddfa4214d639ae0ab60ccb5c7189f765f3b0",
+    "src/browser.mjs": "0b5abfb5f516f511a04af74af3aff6ecaa202ffce98c1aa5c7229987462342da",
+    "src/attribution.mjs": "09ec4007ecc0162c204e961e01fb1be727f63732685dcb153530ee3f7b46330f",
+    "src/domain.mjs": "c173cbc635011eb143d460af4a974c3a746d6e5b32087d011df05fe4e906c481",
+    "examples/LeadForm.astro": "050a075c0305de3ba3da4b1a3912479f0af479c1a2e0354461f374228480e29e",
+    "examples/Attribution.astro": "ef0648c4c5b347d6bf2780133a20b7f95a5d3b76a5dd1447cd6f83fcf33223c1",
+    "examples/frontend-worker.mjs": "98880a167837700417d42a4c510039df89b11f7349600131fb9404719d68f0b4"
+  }
+}

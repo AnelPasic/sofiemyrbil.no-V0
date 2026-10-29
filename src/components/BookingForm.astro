@@ -4,6 +4,7 @@
  * Inneholder de nøyaktige feltene låst med eier:
  * E-post *, Telefon *, Reg. nr. *, Tjenester (sjekkbokser) og Melding (textarea).
  */
+import frontendConfig from '../../lead-intake/frontend-config.mjs';
 interface Props { eyebrow?: string; heading?: string; intro?: string; }
 const {
   eyebrow = 'Timebestilling & Prisforespørsel',
@@ -11,11 +12,11 @@ const {
   intro = 'Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris.',
 } = Astro.props;
 const leadUrl = import.meta.env.PUBLIC_LEAD_ENDPOINT?.trim() ?? '';
-const enabledByOwner = import.meta.env.PUBLIC_LEADS_ENABLED === 'true';
+const enabledByOwner = import.meta.env.PUBLIC_LEADS_ENABLED === 'true' && frontendConfig.PUBLIC_LEADS_ENABLED === 'true';
 let endpointValid = false;
 try {
   const url = new URL(leadUrl);
-  endpointValid = url.protocol === 'https:' && url.pathname === '/api/leads' &&
+  endpointValid = url.protocol === 'https:' && url.origin === frontendConfig.SITE_ORIGIN && url.pathname === '/api/leads' &&
     !url.username && !url.password && !url.search && !url.hash;
 } catch { /* Preview remains disabled. */ }
 const intakeConfigured = enabledByOwner && endpointValid;
@@ -253,6 +254,9 @@ const intakeConfigured = enabledByOwner && endpointValid;
 </style>
 
 <script>
+  import {captureAttribution,browserPermission,submitLead} from '../../lead-intake/src/browser.mjs';
+  import frontendConfig from '../../lead-intake/frontend-config.mjs';
+  import {bookingPayload} from '../lib/booking-intake';
   document.querySelectorAll<HTMLFormElement>('#mws-booking-form').forEach(form => {
     const endpoint = form.dataset.endpoint;
     const button = form.querySelector<HTMLButtonElement>('[data-booking-submit]');
@@ -262,8 +266,7 @@ const intakeConfigured = enabledByOwner && endpointValid;
     if (!endpoint || !button || !feedback) return;
     button.disabled = false;
     let submitting = false;
-    let submissionKey: string | undefined;
-    form.addEventListener('input', () => { if (!submitting) submissionKey = undefined; });
+    const state: {body?: string; key?: string; fingerprint?: string} = {};
     function status(text: string, isError: boolean) {
       feedback!.classList.remove('hidden', 'alert-success', 'alert-error');
       feedback!.classList.add(isError ? 'alert-error' : 'alert-success');
@@ -279,21 +282,8 @@ const intakeConfigured = enabledByOwner && endpointValid;
         return;
       }
       if (fields.get('website_confirmation')) return;
-      const q = new URLSearchParams(location.search);
-      const source: Record<string, string> = {page: location.pathname};
-      for (const field of ['utm_source','utm_medium','utm_campaign','utm_content']) {
-        const value = q.get(field);
-        if (value) source[field] = value.slice(0, 120);
-      }
-      const payload = {
-        site: 'sofiemyrbil.no', form: 'verksted-foresporsel',
-        regnr: String(fields.get('regnr') ?? '').trim(),
-        telefon: String(fields.get('telefon') ?? '').trim(),
-        epost: String(fields.get('epost') ?? '').trim(),
-        services, melding: String(fields.get('melding') ?? '').trim(), source,
-        website_confirmation: String(fields.get('website_confirmation') ?? ''),
-      };
-      submissionKey ??= crypto.randomUUID().replaceAll('-', '');
+      const attribution=captureAttribution(window,browserPermission(frontendConfig.ATTRIBUTION_MODE,frontendConfig.CONSENT_COOKIE_NAME,document.cookie));
+      const payload={...bookingPayload(fields),source:attribution.source,source_kind:attribution.kind};
       submitting = true;
       button.disabled = true;
       button.textContent = 'Sender forespørsel …';
@@ -301,14 +291,11 @@ const intakeConfigured = enabledByOwner && endpointValid;
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 12000);
       try {
-        const response = await fetch(endpoint, {
-          method: 'POST', mode: 'cors', credentials: 'omit', signal: controller.signal,
-          headers: {'Content-Type': 'application/json', 'Idempotency-Key': submissionKey},
-          body: JSON.stringify(payload),
+        const result=await submitLead(payload,{
+          endpoint,state,
+          transport:(url,options)=>fetch(url,{...options,signal:controller.signal}),
         });
-        const result = await response.json() as {ok?: boolean; id?: string; receipt_status?: string};
-        if (!response.ok || result.ok !== true || typeof result.id !== 'string' || !result.id ||
-            result.receipt_status !== 'stored') throw new Error('not-stored');
+        if (result.receipt_status !== 'stored') throw new Error('not-stored');
         status('Forespørselen din er registrert. Verkstedet kontakter deg for å bekrefte tidspunkt og pris. Referanse: ' + result.id, false);
         form.reset();
         button.textContent = 'Forespørsel registrert';

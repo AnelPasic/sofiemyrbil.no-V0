@@ -1,0 +1,37 @@
+---
+import config from '../site.config.json';
+import frontendConfig from '../frontend-config.mjs';
+interface FieldRule { type:string; required?:boolean; max?:number; values?:string[]; }
+interface SiteSchema { siteId:string; forms:Record<string,{label?:string;fields:Record<string,FieldRule>}>; packages:string[]; sites?:SiteSchema[]; }
+const root:SiteSchema=config;
+const site=root.sites?.find(s=>s.siteId===frontendConfig.SITE_ID)||root;
+interface Props { formId?: string; }
+const {formId='contact'}=Astro.props;
+const schema=site.forms[formId];
+if(!schema)throw Error('Configure this form in the installed site.config.json');
+const labels:Record<string,string>={email:'E-post',name:'Navn',phone:'Telefon',website:'Nettside',message:'Melding',package:'Pakke'};
+---
+<form data-medon-lead data-form-id={formId} data-multiple-fields={JSON.stringify(Object.entries(schema.fields).filter(([,rule])=>rule.type==='multi-choice').map(([name])=>name))} data-mode={config.privacy.approved?config.attribution.mode:'off'} data-choice-cookie={config.attribution.consentCookie}>
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{schema.label}</legend>
+    {Object.entries(schema.fields).map(([name,rule])=><label class="fieldset">
+      <span class="fieldset-legend">{labels[name]||name}{rule.required?' *':''}</span>
+      {rule.type==='package'||rule.type==='choice'||rule.type==='multi-choice'?<select class="select w-full" name={name} required={rule.required} multiple={rule.type==='multi-choice'}>
+        {rule.type!=='multi-choice'&&<option value="">Velg</option>}{(rule.type==='package'?site.packages:rule.values||[]).map(value=><option value={value}>{value}</option>)}
+      </select>:name==='message'?<textarea class="textarea w-full" name={name} required={rule.required} maxlength={rule.max||1000}></textarea>:
+      <input class="input w-full" type={rule.type==='email'?'email':rule.type==='phone'?'tel':rule.type==='url'?'url':'text'} name={name} required={rule.required} maxlength={rule.max||(rule.type==='text'?1000:254)}/>}
+    </label>)}
+    <label hidden aria-hidden="true">La dette feltet stå tomt<input name="website_confirmation" tabindex="-1" autocomplete="off"/></label>
+    <button class="btn btn-primary" type="submit">Send henvendelse</button>
+    <p data-lead-status role="status" aria-live="polite"></p>
+    <noscript>Skjemaet krever JavaScript. Bruk nettstedets oppgitte kontaktinformasjon.</noscript>
+  </fieldset>
+</form>
+<script>
+  import {bindLeadForm,browserPermission} from '../src/browser.mjs';
+  document.querySelectorAll<HTMLFormElement>('form[data-medon-lead]').forEach(form=>bindLeadForm(form,{
+    formId:form.dataset.formId,
+    multipleFields:JSON.parse(form.dataset.multipleFields||'[]'),
+    allowed:()=>browserPermission(form.dataset.mode,form.dataset.choiceCookie,document.cookie),
+  }));
+</script>

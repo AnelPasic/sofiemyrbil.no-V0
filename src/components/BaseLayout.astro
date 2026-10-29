@@ -3,6 +3,7 @@ import type { BuilderPage } from '../page-builder';
 import { publicPath } from '../page-builder';
 import { chrome } from '../lib/load-site';
 import SiteChromeHeader from './SiteChromeHeader.astro';
+import Attribution from '../../lead-intake/examples/Attribution.astro';
 import SiteChromeFooter from './SiteChromeFooter.astro';
 import SiteChromeThemeHead from './SiteChromeThemeHead.astro';
 import SiteChromeSearchHead from './SiteChromeSearchHead.astro';
@@ -30,5 +31,6 @@ const canonical = new URL(publicPath(page.slug), Astro.site);
   <SiteChromeHeader config={chrome} />
   <main id="main" data-pagefind-body={page.slug !== '404' && page.slug !== 'design-system' ? '' : undefined} data-pagefind-ignore={page.slug === '404' || page.slug === 'design-system' ? '' : undefined}><slot /></main>
   <SiteChromeFooter config={chrome} />
+  <Attribution showChoice />
 </body>
 </html>

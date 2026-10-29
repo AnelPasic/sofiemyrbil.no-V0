@@ -3,13 +3,13 @@
   "kind": "utility",
   "seo": {
     "title": "Personvernerklæring | Sofiemyr Bil AS",
-    "description": "Les personvernerklæringen til Sofiemyr Bil AS. Vi beskytter dine personopplysninger i henhold til norsk lov og GDPR."
+    "description": "Slik behandler Sofiemyr Bil AS opplysninger fra forespørsler og måling av nettstedet."
   },
   "hero": {
     "layout": "centered-none",
     "eyebrow": "Ditt personvern",
     "title": "Personvernerklæring",
-    "support": "Sofiemyr Bil AS behandler personopplysninger i samsvar med personopplysningsloven og EUs personvernforordning (GDPR). Her kan du lese om hvilke opplysninger vi samler inn og hvordan vi behandler dem.",
+    "support": "Her kan du lese hvordan Sofiemyr Bil AS behandler opplysninger fra nettstedet, og hvordan du kontakter oss om personvern.",
     "visual": {
       "kind": "none"
     },
@@ -35,7 +35,7 @@
       "_block": "content",
       "id": "opplysninger-vi-samler",
       "heading": "Hvilke opplysninger samler vi inn?",
-      "body": "Vi samler bare inn personopplysninger som du frivillig oppgir til oss gjennom bestillingsskjemaet på nettsiden:",
+      "body": "Når du sender en forespørsel, registrerer vi kontaktopplysningene, registreringsnummeret, valgte tjenester og meldingen du oppgir. Forespørselen er ikke en bekreftet timebestilling.",
       "layout": "three-columns",
       "surface": "soft",
       "items": [
@@ -74,7 +74,7 @@
       "_block": "content",
       "id": "lagring-og-sletting",
       "heading": "Lagring og sletting",
-      "body": "Når bestillingsskjemaet er aktivert, registreres opplysninger fra forespørselen i en egen Cloudflare D1-database for Sofiemyr Bil AS. Verkstedet kan varsles på e-post gjennom Resend. Cloudflare og Resend benyttes som databehandlere for disse oppgavene. Tilgang til mottatte forespørsler begrenses til godkjent personell.\n\nOpplysningene brukes til å behandle forespørselen, avtale tidspunkt og eventuelt følge opp arbeidet. Lagringstid, sletting og eventuelle overføringer skal avklares av Sofiemyr Bil AS før reell innsending åpnes. Opplysninger slettes når de ikke lenger er nødvendige for formålet, med mindre lovbestemte plikter krever oppbevaring.",
+      "body": "Forespørsler lagres i en egen Cloudflare D1-database for Sofiemyr Bil AS, med databaselagring i EU. Cloudflare brukes til mottak, lagring og tilgangsbeskyttelse. Resend brukes til e-postvarsler til godkjente operatører. Kun godkjent personell har tilgang til henvendelsene.\n\nOpplysningene brukes til å behandle forespørselen og følge opp avtalt arbeid. De oppbevares så lenge de er nødvendige for formålet eller lovpålagt oppbevaring. Du kan kontakte oss om innsyn og sletting.",
       "layout": "default",
       "surface": "soft",
       "items": [],
@@ -93,8 +93,8 @@
     {
       "_block": "content",
       "id": "informasjonskapsler",
-      "heading": "Informasjonskapsler (cookies)",
-      "body": "Dette nettstedet bruker kun teknisk nødvendige informasjonskapsler for å sikre grunnleggende funksjonalitet. Vi bruker ingen sporings- eller markedsføringskapsler og benytter ingen tredjeparts analyse- eller annonseverktøy uten ditt samtykke.",
+      "heading": "Sidevisninger og valgfri kildemåling",
+      "body": "Vi teller sidevisninger på serveren for å følge bruken av nettstedet. Disse summerte tallene inneholder ikke navn, e-postadresse, registreringsnummer eller en egen besøksidentitet. Sidevisninger er ikke det samme som unike besøkende.\n\nUnder «Valg for kildemåling» nederst på siden kan du tillate eller avslå at nettleseren husker trafikkilde og kampanje frem til en forespørsel. Ved tillatelse kan disse kildeopplysningene knyttes til forespørselen. Et enveis nettverkstreff kan også brukes til å anslå kilden når den ellers mangler; dette merkes som estimert. Rå IP-adresser lagres ikke i kampanjeminnet. Skjemaet virker også når du avslår. Du kan endre valget nederst på siden.",
       "layout": "default",
       "surface": "soft",
       "items": [],
