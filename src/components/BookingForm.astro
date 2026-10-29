@@ -19,7 +19,7 @@ const {
       <p>{intro}</p>
     </div>
 
-    <form class="mws-booking-form" id="mws-booking-form">
+    <form class="mws-booking-form" id="mws-booking-form" method="post" action="/bestilling/">
       <div class="mws-form-grid">
         <div class="form-control">
           <label class="label font-semibold" for="booking-regnr">
@@ -236,3 +236,9 @@ const {
   }
 </style>
 
+<script>
+  // Preview-only: stop implicit Enter-key submission; nothing is sent until a real intake is installed.
+  document.querySelectorAll<HTMLFormElement>('#mws-booking-form').forEach((form) => {
+    form.addEventListener('submit', (event) => event.preventDefault());
+  });
+</script>
