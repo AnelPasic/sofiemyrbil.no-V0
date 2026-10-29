@@ -198,6 +198,9 @@ export function resolveSections(page:BuilderPage,masters:GlobalMasters,pages:rea
   if(!shared[section.entry])throw new Error('Missing shared source: '+section.entry);
  }
  const visible=page.sections.filter(s=>s.visibility!=='hidden');
+ // Form field IDs are intentionally stable; allow at most one booking form per page.
+ const bookingCount=visible.filter(s=>s._block==='sharedContent'&&shared[s.entry].widget==='bookingForm').length;
+ if(bookingCount>1)throw new Error('Only one booking form can be placed on each page');
  const ids=new Set<string>();
  for(const s of visible){
   const id=s._block==='sharedContent'?shared[s.entry].id:s.id;
