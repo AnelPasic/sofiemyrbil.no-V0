@@ -22,7 +22,7 @@ const template = readFileSync(configPath,'utf8');
 const start = '# PAGE_BUILDER_CHOICES_BEGIN', end = '# PAGE_BUILDER_CHOICES_END';
 if(template.split(start).length !== 2 || template.split(end).length !== 2) throw new Error('PageList markers missing or duplicated');
 const rows = pages.map(page=>'        - { name: ' + JSON.stringify(page.slug) + ', label: ' + JSON.stringify(page.seo.title) + ' }').join('\n');
-const pattern = new RegExp('('+start+'\\n)[\\s\\S]*?(\\n'+end+')');
+const pattern = new RegExp('('+start+'\\r?\\n)[\\s\\S]*?(\\r?\\n'+end+')');
 if (!pattern.test(template)) throw new Error('Invalid select markers');
 const expected = template.replace(pattern,(_,a,b)=>a+rows+b);
 if(flag === '--write') {
