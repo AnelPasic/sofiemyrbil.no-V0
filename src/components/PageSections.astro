@@ -4,6 +4,7 @@ import { resolveSections } from '../page-builder';
 import PageList from './PageList.astro';
 import Faq from './Faq.astro';
 import RichContentSection from './RichContentSection.astro';
+import BookingForm from './BookingForm.astro';
 import type {SharedContentRegistry} from '../page-builder';
 
 interface Props {
@@ -26,7 +27,13 @@ for (const item of sections) {
 <div class="mws-page-sections">
   {sections.map(item =>
     item.type === 'content'
-      ? <RichContentSection section={item.section} />
+      ? ('widget' in item.section && item.section.widget === 'bookingForm'
+          ? <BookingForm
+              eyebrow={item.section.eyebrow}
+              heading={item.section.heading}
+              intro={typeof item.section.body === 'string' ? item.section.body : item.section.body.join(' ')}
+            />
+          : <RichContentSection section={item.section} />)
       : item.type === 'faq'
         ? <Faq id={item.section.id} items={item.items} />
         : item.type === 'pageList'
