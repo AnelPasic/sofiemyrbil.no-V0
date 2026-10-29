@@ -1,0 +1,25 @@
+name: Verify website and booking intake
+
+on:
+  push:
+    branches: [main, feat/sofiemyr-intake-worker-d1-resend]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.12.0'
+          cache: npm
+      - name: Install pinned site dependencies
+        run: npm ci
+      - name: Verify Astro, Pages CMS, and site output
+        run: npm run verify
+      - name: Verify receipt storage, security and intake contract
+        run: node --test intake-worker/tests/*.test.mjs
