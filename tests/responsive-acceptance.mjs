@@ -86,22 +86,16 @@ async function runTests() {
     assert.equal(isHidden, true, 'Mobile nav hidden after second click');
     console.log('✔ Mobile menu closes on second tap');
 
-    // 4. TEST BOOKING FORM SUBMISSION
-    console.log('\n--- 4. BOOKING FORM SUBMISSION ---');
-    await mobile.goto(origin + '/bestilling/', { waitUntil: 'domcontentloaded' });
-    await mobile.fill('#booking-regnr', 'EK 12345');
-    await mobile.fill('#booking-tlf', '91234567');
-    await mobile.fill('#booking-epost', 'kunde@example.com');
-    await mobile.check('input[value="EU-Kontroll"]');
-    await mobile.fill('#booking-melding', 'Ønsker time til uken');
-
-    await mobile.click('button[type="submit"]');
-    await mobile.waitForTimeout(300);
-
-    const feedback = mobile.locator('#mws-form-feedback');
-    const feedbackVisible = await feedback.isVisible();
-    assert.ok(feedbackVisible, 'Booking feedback message visible after form submission');
-    console.log('✔ Booking form submission displays feedback message');
+    // 4. GLOBAL BOOKING FORM: NEVER CLAIM A SUBMISSION WITHOUT A BACKEND
+    console.log('\\n--- 4. GLOBAL BOOKING FORM (PREVIEW ONLY) ---');
+    for (const route of ['/bestilling/', '/kontakt/']) {
+      await mobile.goto(origin + route, { waitUntil: 'domcontentloaded' });
+      assert.equal(await mobile.locator('#mws-booking-form').count(), 1, 'Exactly one form on ' + route);
+      assert.ok(await mobile.locator('#booking-regnr').isVisible(), 'Registration field visible on ' + route);
+      assert.ok(await mobile.locator('[data-booking-unavailable]').isVisible(), 'Clear preview warning on ' + route);
+      assert.equal(await mobile.locator('#mws-booking-form button:disabled').count(), 1, 'Submission is disabled until backend exists');
+      assert.equal(await mobile.locator('#mws-form-feedback').count(), 0, 'No fake success feedback on ' + route);
+    }
 
     console.log('\n🎉 ALL RESPONSIVE & INTERACTION TESTS PASSED SUCCESSFULLY!');
   } finally {
