@@ -30,6 +30,11 @@
   ],
   "sections": [
     {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
+    {
       "_block": "content",
       "id": "praktisk-informasjon",
       "eyebrow": "Finn frem til verkstedet",
