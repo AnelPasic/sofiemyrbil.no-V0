@@ -5,7 +5,6 @@ import { resolveHeroProof } from '../lib/hero-proof';
 import BaseLayout from './BaseLayout.astro';
 import Hero from './Hero.astro';
 import PageSections from './PageSections.astro';
-import BookingForm from './BookingForm.astro';
 interface Props { page: BuilderPage; }
 const { page } = Astro.props;
 const featuredProof=resolveHeroProof(page.hero,masters,heroProofCases);
@@ -14,7 +13,6 @@ const featuredProof=resolveHeroProof(page.hero,masters,heroProofCases);
   <div class="mws-main-shell">
     <Hero hero={page.hero} featuredProof={featuredProof} />
     <div class="mws-page-content">
-      {(page.slug === 'kontakt' || page.slug === 'bestilling') && <BookingForm />}
       <PageSections page={page} pages={pages} masters={masters} sharedContent={sharedContent} />
     </div>
   </div>
