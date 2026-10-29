@@ -1,0 +1,17 @@
+{
+  "_block": "content",
+  "uid": "17eb32b6-913d-4d16-8b65-5372e4ba83ad",
+  "id": "bestilling-skjema",
+  "name": "Bestillingsskjema – verkstedtime og prisforespørsel",
+  "widget": "bookingForm",
+  "eyebrow": "Timebestilling & Prisforespørsel",
+  "heading": "Bestill verkstedtime eller få prisoverslag",
+  "body": [
+    "Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris."
+  ],
+  "headingAlign": "center",
+  "layout": "default",
+  "surface": "default",
+  "items": [],
+  "links": []
+}
