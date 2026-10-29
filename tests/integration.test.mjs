@@ -209,8 +209,10 @@ test('booking form uses Global Innhold and reuses one CMS source across pages',(
   const sections=resolveSections(page,masters,pages,[],shared);
   assert.equal(sections.filter(s=>s.type==='content'&&'widget' in s.section&&s.section.widget==='bookingForm').length,1);
  }
- const placedHome={...home,sections:[...home.sections,{_block:'sharedContent',entry:'bestilling-skjema'}]};
- assert.equal(resolveSections(placedHome,masters,pages,[],shared).filter(s=>s.type==='content'&&'widget' in s.section&&s.section.widget==='bookingForm').length,1,'Form may be placed anywhere through CMS');
+ const otherwiseUnconfigured=pages.find(page=>page.slug==='om');
+ assert.ok(otherwiseUnconfigured,'Example page exists');
+ const placedElsewhere={...otherwiseUnconfigured,sections:[...otherwiseUnconfigured.sections.filter(s=>s._block!=='sharedContent'||s.entry!=='bestilling-skjema'),{_block:'sharedContent',entry:'bestilling-skjema'}]};
+ assert.equal(resolveSections(placedElsewhere,masters,pages,[],shared).filter(s=>s.type==='content'&&'widget' in s.section&&s.section.widget==='bookingForm').length,1,'Form may be placed anywhere through CMS');
  assert.doesNotMatch(read('src/components/PageView.astro'),/BookingForm/,'Hardcoded booking form removed');
  assert.match(read('src/components/PageSections.astro'),/item\.section\.widget === 'bookingForm'/);
  const form=read('src/components/BookingForm.astro');
