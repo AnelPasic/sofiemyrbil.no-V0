@@ -64,7 +64,7 @@ const contentLink=z.object({label:text,href:internalHref}).strict();
 export const ordinaryFields={eyebrow:z.string().optional(),heading:text,body:bodySchema,headingAlign:alignment,layout,surface,items:z.array(contentItem).optional(),links:z.array(contentLink).optional()};
 const reserved=new Set(['behov','regneeksempel','sjekk','priser','resultater','mekanisme','passer','sporsmal','skjema','main','mobile-menu','site-menu','order-package','website','email','message']);
 const isReserved=(id:string)=>reserved.has(id)||/^(?:calc-|scenario-|package-home-|term-|header-(?:desktop|mobile)-submenu-)/.test(id);
-export const sharedContentSchema=z.object({_block:z.literal('content'),uid:z.string().uuid(),id:anchor,name:text,...ordinaryFields}).strict().superRefine((value,ctx)=>{
+export const sharedContentSchema=z.object({_block:z.literal('content'),uid:z.string().uuid(),id:anchor,name:text,widget:z.enum(['content','bookingForm']).optional(),...ordinaryFields}).strict().superRefine((value,ctx)=>{
  if(isReserved(value.id))ctx.addIssue({code:'custom',path:['id'],message:'Reserved shared content anchor'});
 });
 export type SharedContent=z.infer<typeof sharedContentSchema>;
