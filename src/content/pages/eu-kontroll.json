@@ -19,7 +19,13 @@
       "href": "/priser/"
     },
     "visual": {
-      "kind": "none"
+      "kind": "image",
+      "image": {
+        "src": "/images/pages/TransitCourier_01_banner.jpg",
+        "alt": "EU Kontroll",
+        "positionX": 50,
+        "positionY": 50
+      }
     },
     "titleEmphasis": "none"
   },
@@ -57,45 +63,51 @@
       "id": "hva-inngaar",
       "eyebrow": "Full gjennomgang",
       "heading": "Hva inngår i EU-kontrollen?",
-      "body": "EU-kontroll (periodisk kjøretøykontroll / PKK) er en lovpålagt teknisk kontroll av kjøretøyets sikkerhet og miljøegenskaper. Kontrollen dekker hele bilen – fra bremser og lys til karosseri og avgasser.\n\nResultatet rapporteres elektronisk direkte til Statens vegvesen umiddelbart etter godkjent kontroll.",
+      "headingAlign": "center",
       "layout": "three-columns",
       "surface": "soft",
       "items": [
         {
           "title": "Bremser og hjuloppheng",
           "text": "Kontroll av bremsekraft, bremseskiver og klosser, bremselinjer, støtdempere, hjullager og drivaksler.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         },
         {
           "title": "Lys, sikt og signaler",
           "text": "Alle kjørelys, bremselys, blinklys, reflekser og vindusvisker. Siktforhold gjennom frontrute og speil.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         },
         {
           "title": "Avgass og miljø",
           "text": "Utslippsmåling (bensin og diesel), eksosanlegg, katalysator og OBD-avlesning for moderne motorer.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         },
         {
           "title": "Karosseri og understell",
           "text": "Rustskader, bæringer, råte og strukturell integritet. Understellet sjekkes for korrosjon og slitasje.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         },
         {
           "title": "Sikkerhetsutstyr",
           "text": "Bilbelter, airbag-kontroll, nakkestøtter, barnelås og eventuelt faste barneseter.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         },
         {
           "title": "Forstilling og styring",
           "text": "Kontroll av styreledd, styrepumpe/servostyring, sportstag og styrelager. Rattslark og spill i ledder.",
-          "surface": "default",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "default"
         }
       ],
       "visibility": "visible"
@@ -105,33 +117,37 @@
       "id": "slik-forbereder-du",
       "eyebrow": "Tips fra verkstedet",
       "heading": "Slik forbereder du bilen til EU-kontroll",
-      "body": "Et par enkle tiltak kan spare deg for en kostbar etterkontroll. Sjekk disse punktene selv før du leverer bilen:",
+      "headingAlign": "center",
       "layout": "two-columns",
       "surface": "default",
       "items": [
         {
           "title": "Sjekk alle lyspærer",
           "text": "Slå på alle lys og gå rundt bilen. Defekte lyspærer er en vanlig grunn til anmerkning.",
-          "surface": "soft",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "soft"
         },
         {
           "title": "Vindusviskerblader",
           "text": "Slitte eller sprukne vindusviskere gir dårlig sikt og fører til underkjenning.",
-          "surface": "soft",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "soft"
         },
         {
           "title": "Dekk og mønsterdybde",
           "text": "Sjekk at alle dekk har minimum 1,6 mm mønsterdybde. Ujevn slitasje kan tyde på feil forstilling.",
-          "surface": "soft",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "soft"
         },
         {
           "title": "Feillamper i dashbord",
           "text": "Lysende motorlys eller ABS-lampe kan føre til underkjenning. Få feilsøkt dette i forkant.",
-          "surface": "soft",
-          "boxVariant": "card"
+          "href": "/",
+          "boxVariant": "card",
+          "surface": "soft"
         }
       ],
       "links": [
