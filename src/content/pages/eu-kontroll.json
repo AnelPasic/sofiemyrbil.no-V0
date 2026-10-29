@@ -6,7 +6,7 @@
     "description": "Bestill EU-kontroll til fastpris kr 1 450,- hos Sofiemyr Bil i Kolbotn. Autorisert PKK-kontrollør for personbiler og varebiler opp til 3 500 kg. Ring 66 81 37 00."
   },
   "hero": {
-    "layout": "centered-none",
+    "layout": "split-right",
     "eyebrow": "Godkjent kontrollverksted · PKK",
     "title": "EU-kontroll til fastpris kr 1 450,-",
     "support": "Sofiemyr Bil AS er offentlig godkjent som PKK-kontrollsted av Statens vegvesen. Vi utfører periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg — effektivt, grundig og til en forutsigbar pris.",
@@ -156,6 +156,11 @@
           "href": "/kontakt/"
         }
       ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
