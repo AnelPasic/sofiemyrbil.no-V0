@@ -159,3 +159,21 @@ test('default RichContentSection has no section framing; explicit colored surfac
  const noSurface=home.sections.find(x=>x.id==='hovedtjenester');
  assert.ok(noSurface,'Homepage section remains CMS-controlled');
 });
+
+test('desktop Pagefind search button is centered and unboxed like the Oslo reference',()=>{
+ const css=read('src/styles/site-chrome.css');
+ const start=css.indexOf('/* Match the accepted Oslo icon-only action:');
+ const end=css.indexOf('.mws-chrome-search:focus-visible',start);
+ assert.ok(start>=0 && end>start,'Desktop-only Pagefind override is missing');
+ const rule=css.slice(start,end);
+ assert.match(rule,/pagefind-modal-trigger\.mws-chrome-search--desktop \.pf-trigger-btn/);
+ for(const declaration of [
+  'align-items: center !important','justify-content: center !important',
+  'width: 44px !important','height: 44px !important',
+  'padding: 0 !important','border: 0 !important',
+  'background: transparent !important',
+ ])assert.ok(rule.includes(declaration),'Missing centered icon-button style: '+declaration);
+ assert.match(rule,/pagefind-modal-trigger\.mws-chrome-search--desktop :is\(\.pf-trigger-icon, \.trigger-icon\)/);
+ assert.ok(css.includes('--pf-background: transparent;'));
+ assert.ok(css.includes('--pf-border: transparent;'));
+});
