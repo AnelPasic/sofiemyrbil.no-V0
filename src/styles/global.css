@@ -18,7 +18,7 @@ main {
 }
 
 .mws-main-shell {
-  width: min(100% - 2.5rem, 80rem);
+  width: min(1440px, 100% - 80px);
   margin-inline: auto;
 }
 

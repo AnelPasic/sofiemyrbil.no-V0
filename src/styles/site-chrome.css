@@ -9,10 +9,10 @@
   color: var(--color-base-content, #172434);
   border-bottom: 1px solid var(--color-base-300, #e5e7eb);
 }
-.mws-chrome-shell { width: min(100% - 2.5rem, 80rem); margin-inline: auto; }
+.mws-chrome-shell { width: min(1440px, 100% - 80px); margin-inline: auto; }
 .mws-chrome-header .mws-chrome-shell.navbar {
   display: flex; align-items: center; min-height: 5.25rem; gap: clamp(1rem, 2.5vw, 2.5rem);
-  padding-block: 0.75rem; padding-inline: 0; width: min(100% - 2.5rem, 80rem);
+  padding-block: 0.75rem; padding-inline: 0; width: min(1440px, 100% - 80px);
 }
 .mws-chrome-brand, .mws-chrome-footer-brand {
   flex: 0 0 auto; color: inherit; font-weight: 750; font-size: 1.12rem;
