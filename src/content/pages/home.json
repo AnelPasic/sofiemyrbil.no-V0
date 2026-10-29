@@ -175,6 +175,11 @@
         }
       ],
       "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
     }
   ]
 }
