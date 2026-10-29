@@ -681,6 +681,15 @@ content:
             options: { editable: false, generate: true }
           - { name: id, label: Stabil ID og anker, type: string, required: true, pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$' }
           - { name: name, label: Navn i seksjonslisten, type: string, required: true }
+          - name: widget
+            label: Visningstype
+            type: select
+            default: content
+            description: Vanlig innhold eller gjenbrukbart bestillingsskjema. Skjemaet krever aktivert ekte innsending før bruk.
+            options:
+              values:
+                - { name: content, label: Vanlig innholdsseksjon }
+                - { name: bookingForm, label: Bestillingsskjema }
           - { name: eyebrow, label: Overtekst, type: string }
           - { name: heading, label: Overskrift, type: string, required: true }
           - { name: headingAlign, label: Overskriftsjustering, component: richAlign }
