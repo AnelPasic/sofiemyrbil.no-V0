@@ -196,6 +196,12 @@ test('booking form uses Global Innhold and reuses one CMS source across pages',(
   assert.equal(parsed.test.widget,widget);
  }
  assert.throws(()=>validateSharedContentEntries({'test.json':{...booking,id:'test',widget:'unknown'}}));
+ const secondary={...shared['bestilling-skjema'],id:'booking-alt'};
+ const duplicated={...pages.find(x=>x.slug==='bestilling'),sections:[
+  {_block:'sharedContent',entry:'bestilling-skjema'},
+  {_block:'sharedContent',entry:'booking-alt'},
+ ]};
+ assert.throws(()=>resolveSections(duplicated,masters,pages,[],{...shared,'booking-alt':secondary}),/Only one booking form/);
  for(const slug of ['bestilling','kontakt']){
   const page=pages.find(x=>x.slug===slug);
   const placed=page.sections.filter(s=>s._block==='sharedContent'&&s.entry==='bestilling-skjema');
@@ -211,5 +217,7 @@ test('booking form uses Global Innhold and reuses one CMS source across pages',(
  assert.match(form,/data-booking-unavailable/,'No-backend status visible');
  assert.match(form,/disabled aria-disabled="true"/);
  assert.doesNotMatch(form,/Vi har mottatt opplysningene/,'Cannot claim a request was received');
- assert.doesNotMatch(form,/e\.preventDefault\(\)/,'Fake submit handler removed');
+ assert.match(form,/method="post" action="\/bestilling\/"/,'No GET submission with personal data');
+ assert.match(form,/event\.preventDefault\(\)/,'Implicit Enter submit is blocked without a backend');
+ assert.doesNotMatch(form,/Takk for din bestillingsforespørsel/,'No fake success message');
 });
