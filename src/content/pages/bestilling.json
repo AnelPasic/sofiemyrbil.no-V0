@@ -31,13 +31,8 @@
   ],
   "sections": [
     {
-      "_block": "content",
-      "id": "bestillingsskjema",
-      "heading": "Fyll ut bestillingsskjemaet",
-      "body": "Alle felt merket med * er obligatoriske. Vi behandler dine opplysninger konfidensielt og bruker dem kun til å behandle din forespørsel.",
-      "layout": "default",
-      "surface": "soft",
-      "items": [],
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
