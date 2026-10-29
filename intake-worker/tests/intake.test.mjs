@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validate, configuration, HttpError} from '../src/domain.mjs';
 import worker from '../src/worker.mjs';
+import {recipientEmails,notification} from '../src/notify.mjs';
 
 const site='sofiemyrbil.no';
 const origin='https://sofiemyrbil-no-v0.anel.workers.dev';
@@ -100,4 +101,24 @@ test('origin, honeypot and invalid payload are rejected',async()=>{
 test('private administration never exposes data without Access authorization',async()=>{
  const r=await worker.fetch(new Request(ingress+'/admin/receipts'),env(),context);
  assert.equal(r.status,403);
+});
+
+
+test('one or several recipient addresses are validated and included in one Resend message',()=>{
+ assert.deepEqual(recipientEmails('firma@example.org'),['firma@example.org']);
+ assert.deepEqual(recipientEmails('firma@example.org, varsling@example.org'),['firma@example.org','varsling@example.org']);
+ for(const invalid of ['', 'firma@example.org,', 'firma@example.org, firma@example.org',
+  'firma@example.org, BAD', 'bad', 'firma@example.org;varsling@example.org',
+  Array(6).fill(0).map((_,i)=>'user'+i+'@example.org').join(',')]){
+  assert.deepEqual(recipientEmails(invalid),[],'Invalid recipients must not be accepted: '+invalid);
+ }
+ const lead={id:'test-receipt',created_at_ms:0,payload_json:JSON.stringify(valid)};
+ const single=JSON.parse(notification(lead,{
+   RESEND_FROM:'verksted@example.org',LEAD_TO_EMAIL:'firma@example.org'}));
+ assert.deepEqual(single.to,['firma@example.org']);
+ const multiple=JSON.parse(notification(lead,{
+   RESEND_FROM:'verksted@example.org',LEAD_TO_EMAIL:'firma@example.org, varsling@example.org'}));
+ assert.deepEqual(multiple.to,['firma@example.org','varsling@example.org']);
+ assert.equal(multiple.reply_to,valid.epost);
+ assert.equal(multiple.subject,'Ny verkstedforespørsel – Sofiemyr Bil');
 });
