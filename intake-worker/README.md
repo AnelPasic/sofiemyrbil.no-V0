@@ -40,6 +40,15 @@ inneholder det prøvde grunnmønsteret, ikke et ferdig dashboard.
 5. Verifiser et Resend-avsenderdomene. Legg følgende inn som **Cloudflare
    Worker Secrets** (aldri i kildekode, ChatGPT eller GitHub):
    \`RESEND_API_KEY\`, \`RESEND_FROM\`, \`LEAD_TO_EMAIL\`,
+   \`LEAD_TO_EMAIL\` er **mottaker**, ikke avsender: én adresse, for eksempel
+   \`firma@sofiemyrbil.no\`, eller flere adresser adskilt med komma
+   (\`firma@sofiemyrbil.no, annen@eksempel.no\`). Maks fem unike og gyldige
+   mottakere. Tom/ugyldig liste stopper varsling, men endrer ikke D1-lagring.
+   \`RESEND_FROM\` er en verifisert **avsender**. Cloudflare Secrets er scoped
+   til én Worker og arves ikke fra nettstedets Worker: legg dem på
+   \`sofiemyrbil-intake\`, selv om de finnes på \`sofiemyrbil-no-v0\`.
+   \`RESEND_API_KEY\` må være typen **Secret** (ikke plaintext Variable).
+
    \`ADMIN_GRANTS_JSON\`. Grant-format er en JSON-map med e-post til
    \`[{ "site": "sofiemyrbil.no", "permissions": ["read", "retry"] }]\`.
 6. Konfigurer en Cloudflare Access-applikasjon for Workers
