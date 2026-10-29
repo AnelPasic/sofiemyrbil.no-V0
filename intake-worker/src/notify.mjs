@@ -4,12 +4,25 @@ const MAX_ATTEMPTS = 5;
 const WINDOW_MS = 23 * 60 * 60 * 1000;
 const BACKOFF = [60000, 300000, 900000, 3600000, 14400000];
 
-function ready(env) {
-  return env.DB && env.SITE_ID && env.SITE_STAGE === 'production' && env.PRIVACY_APPROVED === 'true' &&
-    env.SEND_NOTIFICATIONS === 'true' && env.RESEND_API_KEY && env.RESEND_FROM && env.LEAD_TO_EMAIL;
+// One owner-configured mailbox or up to five comma-separated recipients.
+// Invalid/ambiguous configuration disables notifications rather than sending to unintended addresses.
+export function recipientEmails(value) {
+  if (typeof value !== 'string' || !value.trim()) return [];
+  const addresses = value.split(',').map(address => address.trim());
+  if (addresses.length > 5 || addresses.some(address =>
+    !/^[^\s@,<>]+@[^\s@,<>]+\.[^\s@,<>]+$/.test(address))) return [];
+  if (new Set(addresses.map(address => address.toLowerCase())).size !== addresses.length) return [];
+  return addresses;
 }
 
-function notification(lead, env) {
+
+function ready(env) {
+  return env.DB && env.SITE_ID && env.SITE_STAGE === 'production' && env.PRIVACY_APPROVED === 'true' &&
+    env.SEND_NOTIFICATIONS === 'true' && env.RESEND_API_KEY && env.RESEND_FROM &&
+    recipientEmails(env.LEAD_TO_EMAIL).length > 0;
+}
+
+export function notification(lead, env) {
   const p = JSON.parse(lead.payload_json);
   const body = [
     'Ny forespørsel – Sofiemyr Bil AS',
@@ -24,7 +37,7 @@ function notification(lead, env) {
   ].join('\n\n');
   return JSON.stringify({
     from: env.RESEND_FROM,
-    to: [env.LEAD_TO_EMAIL],
+    to: recipientEmails(env.LEAD_TO_EMAIL),
     reply_to: p.epost,
     subject: 'Ny verkstedforespørsel – Sofiemyr Bil',
     text: body,
