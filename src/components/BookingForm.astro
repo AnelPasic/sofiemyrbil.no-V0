@@ -10,6 +10,15 @@ const {
   heading = 'Bestill verkstedtime eller få prisoverslag',
   intro = 'Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris.',
 } = Astro.props;
+const leadUrl = import.meta.env.PUBLIC_LEAD_ENDPOINT?.trim() ?? '';
+const enabledByOwner = import.meta.env.PUBLIC_LEADS_ENABLED === 'true';
+let endpointValid = false;
+try {
+  const url = new URL(leadUrl);
+  endpointValid = url.protocol === 'https:' && url.pathname === '/api/leads' &&
+    !url.username && !url.password && !url.search && !url.hash;
+} catch { /* Preview remains disabled. */ }
+const intakeConfigured = enabledByOwner && endpointValid;
 ---
 <section id="bestilling-skjema" class="mws-booking-section">
   <div class="mws-booking-card">
@@ -19,7 +28,7 @@ const {
       <p>{intro}</p>
     </div>
 
-    <form class="mws-booking-form" id="mws-booking-form" method="post" action="/bestilling/">
+    <form class="mws-booking-form" id="mws-booking-form" method="post" action="/bestilling/" data-endpoint={intakeConfigured ? leadUrl : undefined}>
       <div class="mws-form-grid">
         <div class="form-control">
           <label class="label font-semibold" for="booking-regnr">
@@ -116,12 +125,19 @@ const {
         ></textarea>
       </div>
 
-      <div class="alert alert-warning mt-6" role="status" data-booking-unavailable>
+      <div class="hidden" aria-hidden="true">
+        <label for="booking-confirmation">La dette feltet stå tomt</label>
+        <input id="booking-confirmation" type="text" name="website_confirmation" autocomplete="off" tabindex="-1" />
+      </div>
+      <p class="text-sm mt-4">
+        Opplysningene brukes for å behandle forespørselen din. Se <a href="/personvern/" class="link link-primary">personvernerklæringen</a>.
+      </p>
+      <div class="alert alert-warning mt-6" role="status" data-booking-unavailable hidden={intakeConfigured}>
         <span><strong>Innsending er ikke aktiv ennå.</strong> Skjemaet er under oppsett og sender ingen opplysninger. Ring verkstedet for å avtale time.</span>
       </div>
       <div class="mws-booking-actions">
-        <button type="button" class="btn btn-primary btn-lg w-full md:w-auto" disabled aria-disabled="true">
-          Innsending kommer snart
+        <button type="submit" class="btn btn-primary btn-lg w-full md:w-auto" data-booking-submit disabled>
+          Send bestillingsforespørsel
         </button>
         <div class="mws-call-direct">
           <span>Eller ring oss direkte:</span>
@@ -133,7 +149,7 @@ const {
           </a>
         </div>
       </div>
-
+      <div class="alert mt-4 hidden" role="status" aria-live="polite" data-booking-feedback></div>
     </form>
   </div>
 </section>
@@ -237,8 +253,73 @@ const {
 </style>
 
 <script>
-  // Preview-only: stop implicit Enter-key submission; nothing is sent until a real intake is installed.
-  document.querySelectorAll<HTMLFormElement>('#mws-booking-form').forEach((form) => {
-    form.addEventListener('submit', (event) => event.preventDefault());
+  document.querySelectorAll<HTMLFormElement>('#mws-booking-form').forEach(form => {
+    const endpoint = form.dataset.endpoint;
+    const button = form.querySelector<HTMLButtonElement>('[data-booking-submit]');
+    const feedback = form.querySelector<HTMLElement>('[data-booking-feedback]');
+    // Never submit a native POST to the static /bestilling/ route, even on a disabled preview.
+    form.addEventListener('submit', event => event.preventDefault());
+    if (!endpoint || !button || !feedback) return;
+    button.disabled = false;
+    let submitting = false;
+    let submissionKey: string | undefined;
+    form.addEventListener('input', () => { if (!submitting) submissionKey = undefined; });
+    function status(text: string, isError: boolean) {
+      feedback!.classList.remove('hidden', 'alert-success', 'alert-error');
+      feedback!.classList.add(isError ? 'alert-error' : 'alert-success');
+      feedback!.textContent = text;
+    }
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submitting || !form.reportValidity()) return;
+      const fields = new FormData(form);
+      const services = fields.getAll('services').map(String);
+      if (services.length === 0) {
+        status('Velg minst én tjeneste før du sender forespørselen.', true);
+        return;
+      }
+      if (fields.get('website_confirmation')) return;
+      const q = new URLSearchParams(location.search);
+      const source: Record<string, string> = {page: location.pathname};
+      for (const field of ['utm_source','utm_medium','utm_campaign','utm_content']) {
+        const value = q.get(field);
+        if (value) source[field] = value.slice(0, 120);
+      }
+      const payload = {
+        site: 'sofiemyrbil.no', form: 'verksted-foresporsel',
+        regnr: String(fields.get('regnr') ?? '').trim(),
+        telefon: String(fields.get('telefon') ?? '').trim(),
+        epost: String(fields.get('epost') ?? '').trim(),
+        services, melding: String(fields.get('melding') ?? '').trim(), source,
+        website_confirmation: String(fields.get('website_confirmation') ?? ''),
+      };
+      submissionKey ??= crypto.randomUUID().replaceAll('-', '');
+      submitting = true;
+      button.disabled = true;
+      button.textContent = 'Sender forespørsel …';
+      feedback.classList.add('hidden');
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 12000);
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST', mode: 'cors', credentials: 'omit', signal: controller.signal,
+          headers: {'Content-Type': 'application/json', 'Idempotency-Key': submissionKey},
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json() as {ok?: boolean; id?: string; receipt_status?: string};
+        if (!response.ok || result.ok !== true || typeof result.id !== 'string' || !result.id ||
+            result.receipt_status !== 'stored') throw new Error('not-stored');
+        status('Forespørselen din er registrert. Verkstedet kontakter deg for å bekrefte tidspunkt og pris. Referanse: ' + result.id, false);
+        form.reset();
+        button.textContent = 'Forespørsel registrert';
+      } catch {
+        status('Vi kunne ikke bekrefte registreringen. Prøv igjen, eller ring oss på 66 81 37 00.', true);
+        button.disabled = false;
+        button.textContent = 'Prøv innsending på nytt';
+      } finally {
+        clearTimeout(timer);
+        submitting = false;
+      }
+    });
   });
 </script>
