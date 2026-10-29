@@ -1,4 +1,4 @@
-name: Verify website and booking intake
+name: Verify website and shared MWS intake adapter
 
 on:
   push:
@@ -21,5 +21,3 @@ jobs:
         run: npm ci
       - name: Verify Astro, Pages CMS, and site output
         run: npm run verify
-      - name: Verify receipt storage, security and intake contract
-        run: node --test intake-worker/tests/*.test.mjs

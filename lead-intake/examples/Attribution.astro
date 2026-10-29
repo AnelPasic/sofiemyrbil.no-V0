@@ -1,0 +1,42 @@
+---
+import config from '../site.config.json';
+interface Props { showChoice?: boolean; }
+const {showChoice=false}=Astro.props;
+const mode = config.privacy.approved ? config.attribution.mode : 'off';
+---
+<span hidden data-medon-policy data-mode={mode} data-choice-cookie={config.attribution.consentCookie}></span>
+{showChoice && mode==='consent' && <details class="mx-auto max-w-4xl p-4 text-sm" data-medon-choice>
+  <summary class="cursor-pointer">Valg for kildemåling</summary>
+  <p>Du kan tillate at vi husker trafikkilde og kampanje når du sender en forespørsel. Det er valgfritt og påvirker ikke skjemaet. Se <a class="link" href="/personvern/">personvernerklæringen</a>.</p>
+  <div class="flex flex-wrap gap-2 mt-2">
+    <button class="btn btn-outline btn-sm" type="button" data-medon-grant>Tillat kildemåling</button>
+    <button class="btn btn-outline btn-sm" type="button" data-medon-deny>Avslå kildemåling</button>
+  </div>
+  <p data-medon-choice-status role="status" aria-live="polite"></p>
+</details>}
+<script>
+  import {captureAttribution,browserPermission} from '../src/browser.mjs';
+  function capture() {
+    const policy=document.querySelector<HTMLElement>('[data-medon-policy]');
+    if(policy) {
+      const allowed=browserPermission(policy.dataset.mode,policy.dataset.choiceCookie,document.cookie) && !('globalPrivacyControl' in navigator && navigator.globalPrivacyControl===true);
+      captureAttribution(window,allowed);
+      const status=document.querySelector<HTMLElement>('[data-medon-choice-status]');
+      if(status)status.textContent=allowed?'Kildemåling er tillatt.':'Kildemåling er avslått.';
+    }
+    document.querySelectorAll<HTMLElement>('[data-medon-choice]').forEach(control=>{
+      if(control.dataset.bound)return;control.dataset.bound='true';
+      const choose=(value:string)=>{
+        const name=policy?.dataset.choiceCookie;
+        if(!name||!/^[A-Za-z0-9_-]{1,80}$/.test(name))return;
+        document.cookie=`${name}=${value}; Path=/; Secure; SameSite=Lax`;
+        window.dispatchEvent(new Event('medon:permission-change'));
+      };
+      control.querySelector('[data-medon-grant]')?.addEventListener('click',()=>choose('granted'));
+      control.querySelector('[data-medon-deny]')?.addEventListener('click',()=>choose('denied'));
+    });
+  }
+  capture();
+  window.addEventListener('medon:permission-change',capture);
+  document.addEventListener('astro:page-load',capture);
+</script>
