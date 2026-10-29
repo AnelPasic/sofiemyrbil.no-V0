@@ -4,16 +4,22 @@
  * Inneholder de nøyaktige feltene låst med eier:
  * E-post *, Telefon *, Reg. nr. *, Tjenester (sjekkbokser) og Melding (textarea).
  */
+interface Props { eyebrow?: string; heading?: string; intro?: string; }
+const {
+  eyebrow = 'Timebestilling & Prisforespørsel',
+  heading = 'Bestill verkstedtime eller få prisoverslag',
+  intro = 'Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris.',
+} = Astro.props;
 ---
 <section id="bestilling-skjema" class="mws-booking-section">
   <div class="mws-booking-card">
     <div class="mws-booking-header">
-      <span class="badge badge-primary">Timebestilling & Prisforespørsel</span>
-      <h2>Bestill verkstedtime eller få prisoverslag</h2>
-      <p>Fyll ut feltene under, så kontakter en av våre bilmekanikere deg raskt for å bekrefte tidspunkt og pris.</p>
+      <span class="badge badge-primary">{eyebrow}</span>
+      <h2>{heading}</h2>
+      <p>{intro}</p>
     </div>
 
-    <form class="mws-booking-form" id="mws-booking-form">
+    <form class="mws-booking-form" id="mws-booking-form" method="post" action="/bestilling/">
       <div class="mws-form-grid">
         <div class="form-control">
           <label class="label font-semibold" for="booking-regnr">
@@ -110,9 +116,12 @@
         ></textarea>
       </div>
 
+      <div class="alert alert-warning mt-6" role="status" data-booking-unavailable>
+        <span><strong>Innsending er ikke aktiv ennå.</strong> Skjemaet er under oppsett og sender ingen opplysninger. Ring verkstedet for å avtale time.</span>
+      </div>
       <div class="mws-booking-actions">
-        <button type="submit" class="btn btn-primary btn-lg w-full md:w-auto">
-          Send bestillingsforespørsel
+        <button type="button" class="btn btn-primary btn-lg w-full md:w-auto" disabled aria-disabled="true">
+          Innsending kommer snart
         </button>
         <div class="mws-call-direct">
           <span>Eller ring oss direkte:</span>
@@ -125,13 +134,6 @@
         </div>
       </div>
 
-      <div id="mws-form-feedback" class="alert alert-success mt-4 hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        <div>
-          <h4 class="font-bold">Takk for din bestillingsforespørsel!</h4>
-          <p class="text-sm">Vi har mottatt opplysningene dine og kontakter deg innen kort tid for å bekrefte tidspunkt og pris.</p>
-        </div>
-      </div>
     </form>
   </div>
 </section>
@@ -235,15 +237,8 @@
 </style>
 
 <script>
-  const bookingForms = document.querySelectorAll<HTMLFormElement>('#mws-booking-form');
-  bookingForms.forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const feedback = form.querySelector('#mws-form-feedback');
-      if (feedback) {
-        feedback.classList.remove('hidden');
-        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    });
+  // Preview-only: stop implicit Enter-key submission; nothing is sent until a real intake is installed.
+  document.querySelectorAll<HTMLFormElement>('#mws-booking-form').forEach((form) => {
+    form.addEventListener('submit', (event) => event.preventDefault());
   });
 </script>

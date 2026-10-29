@@ -177,3 +177,47 @@ test('desktop Pagefind search button is centered and unboxed like the Oslo refer
  assert.ok(css.includes('--pf-background: transparent;'));
  assert.ok(css.includes('--pf-border: transparent;'));
 });
+
+test('booking form uses Global Innhold and reuses one CMS source across pages',()=>{
+ const cms=YAML.parse(read('.pages.yml'));
+ const globalGroup=cms.content.find(x=>x.name==='globalContentGroup');
+ const collection=globalGroup.items.find(x=>x.name==='sharedContent');
+ const widget=collection.fields.find(x=>x.name==='widget');
+ assert.ok(widget,'Global Innhold must expose a form type');
+ assert.deepEqual(widget.options.values.map(x=>x.name),['content','bookingForm']);
+ assert.equal(cms.components.builderSharedPlacement.fields[0].options.collection,'sharedContent');
+ const booking=json('src/content/global-content/bestilling-skjema.json');
+ assert.equal(booking.widget,'bookingForm');
+ assert.equal(booking.id,'bestilling-skjema');
+ assert.equal(shared['bestilling-skjema'].heading,booking.heading);
+ const widgetValues=['content','bookingForm'];
+ for(const widget of widgetValues){
+  const parsed=validateSharedContentEntries({'test.json':{...booking,id:'test',widget}});
+  assert.equal(parsed.test.widget,widget);
+ }
+ assert.throws(()=>validateSharedContentEntries({'test.json':{...booking,id:'test',widget:'unknown'}}));
+ const secondary={...shared['bestilling-skjema'],id:'booking-alt'};
+ const duplicated={...pages.find(x=>x.slug==='bestilling'),sections:[
+  {_block:'sharedContent',entry:'bestilling-skjema'},
+  {_block:'sharedContent',entry:'booking-alt'},
+ ]};
+ assert.throws(()=>resolveSections(duplicated,masters,pages,[],{...shared,'booking-alt':secondary}),/Only one booking form/);
+ for(const slug of ['bestilling','kontakt']){
+  const page=pages.find(x=>x.slug===slug);
+  const placed=page.sections.filter(s=>s._block==='sharedContent'&&s.entry==='bestilling-skjema');
+  assert.equal(placed.length,1,'One shared form reference on '+slug);
+  const sections=resolveSections(page,masters,pages,[],shared);
+  assert.equal(sections.filter(s=>s.type==='content'&&'widget' in s.section&&s.section.widget==='bookingForm').length,1);
+ }
+ const placedHome={...home,sections:[...home.sections,{_block:'sharedContent',entry:'bestilling-skjema'}]};
+ assert.equal(resolveSections(placedHome,masters,pages,[],shared).filter(s=>s.type==='content'&&'widget' in s.section&&s.section.widget==='bookingForm').length,1,'Form may be placed anywhere through CMS');
+ assert.doesNotMatch(read('src/components/PageView.astro'),/BookingForm/,'Hardcoded booking form removed');
+ assert.match(read('src/components/PageSections.astro'),/item\.section\.widget === 'bookingForm'/);
+ const form=read('src/components/BookingForm.astro');
+ assert.match(form,/data-booking-unavailable/,'No-backend status visible');
+ assert.match(form,/disabled aria-disabled="true"/);
+ assert.doesNotMatch(form,/Vi har mottatt opplysningene/,'Cannot claim a request was received');
+ assert.match(form,/method="post" action="\/bestilling\/"/,'No GET submission with personal data');
+ assert.match(form,/event\.preventDefault\(\)/,'Implicit Enter submit is blocked without a backend');
+ assert.doesNotMatch(form,/Takk for din bestillingsforespørsel/,'No fake success message');
+});
