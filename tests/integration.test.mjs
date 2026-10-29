@@ -215,7 +215,10 @@ test('booking form uses Global Innhold and reuses one CMS source across pages',(
  assert.match(read('src/components/PageSections.astro'),/item\.section\.widget === 'bookingForm'/);
  const form=read('src/components/BookingForm.astro');
  assert.match(form,/data-booking-unavailable/,'No-backend status visible');
- assert.match(form,/disabled aria-disabled="true"/);
+ assert.match(form,/data-booking-submit disabled/,'Submit remains disabled in raw HTML until JS and approved endpoint are ready');
+ assert.match(form,/PUBLIC_LEAD_ENDPOINT/,'Frontend endpoint must be explicit');
+ assert.match(form,/PUBLIC_LEADS_ENABLED/,'Owner-controlled switch must gate real requests');
+ assert.match(form,/receipt_status !== 'stored'/,'Success needs a durable D1 acknowledgement');
  assert.doesNotMatch(form,/Vi har mottatt opplysningene/,'Cannot claim a request was received');
  assert.match(form,/method="post" action="\/bestilling\/"/,'No GET submission with personal data');
  assert.match(form,/event\.preventDefault\(\)/,'Implicit Enter submit is blocked without a backend');
