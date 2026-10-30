@@ -17,6 +17,9 @@ test('existing booking fields map to the installed generic schema without losing
   assert.throws(()=>validate({...payload,services:['unavailable']},canonical));
 });
 test('customer install has no copied backend, dashboard or D1 migrations',()=>{
+  const config=JSON.parse(readFileSync(new URL('../lead-intake/site.config.json',import.meta.url),'utf8'));
+  assert.equal(config.privacy,undefined,'Internal operating policy belongs in the private central registry');
+  assert.equal(config.access,undefined,'Private operator configuration must not be published in this repository');
   const {files}=JSON.parse(readFileSync(new URL('../lead-intake/kit-lock.json',import.meta.url),'utf8'));
   assert.equal(existsSync(new URL('../intake-worker/src/worker.mjs',import.meta.url)),false,'Old customer backend must be removed');
   for(const path of Object.keys(files))assert.doesNotMatch(path,/^src\/worker\.mjs$|admin\.|migrations|notify\.mjs/);

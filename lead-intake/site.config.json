@@ -1,8 +1,4 @@
 {
-  "installationMode": "customer",
-  "deployment": {
-    "mode": "workers-dev"
-  },
   "siteId": "sofiemyrbil.no",
   "siteLabel": "Sofiemyr Bil",
   "siteOrigin": "https://sofiemyrbil-no-v0.anel.workers.dev",
@@ -11,52 +7,8 @@
   "databaseName": "sofiemyrbil-mws-leads",
   "databaseId": "9a2534a3-b0cf-4481-abc8-0c4a0c29efe7",
   "accountId": "f772a1f16c82756f67e76357c4e5adaf",
+  "installationMode": "customer",
   "timezone": "Europe/Oslo",
-  "backendStage": "production",
-  "access": {
-    "issuer": "https://medon-anel.cloudflareaccess.com",
-    "audience": "1da77cd765079010cdbf7c6ce7070016f2db4484556d02c0a727e306eca602d2",
-    "admins": [
-      "anel@medon.no"
-    ]
-  },
-  "privacy": {
-    "controller": "Sofiemyr Bil AS (977 345 618)",
-    "contact": "firma@sofiemyrbil.no",
-    "noticeUrl": "https://sofiemyrbil-no-v0.anel.workers.dev/personvern/",
-    "approved": true,
-    "retentionMode": "manual",
-    "retentionReview": {
-      "reviewedAt": "2026-10-29T17:07:50.767411+00:00",
-      "everyDays": 90,
-      "owner": "anel@medon.no"
-    },
-    "receiptHistoryStartedAt": "2026-10-29T16:54:06.567Z",
-    "hitRetentionDays": 400
-  },
-  "enabled": {
-    "leads": true,
-    "orders": false,
-    "notifications": true,
-    "hits": true
-  },
-  "attribution": {
-    "mode": "consent",
-    "consentCookie": "sofiemyr_attribution_permission"
-  },
-  "trackingStartedAt": "2026-10-29T21:03:18.773560+00:00",
-  "hitPaths": [
-    "/",
-    "/bestilling/",
-    "/kontakt/",
-    "/eu-kontroll/",
-    "/tjeneste/",
-    "/priser/",
-    "/om/",
-    "/personvern/",
-    "/artikkel/"
-  ],
-  "packages": [],
   "forms": {
     "verksted-foresporsel": {
       "label": "Verkstedforespørsel",
@@ -92,5 +44,6 @@
         }
       }
     }
-  }
+  },
+  "packages": []
 }
