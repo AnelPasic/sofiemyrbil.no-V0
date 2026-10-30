@@ -45,5 +45,12 @@
       }
     }
   },
-  "packages": []
+  "packages": [],
+  "privacy": {
+    "approved": true
+  },
+  "attribution": {
+    "mode": "consent",
+    "consentCookie": "sofiemyr_attribution_permission"
+  }
 }

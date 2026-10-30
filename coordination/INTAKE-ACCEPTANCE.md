@@ -1,6 +1,6 @@
 # MWS intake installation - 2026-10-29
 
-State (2026-10-30): deployed on existing preview; real acceptance is incomplete. Mail delivery and authenticated dashboard/export are not yet verified.
+State (2026-10-30): deployed on existing preview. Gmail delivery is verified; OWNER confirmed actual authenticated dashboard/export/reporting. Final correction CI and complete acceptance are still tracked below.
 
 The existing preview remains `https://sofiemyrbil-no-v0.anel.workers.dev/`, noindex preserved. Existing booking and contact pages still use the one `bestilling-skjema` CMS source. Field layout, all six service choices and EU inspection price 1 450 NOK remain unchanged. Submission is an enquiry; the workshop confirms time and price.
 
@@ -18,4 +18,8 @@ Actual checks: clearly synthetic preview form submission returned201 after D1 st
 
 Local source checks passed before source merge: strict Astro, booking transport, preserved site tests and Astro/Pagefind build. This follow-up reran only the2 affected transport/boundary tests. The public customer configuration now contains identity/form data only; private operating policy is managed centrally and is absent from current customer files and public site/privacy output. Earlier Git history is not rewritten. Runtime configuration and pinned adapter files are unchanged.
 
-Remaining: owner must rotate/revoke the old Resend credential and complete actual Access login. Notifications remain deliberately paused; the synthetic receipt is pending with zero send attempts. No actual email delivery is claimed. Authenticated dashboard/CSV/JSON, period controls, live estimated/unknown attribution and final owner acceptance remain open. MWS is not marked READY_OUT_OF_BOX. Internal evidence and provider details are maintained in the private MWS repository.
+OWNER confirmed the new Resend key is stored and the old key revoked. Central recovery deployed intake version `2d3d57c6-b9fb-41a6-8ca2-5988e872c660` from the same pinned source with lead and notification flags restored, retaining the new Secrets. The queued synthetic receipt was accepted by Resend on its first send attempt. Actual Gmail INBOX receipt was verified at2026-10-30T08:55:59Z with matching receipt reference and synthetic marker. Headers include both approved recipients; independent delivery to the second mailbox is not claimed.
+
+OWNER confirmed actual Access login and dashboard, synthetic campaign receipt, JSON/CSV, 30d/90d/6m/1y, week/month and comparison controls. These checks are OWNER-confirmed in their authenticated session; anonymous denial was separately tool-verified. Two further clearly synthetic actual preview submissions prove estimated IP-match attribution and unknown attribution after explicit denial. Both returned201/stored, with the expected D1 classification and one accepted send attempt. No denied measurement was recovered from campaign memory.
+
+Follow-up CI/merge is tracked in customer PR #9 and MWS PR #67. Overall owner release acceptance of the generic kit remains separate; MWS is not marked READY_OUT_OF_BOX. Internal evidence and provider details are maintained in the private MWS repository.
