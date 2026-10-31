@@ -91,8 +91,8 @@
       ],
       "links": [
         {
-          "label": "Les om EU-kontroll til kr 1 450,-",
-          "href": "/eu-kontroll/"
+          "label": "Bestill EU-kontroll – kr 1 450,-",
+          "href": "/bestilling/?tjeneste=eu-kontroll"
         }
       ],
       "visibility": "visible"
