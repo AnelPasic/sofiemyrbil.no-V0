@@ -135,23 +135,26 @@
         {
           "title": "Etablert i 1997",
           "text": "Sofiemyr Bil ble etablert i 1997 og har lang erfaring med service og reparasjoner for bileiere i Kolbotn og omegn.",
-          "href": "/#etablert",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         },
         {
           "title": "Ford-ekspertise & Alle merker",
           "text": "Særlig erfaring med Ford, samtidig som verkstedet utfører service og reparasjoner på mange andre bilmerker.",
-          "href": "/#ekspertise",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         },
         {
           "title": "Fem ansatte på verkstedet",
           "text": "Sofiemyr Bil oppgir fem ansatte og legger vekt på personlig service fra et erfarent verkstedteam.",
-          "href": "/#erfaring",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         }
       ],
       "visibility": "visible"
