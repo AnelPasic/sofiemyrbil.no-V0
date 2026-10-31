@@ -31,6 +31,6 @@ const canonical = new URL(publicPath(page.slug), Astro.site);
   <SiteChromeHeader config={chrome} />
   <main id="main" data-pagefind-body={page.slug !== '404' && page.slug !== 'design-system' ? '' : undefined} data-pagefind-ignore={page.slug === '404' || page.slug === 'design-system' ? '' : undefined}><slot /></main>
   <SiteChromeFooter config={chrome} />
-  <Attribution showChoice />
+  <Attribution />
 </body>
 </html>
