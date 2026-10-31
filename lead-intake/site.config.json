@@ -50,7 +50,7 @@
     "approved": true
   },
   "attribution": {
-    "mode": "consent",
+    "mode": "off",
     "consentCookie": "sofiemyr_attribution_permission"
   }
 }
