@@ -11,7 +11,7 @@
     "title": "Reparasjon av bil og varebil på Kolbotn",
     "support": "Trenger bilen nye slitedeler eller utbedring av en feil? Sofiemyr Bil reparerer Ford og andre bilmerker. Vi avklarer symptomer, arbeid og pris før reparasjonen avtales.",
     "primaryCta": {
-      "label": "Send forespørsel om time",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -44,6 +44,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "reparasjoner-hjelp",
@@ -121,11 +126,6 @@
           "href": "/service/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]

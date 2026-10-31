@@ -2,16 +2,18 @@
 import type { BuilderPage } from '../page-builder';
 import { pages, masters, sharedContent, heroProofCases } from '../lib/load-site';
 import { resolveHeroProof } from '../lib/hero-proof';
+import { resolveBookingHero } from '../lib/booking-cta';
 import BaseLayout from './BaseLayout.astro';
 import Hero from './Hero.astro';
 import PageSections from './PageSections.astro';
 interface Props { page: BuilderPage; }
 const { page } = Astro.props;
 const featuredProof=resolveHeroProof(page.hero,masters,heroProofCases);
+const hero=resolveBookingHero(page,sharedContent);
 ---
 <BaseLayout page={page}>
   <div class="mws-main-shell">
-    <Hero hero={page.hero} featuredProof={featuredProof} isHome={page.kind === 'home'} />
+    <Hero hero={hero} featuredProof={featuredProof} isHome={page.kind === 'home'} />
     <div class="mws-page-content">
       <PageSections page={page} pages={pages} masters={masters} sharedContent={sharedContent} />
     </div>

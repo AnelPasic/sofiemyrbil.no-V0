@@ -11,7 +11,7 @@
     "title": "Ford-verksted på Kolbotn – også for andre bilmerker",
     "support": "Sofiemyr Bil er et lokalt bilverksted med særlig erfaring med Ford og tilknytning til Follo Autoco, Ford-miljøet i Ski. Vi hjelper med service, feilsøking, reparasjoner og EU-kontroll – også når bilen din har et annet merke.",
     "primaryCta": {
-      "label": "Send verkstedforespørsel",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -48,6 +48,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "ford-verkstedtjenester",
@@ -135,11 +140,6 @@
           "boxVariant": "card"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]

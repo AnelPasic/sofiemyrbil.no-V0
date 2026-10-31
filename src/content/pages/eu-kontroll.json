@@ -11,7 +11,7 @@
     "title": "EU-kontroll til fastpris kr. 1450,-",
     "support": "Sofiemyr Bil AS er registrert som godkjent kontrollorgan for EU-kontroll. Vi utfører periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg — effektivt, grundig og til en forutsigbar pris.",
     "primaryCta": {
-      "label": "Send forespørsel om EU-kontroll",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -58,6 +58,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "hva-inngaar",
@@ -146,11 +151,6 @@
           "href": "/bestilling/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]

@@ -11,7 +11,7 @@
     "title": "Service og EU-kontroll på bobil opptil 3,5 tonn",
     "support": "Bobilen trenger vedlikehold også mellom turene. Sofiemyr Bil tilbyr mekanisk verkstedarbeid og EU-kontroll på aktuelle bobiler opptil 3 500 kg. Kontakt oss med opplysninger om bobilen før du leverer.",
     "primaryCta": {
-      "label": "Send forespørsel om time",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -44,6 +44,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "bobil-hva",
@@ -121,11 +126,6 @@
           "href": "/bestilling/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]

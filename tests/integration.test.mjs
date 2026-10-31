@@ -7,6 +7,7 @@ import YAML from 'yaml';
 import { surfaceChoices, semanticSurfaces, legacySurfaces } from '../src/lib/surface-catalog.ts';
 import { builderPageSchema, publicPath, resolveSections, validateSharedContentEntries, ordinaryFields } from '../src/page-builder.ts';
 import { resolveHeroProof } from '../src/lib/hero-proof.ts';
+import { resolveBookingHero } from '../src/lib/booking-cta.ts';
 import { composeSiteChrome } from '../src/lib/site-chrome-content.ts';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = p => readFileSync(join(root,p),'utf8');
@@ -344,4 +345,38 @@ test('EU-kontroll price CTA goes straight to the booking form and preselects tha
  assert.match(booking,/new URLSearchParams\(window\.location\.search\)\.get\('tjeneste'\) === 'eu-kontroll'/);
  assert.match(booking,/input\[name="services"\]\[value="EU-Kontroll"\]/);
  assert.match(booking,/euControl\.checked = true/);
+});
+
+test('service CTAs target the first visible booking section and never a hidden anchor',()=>{
+ const slugs=['service','diagnose','reparasjoner','bobilservice','flateavtale','tjeneste','eu-kontroll','ford-verksted'];
+ for(const slug of slugs){
+  const page=pages.find(p=>p.slug===slug);
+  assert.ok(page,'Missing service page: '+slug);
+  assert.equal(page.kind,'service');
+  assert.equal(page.sections[0]._block,'sharedContent','Booking must be the first section after hero: '+slug);
+  assert.equal(page.sections[0].entry,'bestilling-skjema');
+  assert.equal(page.sections[0].visibility,'visible');
+  const visible=resolveSections(page,masters,pages,[],shared);
+  assert.equal(visible[0].type,'content','First resolved section must render form on '+slug);
+  assert.equal(visible[0].section.widget,'bookingForm','First visible section must be the booking widget on '+slug);
+  assert.deepEqual(resolveBookingHero(page,shared).primaryCta,
+   {label:'Bestill time',href:'#bestilling-skjema'},'Visible booking should receive a local hero CTA: '+slug);
+  assert.deepEqual(page.hero.primaryCta,
+   {label:'Bestill time',href:'/bestilling/'},'CMS should retain safe external fallback: '+slug);
+  const hidden={...page,sections:page.sections.map(section=>section._block==='sharedContent' &&
+   section.entry==='bestilling-skjema'?{...section,visibility:'hidden'}:section)};
+  assert.deepEqual(resolveBookingHero(hidden,shared).primaryCta,
+   {label:'Bestill time',href:'/bestilling/'},'Hidden booking must not create dead anchor on '+slug);
+  const removed={...page,sections:page.sections.filter(section=>section._block!=='sharedContent' ||
+   section.entry!=='bestilling-skjema')};
+  assert.deepEqual(resolveBookingHero(removed,shared).primaryCta,
+   {label:'Bestill time',href:'/bestilling/'},'Removed booking must fall back on '+slug);
+ }
+ // The homepage is owned by the parallel thread and must retain its exact current hero.
+ assert.equal(resolveBookingHero(home,shared),home.hero);
+ assert.equal(home.hero.primaryCta.href,'/bestilling/');
+ const view=read('src/components/PageView.astro');
+ assert.match(view,/resolveBookingHero\(page,sharedContent\)/);
+ assert.match(view,/<Hero hero=\{hero\}/);
+ assert.match(read('src/components/BookingForm.astro'),/<section id="bestilling-skjema"/);
 });
