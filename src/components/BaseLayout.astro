@@ -32,5 +32,9 @@ const canonical = new URL(publicPath(page.slug), Astro.site);
   <main id="main" data-pagefind-body={page.slug !== '404' && page.slug !== 'design-system' ? '' : undefined} data-pagefind-ignore={page.slug === '404' || page.slug === 'design-system' ? '' : undefined}><slot /></main>
   <SiteChromeFooter config={chrome} />
   <Attribution />
+  <!-- Retire the previous source-measurement choice cookie when the optional feature is off. -->
+  <script is:inline>
+    document.cookie = 'sofiemyr_attribution_permission=; Max-Age=0; Path=/; Secure; SameSite=Lax';
+  </script>
 </body>
 </html>
