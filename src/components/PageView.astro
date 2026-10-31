@@ -11,7 +11,7 @@ const featuredProof=resolveHeroProof(page.hero,masters,heroProofCases);
 ---
 <BaseLayout page={page}>
   <div class="mws-main-shell">
-    <Hero hero={page.hero} featuredProof={featuredProof} />
+    <Hero hero={page.hero} featuredProof={featuredProof} isHome={page.kind === 'home'} />
     <div class="mws-page-content">
       <PageSections page={page} pages={pages} masters={masters} sharedContent={sharedContent} />
     </div>

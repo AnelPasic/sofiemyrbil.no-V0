@@ -1,12 +1,12 @@
 ---
 import type { BuilderPage } from '../page-builder';
 import type {HeroProofCase} from '../lib/hero-proof';
-interface Props { hero: BuilderPage['hero']; featuredProof?:HeroProofCase; }
-const { hero,featuredProof } = Astro.props;
+interface Props { hero: BuilderPage['hero']; featuredProof?:HeroProofCase; isHome?: boolean; }
+const { hero,featuredProof,isHome=false } = Astro.props;
 const emphasisAt=hero.titleEmphasis==='first-sentence'?hero.title.indexOf('.'):-1;
 const image = hero.visual.kind === 'image' ? hero.visual.image : undefined;
 ---
-<section class:list={['mws-starter-hero', image && 'has-image']} data-layout={hero.layout}>
+<section class:list={['mws-starter-hero', image && 'has-image',isHome&&'mws-home-hero']} data-layout={hero.layout}>
   <div class="mws-starter-hero-copy">
     {hero.eyebrow && <p class="mws-starter-eyebrow">{hero.eyebrow}</p>}
     <h1>{emphasisAt>=0?<><span class="hero-emphasis">{hero.title.slice(0,emphasisAt+1)}</span>{hero.title.slice(emphasisAt+1)}</>:hero.title}</h1>
@@ -15,8 +15,20 @@ const image = hero.visual.kind === 'image' ? hero.visual.image : undefined;
       {hero.primaryCta && <a class="btn btn-primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>}
       {hero.secondaryCta && <a class="btn btn-outline" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>}
     </div>
+    {isHome && <div class="mws-home-hero-facts" aria-label="Kort om Sofiemyr Bil">
+      <span>Spesialister på Ford</span>
+      <span>Service på alle merker</span>
+      <span>Kolbotn siden 1997</span>
+    </div>}
   </div>
-  {image && <div class="mws-starter-hero-media"><img src={image.src} alt={image.alt} width="1200" height="900" decoding="async" style={{ objectPosition: image.positionX + '% ' + image.positionY + '%' }} />{featuredProof&&<aside class="hero-proof" aria-label="Dokumentert resultat"><strong>{featuredProof.metric}</strong><span>{featuredProof.displayName} – {featuredProof.context}</span></aside>}</div>}
+  {image && <div class="mws-starter-hero-media">
+    <img src={image.src} alt={image.alt} width="1200" height="900" decoding="async" fetchpriority={isHome ? 'high' : undefined} style={{ objectPosition: image.positionX + '% ' + image.positionY + '%' }} />
+    {isHome && <aside class="mws-home-ford-note" aria-label="Ford-tilknytning">
+      <img src="/images/brands/ford.svg" alt="Ford" width="84" height="34" loading="eager" />
+      <div><strong>Ford-kompetanse</strong><span>En del av Follo Autoco – Ford i Ski. Verksted for alle bilmerker.</span></div>
+    </aside>}
+    {featuredProof&&<aside class="hero-proof" aria-label="Dokumentert resultat"><strong>{featuredProof.metric}</strong><span>{featuredProof.displayName} – {featuredProof.context}</span></aside>}
+  </div>}
 </section>
 <style>
 .mws-starter-hero { padding: clamp(3.5rem, 9vw, 7rem) 0; display:grid; align-items:center; gap:clamp(2rem,5vw,5rem); }
@@ -34,6 +46,26 @@ const image = hero.visual.kind === 'image' ? hero.visual.image : undefined;
 .mws-starter-hero-media { min-width:0; }
 .mws-starter-hero-media img { width:100%; height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-box,1rem); }
 .hero-emphasis{color:var(--color-primary)}
+.mws-home-hero{padding-block:clamp(2.25rem,5vw,4.75rem);gap:clamp(1.5rem,4vw,4rem);}
+.mws-home-hero .mws-starter-hero-copy{max-width:38rem;}
+.mws-home-hero h1{font-size:clamp(2.15rem,4.4vw,4.1rem);line-height:1.06;letter-spacing:-.05em;text-wrap:balance;}
+.mws-home-hero .hero-emphasis{color:var(--color-primary);}
+.mws-home-hero .mws-starter-eyebrow{color:var(--color-primary);font-size:.77rem;}
+.mws-home-hero .mws-starter-hero-copy>p:not(.mws-starter-eyebrow){color:var(--color-base-content);opacity:.86;max-width:54ch;}
+.mws-home-hero .mws-starter-hero-actions .btn{min-height:3rem;padding-inline:1.3rem;font-weight:700;}
+.mws-home-hero-facts{display:flex;gap:.5rem .75rem;flex-wrap:wrap;margin-top:1.6rem;padding-top:1.35rem;border-top:1px solid var(--color-base-300);}
+.mws-home-hero-facts span{font-size:.82rem;color:var(--color-base-content);font-weight:600;display:inline-flex;align-items:center;gap:.5rem;}
+.mws-home-hero-facts span+span::before{content:'·';color:var(--color-primary);font-weight:800;font-size:1rem;}
+.mws-home-hero .mws-starter-hero-media{position:relative;min-width:0;}
+.mws-home-hero .mws-starter-hero-media>img{aspect-ratio:5/4;min-height:20rem;border-radius:1.15rem;box-shadow:0 12px 42px color-mix(in srgb,var(--color-base-content) 12%,transparent);}
+.mws-home-ford-note{position:absolute;left:clamp(.75rem,3vw,1.4rem);right:clamp(.75rem,3vw,1.4rem);bottom:clamp(.75rem,3vw,1.4rem);display:flex;align-items:center;gap:.9rem;padding:.75rem 1.05rem;border-radius:.8rem;background:color-mix(in srgb,var(--color-base-100) 96%,transparent);color:var(--color-base-content);border:1px solid var(--color-base-300);box-shadow:0 10px 30px color-mix(in srgb,var(--color-base-content) 9%,transparent);}
+.mws-home-ford-note img{flex:0 0 4.2rem;width:4.2rem;height:auto;max-height:2.6rem;object-fit:contain;}
+.mws-home-ford-note div{min-width:0;display:grid;gap:.12rem;}
+.mws-home-ford-note strong{font-weight:750;font-size:.9rem;}
+.mws-home-ford-note span{font-size:.74rem;line-height:1.4;opacity:.78;}
+@media(max-width:900px){.mws-home-hero.has-image{grid-template-columns:1fr;}.mws-home-hero .mws-starter-hero-media{max-width:45rem;}.mws-home-hero .mws-starter-hero-copy{max-width:45rem;}}
+@media(max-width:540px){.mws-home-hero{padding-block:2rem;}.mws-home-hero-facts{gap:.5rem;}.mws-home-hero-facts span{font-size:.75rem;}.mws-home-ford-note{gap:.7rem;padding:.65rem .8rem;}.mws-home-ford-note img{flex-basis:3.7rem;width:3.7rem;}.mws-home-ford-note span{font-size:.69rem;}}
+
 .hero-proof{position:relative;margin:-2rem 1rem 0 auto;z-index:1;max-width:18rem;display:grid;gap:.3rem;padding:1rem;border-radius:var(--radius-box,1rem);background:var(--color-base-100);color:var(--color-base-content);box-shadow:0 12px 40px color-mix(in srgb,var(--color-base-content) 15%,transparent)}
 .hero-proof strong{font-size:1.4rem}
 .mws-starter-eyebrow { font-size:.83rem; font-weight:700; text-transform:uppercase;letter-spacing:.1em; }
