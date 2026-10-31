@@ -75,7 +75,7 @@
       "items": [
         {
           "title": "Periodisk Service",
-          "text": "Inkluderer motorolje av riktig spesifikasjon, oljefilter, sikkerhetssjekk og stempel i serviceheftet. Service dokumenteres i tråd med bilprodusentens krav.",
+          "text": "Innholdet tilpasses bilmodell og produsentens serviceprogram. Olje og oljefilter skiftes der dette er aktuelt, og utført arbeid dokumenteres.",
           "surface": "soft",
           "boxVariant": "card"
         },
