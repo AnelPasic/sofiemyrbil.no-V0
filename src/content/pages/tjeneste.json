@@ -7,7 +7,7 @@
   },
   "hero": {
     "layout": "centered-none",
-    "eyebrow": "Spesialist på Ford – Godkjent for alle merker",
+    "eyebrow": "Ford-kompetanse – verksted for flere bilmerker",
     "title": "Verkstedtjenester og profesjonell bilservice på Kolbotn",
     "support": "Vi har moderne diagnoseutstyr, erfarne mekanikere og godkjent kapasitet for kjøretøy inntil 3 500 kg. Vi tar vare på bilen din slik at bruktbilverdien og tryggheten bevares.",
     "primaryCta": {
@@ -41,7 +41,7 @@
     {
       "_block": "content",
       "id": "tjenesteoversikt",
-      "eyebrow": "Autorisert bilverksted",
+      "eyebrow": "Godkjent bilverksted",
       "heading": "Vårt fagområde",
       "body": "Hos Sofiemyr Bil AS dekker vi hele spekteret av mekanisk arbeid og service for alle drivlinjer – enten du kjører en moderne elbil, en klassisk bensinbil, en trofast Ford Transit varebil eller en bobil.",
       "layout": "three-columns",
@@ -57,7 +57,7 @@
         },
         {
           "title": "Intervallservice & Vedlikehold",
-          "text": "Full service etter produsentens intervall med dokumentasjon av arbeidet. Nybilgarantien avhenger av at produsentens serviceprogram og øvrige garantivilkår følges.",
+          "text": "Service etter produsentens intervall med dokumentasjon av arbeidet. Nybilgarantien avhenger av at produsentens serviceprogram og øvrige garantivilkår følges.",
           "href": "/kontakt/",
           "label": "Bestill service",
           "surface": "default",
@@ -65,7 +65,7 @@
         },
         {
           "title": "Avansert Diagnose",
-          "text": "Feilsøking på motorstyring, ABS, ESP, airbags og bilelektronikk med nyeste diagnoseutstyr.",
+          "text": "Feilsøking på motorstyring, ABS, ESP, airbags og bilelektronikk med diagnoseutstyr.",
           "href": "/kontakt/",
           "label": "Forespør diagnose",
           "surface": "default",
