@@ -267,14 +267,19 @@ components:
 # PAGE_BUILDER_CHOICES_BEGIN
         - { name: "404", label: "404 – Siden finnes ikke | Sofiemyr Bil AS" }
         - { name: "bestilling", label: "Bestill verkstedtime | Sofiemyr Bil AS Kolbotn" }
+        - { name: "bobilservice", label: "Bobilservice og EU-kontroll på Kolbotn | Sofiemyr Bil" }
+        - { name: "diagnose", label: "Diagnose og feilsøking bil i Kolbotn | Sofiemyr Bil" }
         - { name: "eu-kontroll", label: "EU-kontroll Kolbotn – Fastpris kr 1 450,- | Sofiemyr Bil AS" }
+        - { name: "flateavtale", label: "Flåteavtale og firmabilservice Kolbotn | Sofiemyr Bil" }
         - { name: "home", label: "Sofiemyr Bil AS | Autorisert bilverksted på Kolbotn – Ford-spesialist" }
         - { name: "innsikt/artikkel", label: "Slik sjekker du fristen for EU-kontroll | Sofiemyr Bil AS" }
         - { name: "kontakt", label: "Kontakt oss & Bestill time | Sofiemyr Bil AS – Skiveien 42" }
         - { name: "om", label: "Om oss | Sofiemyr Bil AS – Bilverksted på Kolbotn siden 1997" }
         - { name: "personvern", label: "Personvernerklæring | Sofiemyr Bil AS" }
         - { name: "priser", label: "Priser & Bestilling | Sofiemyr Bil AS – EU-kontroll kr 1 450,-" }
-        - { name: "tjeneste", label: "Verkstedtjenester & Service | Sofiemyr Bil AS Kolbotn" }
+        - { name: "reparasjoner", label: "Bilreparasjon på Kolbotn – Ford og flere merker | Sofiemyr Bil" }
+        - { name: "service", label: "Bilservice i Kolbotn – Ford og andre merker | Sofiemyr Bil" }
+        - { name: "tjeneste", label: "Verkstedtjenester Kolbotn – Service, EU-kontroll | Sofiemyr Bil" }
 # PAGE_BUILDER_CHOICES_END
   builderSections:
     type: block
@@ -814,9 +819,84 @@ content:
       - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
 
   - name: starterTjeneste
-    label: En tydelig tjeneste
+    label: Alle verkstedtjenester
     type: file
     path: src/content/pages/tjeneste.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterService
+    label: Bilservice
+    type: file
+    path: src/content/pages/service.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterDiagnose
+    label: Feilsøking og diagnose
+    type: file
+    path: src/content/pages/diagnose.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterReparasjoner
+    label: Reparasjoner
+    type: file
+    path: src/content/pages/reparasjoner.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterBobilservice
+    label: Bobilservice
+    type: file
+    path: src/content/pages/bobilservice.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterFlateavtale
+    label: Flåteavtaler
+    type: file
+    path: src/content/pages/flateavtale.json
     format: json
     operations: { create: false, delete: false, rename: false }
     fields:
