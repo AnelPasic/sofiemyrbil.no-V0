@@ -252,7 +252,7 @@ test('dedicated services have distinct SEO, CMS paths, links and one reusable bo
    for(const card of sec.items){
     if(card.href?.startsWith('/'))assert.ok(paths.has(card.href),'Broken card href '+card.href+' on '+slug);
    }
-   for(const link of sec.links??[])assert.ok(paths.has(link.href),'Broken CTA '+link.href+' on '+slug);
+   for(const link of sec.links??[])assert.ok(paths.has(new URL(link.href,'https://sofiemyrbil.no').pathname),'Broken CTA '+link.href+' on '+slug);
   }
   assert.ok(paths.has(page.hero.secondaryCta?.href));
   const editor=cms.content.find(x=>x.path==='src/content/pages/'+slug+'.json');
@@ -330,4 +330,18 @@ test('Ford workshop landing targets relevant intent without inventing Ford brand
  assert.ok(read('.pages.yml').includes('src/content/pages/ford-verksted.json'));
  const faq=home.faq.find(x=>x.question.includes('bobil'));
  assert.match(faq.answer,/bobil/);
+});
+
+test('EU-kontroll price CTA goes straight to the booking form and preselects that service',()=>{
+ const ford=pages.find(page=>page.slug==='ford-verksted');
+ const cta=ford.sections.flatMap(section=>section.links??[]).find(link=>link.label.startsWith('Bestill EU-kontroll'));
+ assert.ok(cta,'Ford landing must have a conversion CTA');
+ assert.equal(cta.label,'Bestill EU-kontroll – kr 1 450,-');
+ const target=new URL(cta.href,'https://sofiemyrbil.no');
+ assert.equal(target.pathname,'/bestilling/');
+ assert.equal(target.searchParams.get('tjeneste'),'eu-kontroll');
+ const booking=read('src/components/BookingForm.astro');
+ assert.match(booking,/new URLSearchParams\(window\.location\.search\)\.get\('tjeneste'\) === 'eu-kontroll'/);
+ assert.match(booking,/input\[name="services"\]\[value="EU-Kontroll"\]/);
+ assert.match(booking,/euControl\.checked = true/);
 });

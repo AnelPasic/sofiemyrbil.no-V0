@@ -261,6 +261,12 @@ const intakeConfigured = enabledByOwner && endpointValid;
     const endpoint = form.dataset.endpoint;
     const button = form.querySelector<HTMLButtonElement>('[data-booking-submit]');
     const feedback = form.querySelector<HTMLElement>('[data-booking-feedback]');
+    // Booking CTAs can select a relevant service before the customer starts typing.
+    // Accept only an explicit known value; do not change selections for generic visits.
+    if (new URLSearchParams(window.location.search).get('tjeneste') === 'eu-kontroll') {
+      const euControl = form.querySelector<HTMLInputElement>('input[name="services"][value="EU-Kontroll"]');
+      if (euControl) euControl.checked = true;
+    }
     // Never submit a native POST to the static /bestilling/ route, even on a disabled preview.
     form.addEventListener('submit', event => event.preventDefault());
     if (!endpoint || !button || !feedback) return;
