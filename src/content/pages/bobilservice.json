@@ -1,0 +1,132 @@
+{
+  "slug": "bobilservice",
+  "kind": "service",
+  "seo": {
+    "title": "Bobilservice og EU-kontroll på Kolbotn | Sofiemyr Bil",
+    "description": "Sofiemyr Bil tilbyr verkstedservice og EU-kontroll for aktuelle bobiler opptil 3 500 kg på Kolbotn. Oppgi registreringsnummer og vekt for å avtale arbeid."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Verksted for bobil",
+    "title": "Service og EU-kontroll på bobil opptil 3,5 tonn",
+    "support": "Bobilen trenger vedlikehold også mellom turene. Sofiemyr Bil tilbyr mekanisk verkstedarbeid og EU-kontroll på aktuelle bobiler opptil 3 500 kg. Kontakt oss med opplysninger om bobilen før du leverer.",
+    "primaryCta": {
+      "label": "Send forespørsel om time",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle tjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Service og EU-kontroll på bobil opptil 3,5 tonn",
+    "summary": "Mekanisk vedlikehold og EU-kontroll på aktuelle bobiler opptil 3,5 tonn.",
+    "visible": true,
+    "order": 5
+  },
+  "faq": [
+    {
+      "question": "Tar dere EU-kontroll på bobiler?",
+      "answer": "Sofiemyr Bil oppgir at de kan utføre EU-kontroll på aktuelle bobiler opptil 3 500 kg. Oppgi registreringsnummer og totalvekt for å avklare kapasitet og booking."
+    },
+    {
+      "question": "Utfører dere service på bodel, gassanlegg og vannsystem?",
+      "answer": "Denne siden gjelder bilens mekaniske og kjøretøytekniske vedlikehold. Ta kontakt om konkrete behov i bodelen; vi bekrefter hva verkstedet kan hjelpe med før bestilling."
+    },
+    {
+      "question": "Bør jeg ta service før sesongen?",
+      "answer": "Det er fornuftig å planlegge vedlikehold før lengre turer, men hvilke kontroller som er aktuelle avhenger av bobilens serviceprogram, tilstand og bruk."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "bobil-hva",
+      "eyebrow": "Avklar bil og vekt",
+      "heading": "Dette kan være aktuelt på verkstedet",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Bobiler har ofte andre mål og større vekt enn vanlige personbiler. Vi ber derfor om registreringsnummer, registrert totalvekt og hvilket arbeid du ønsker utført før vi bekrefter kapasitet.",
+        "Det er særlig kjøretøyets mekaniske systemer og lovpålagte kontroll som omtales her – ikke installasjoner i bodelen."
+      ],
+      "items": [
+        {
+          "title": "EU-kontroll",
+          "text": "Periodisk kjøretøykontroll for aktuelle bobiler opptil 3 500 kg. Kontrollfristen sjekkes hos Statens vegvesen.",
+          "href": "/eu-kontroll/",
+          "label": "Les om EU-kontroll",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Service og vedlikehold",
+          "text": "Aktuell service avklares ut fra kjøretøyets serviceprogram, type drivlinje og tilstand.",
+          "href": "/service/",
+          "label": "Les om service",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Reparasjoner",
+          "text": "Mekaniske feil og slitedeler vurderes etter kjøretøytype og tilgjengelig verkstedkapasitet.",
+          "href": "/reparasjoner/",
+          "label": "Les om reparasjoner",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "bobil-planlegg",
+      "eyebrow": "Før verkstedbesøket",
+      "heading": "Slik gjør vi forespørselen enklere",
+      "headingAlign": "left",
+      "layout": "two-columns",
+      "surface": "default",
+      "body": [
+        "Oppgi registreringsnummer, totalvekt og gjerne bobilens merke eller chassis. Fortell også om du ønsker ordinær service, EU-kontroll eller hjelp med en konkret feil.",
+        "Verkstedet bekrefter om oppdraget kan utføres og foreslår et tidspunkt. Ikke møt opp med bobilen før avtale er inngått."
+      ],
+      "items": [
+        {
+          "title": "Oppgi riktig vekt",
+          "text": "Totalvekt er viktig for å avklare hvilke kjøretøy som kan tas inn.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Beskriv ønsket arbeid",
+          "text": "Fortell om det gjelder kontroll, mekanisk service eller feilsøking.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Se EU-kontroll til 1 450 kr",
+          "href": "/eu-kontroll/"
+        },
+        {
+          "label": "Send forespørsel",
+          "href": "/bestilling/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}

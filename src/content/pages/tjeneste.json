@@ -2,17 +2,17 @@
   "slug": "tjeneste",
   "kind": "service",
   "seo": {
-    "title": "Verkstedtjenester & Service | Sofiemyr Bil AS Kolbotn",
-    "description": "Komplett verkstedtilbud for alle bilmerker i Skiveien 42. EU-kontroll, periodisk service, feilsøking, bremser og bobilservice opptil 3,5t. Ring 66 81 37 00."
+    "title": "Verkstedtjenester Kolbotn – Service, EU-kontroll | Sofiemyr Bil",
+    "description": "Se verkstedtjenester hos Sofiemyr Bil på Kolbotn: service, diagnose, reparasjoner, EU-kontroll til 1 450 kr, bobil og firmabilavtale."
   },
   "hero": {
     "layout": "centered-none",
     "eyebrow": "Ford-kompetanse – verksted for flere bilmerker",
-    "title": "Verkstedtjenester og profesjonell bilservice på Kolbotn",
-    "support": "Vi har moderne diagnoseutstyr, erfarne mekanikere og godkjent kapasitet for kjøretøy inntil 3 500 kg. Vi tar vare på bilen din slik at bruktbilverdien og tryggheten bevares.",
+    "title": "Verkstedtjenester på Kolbotn – Ford og andre bilmerker",
+    "support": "Vi hjelper med EU-kontroll, bilservice, feilsøking og reparasjoner – samt aktuelt bobilvedlikehold og avtaler for firmabiler. Verkstedet ligger i Skiveien 42 på Kolbotn.",
     "primaryCta": {
-      "label": "Bestill time",
-      "href": "/kontakt/"
+      "label": "Send bestillingsforespørsel",
+      "href": "/bestilling/"
     },
     "secondaryCta": {
       "label": "Se priser",
@@ -23,8 +23,8 @@
     }
   },
   "listing": {
-    "title": "Verkstedtjenester & Service",
-    "summary": "EU-kontroll, intervallservice, diagnose og bobilservice på Kolbotn.",
+    "title": "Alle verkstedtjenester",
+    "summary": "EU-kontroll, service, diagnose, reparasjoner, bobilservice og firmabilavtale.",
     "visible": true
   },
   "faq": [
@@ -34,7 +34,7 @@
     },
     {
       "question": "Må jeg bestille time til EU-kontroll på forhånd?",
-      "answer": "Ja, vi anbefaler å bestille time i god tid før kontrollfristen din utløper for å sikre at du får et tidspunkt som passer deg."
+      "answer": "Send en forespørsel før kontrollfristen din. Verkstedet bekrefter tilgjengelig tidspunkt; skjemaet er ikke en automatisk, bekreftet timebestilling."
     }
   ],
   "sections": [
@@ -42,47 +42,50 @@
       "_block": "content",
       "id": "tjenesteoversikt",
       "eyebrow": "Godkjent bilverksted",
-      "heading": "Vårt fagområde",
-      "body": "Hos Sofiemyr Bil AS dekker vi hele spekteret av mekanisk arbeid og service for alle drivlinjer – enten du kjører en moderne elbil, en klassisk bensinbil, en trofast Ford Transit varebil eller en bobil.",
+      "heading": "Finn riktig verkstedtjeneste",
+      "body": [
+        "Sofiemyr Bil har særlig Ford-kompetanse og hjelper også med service og reparasjoner på andre bilmerker. Velg tjenesten du trenger for å lese om innhold, vanlige spørsmål og hvordan du sender en forespørsel.",
+        "For EU-kontroll gjelder godkjent fastpris på 1 450 kr. Øvrige tjenester prises etter bil og arbeidets omfang."
+      ],
       "layout": "three-columns",
       "surface": "soft",
       "items": [
         {
           "title": "EU-kontroll (PKK)",
           "text": "Fast pris kr 1 450,-. Full gjennomgang etter Statens vegvesens krav med umiddelbar innrapportering.",
-          "href": "/priser/",
-          "label": "Les mer om EU-kontroll",
+          "href": "/eu-kontroll/",
+          "label": "Les om EU-kontroll",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Intervallservice & Vedlikehold",
           "text": "Service etter produsentens intervall med dokumentasjon av arbeidet. Nybilgarantien avhenger av at produsentens serviceprogram og øvrige garantivilkår følges.",
-          "href": "/kontakt/",
-          "label": "Bestill service",
+          "href": "/service/",
+          "label": "Les om bilservice",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Avansert Diagnose",
           "text": "Feilsøking på motorstyring, ABS, ESP, airbags og bilelektronikk med diagnoseutstyr.",
-          "href": "/kontakt/",
-          "label": "Forespør diagnose",
+          "href": "/diagnose/",
+          "label": "Les om feilsøking",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Bremser, Hjulstilling & Dekk",
           "text": "Skifte av slitedeler, kontroll av bremselinjer, 4-hjulskontroll og dekkskifte.",
-          "href": "/kontakt/",
-          "label": "Bestill bremsearbeid",
+          "href": "/reparasjoner/",
+          "label": "Les om reparasjoner",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Bobilservice inntil 3,5 tonn",
           "text": "Reparasjoner, vedlikehold og EU-kontroll for bobiler og campingbiler. Eget tilpasset verkstedutstyr.",
-          "href": "/kontakt/",
+          "href": "/bobilservice/",
           "label": "Les om bobilservice",
           "surface": "default",
           "boxVariant": "card"
@@ -90,8 +93,8 @@
         {
           "title": "Firmabil & Flåteavtale",
           "text": "Forutsigbare driftsavtaler og planlagt oppfølging for lokale bedrifter med firmabiler og varebiler.",
-          "href": "/kontakt/",
-          "label": "Ta kontakt om avtale",
+          "href": "/flateavtale/",
+          "label": "Les om flåteavtaler",
           "surface": "default",
           "boxVariant": "card"
         }
@@ -101,6 +104,11 @@
     {
       "_block": "sharedContent",
       "entry": "felles-eksempel",
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]

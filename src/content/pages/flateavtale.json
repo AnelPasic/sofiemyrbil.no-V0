@@ -1,0 +1,132 @@
+{
+  "slug": "flateavtale",
+  "kind": "service",
+  "seo": {
+    "title": "Flåteavtale og firmabilservice Kolbotn | Sofiemyr Bil",
+    "description": "Serviceavtale for firmabiler og varebiler på Kolbotn. Sofiemyr Bil tilbyr planlagt oppfølging av service og EU-kontroll for flere bilmerker. Be om avtale."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Firmabil og varebil",
+    "title": "Flåteavtale for bedrifter med firmabiler",
+    "support": "Når flere biler brukes i jobben, er planlagt vedlikehold viktig. Sofiemyr Bil tilbyr flåteavtaler med oppfølging av service, EU-kontroll og annet avtalt vedlikehold for Ford og andre merker.",
+    "primaryCta": {
+      "label": "Send forespørsel om time",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle tjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Flåteavtale for bedrifter med firmabiler",
+    "summary": "Avtalt oppfølging av service, EU-kontroll og vedlikehold av firmabiler.",
+    "visible": true,
+    "order": 6
+  },
+  "faq": [
+    {
+      "question": "Hva kan inngå i en flåteavtale?",
+      "answer": "Avtalen kan omfatte planlegging og oppfølging av service, EU-kontroll og annet vedlikehold etter nærmere avtale. Omfang, kontaktpersoner og priser avklares med bedriften."
+    },
+    {
+      "question": "Gjelder flåteavtalen bare Ford?",
+      "answer": "Nei. Sofiemyr Bil oppgir at de tilbyr flåteavtaler for flere bilmerker. Beskriv bilparken, så kan verkstedet avklare hvilke kjøretøy som kan omfattes."
+    },
+    {
+      "question": "Får bedriften automatisk prioritert time?",
+      "answer": "Vi lover ikke prioritert time uten en konkret avtale. Kapasitet, varslingsrutiner og eventuelle responstider må fastsettes i den enkelte flåteavtalen."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "flateavtale-innhold",
+      "eyebrow": "For lokale bedrifter",
+      "heading": "Mindre administrasjon rundt bilparken",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "På en arbeidsbil kan manglende vedlikehold gi unødvendige driftsavbrudd. En flåteavtale kan samle planleggingen av aktuelle kontroll- og servicepunkter hos ett verksted.",
+        "Vi tilpasser omfanget til antall biler, kjøretøytyper og hvordan bedriften bruker dem."
+      ],
+      "items": [
+        {
+          "title": "Serviceoppfølging",
+          "text": "Avtal når og hvordan bedriften skal kontaktes om planlagt service.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "EU-kontrollfrister",
+          "text": "Avklar hvordan frister og kontrollbehov skal følges opp for bilene som omfattes.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Vedlikehold etter avtale",
+          "text": "Omfang og pris på mekaniske arbeider og reparasjoner avtales ut fra behov.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "flateavtale-tilbud",
+      "eyebrow": "Før vi gir tilbud",
+      "heading": "Hva bør dere sende oss?",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Send antall biler, registreringsnummer eller kjøretøytyper og hvilken oppfølging dere trenger. Har dere egne rutiner for innlevering eller godkjenning av reparasjoner, kan dere beskrive dem.",
+        "Vi gir ingen standardpris uten å vite hva avtalen skal dekke. Et konkret tilbud og eventuelle servicebetingelser avklares direkte med bedriften."
+      ],
+      "items": [
+        {
+          "title": "Antall og type biler",
+          "text": "Fortell om bedriften har personbiler, varebiler eller en kombinasjon.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Behov for oppfølging",
+          "text": "Beskriv om dere ønsker påminnelser, periodisk service eller EU-kontroll.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Kontaktperson",
+          "text": "Oppgi hvem verkstedet skal avtale tidspunkt og arbeid med.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Les om varebilservice",
+          "href": "/service/"
+        },
+        {
+          "label": "Kontakt verkstedet",
+          "href": "/kontakt/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}

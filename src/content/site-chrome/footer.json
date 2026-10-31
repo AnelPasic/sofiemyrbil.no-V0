@@ -6,15 +6,35 @@
         "heading": "Tjenester",
         "links": [
           {
-            "label": "EU-kontroll – Fastpris",
+            "label": "EU-kontroll – fastpris",
             "href": "/eu-kontroll/"
           },
           {
-            "label": "Verkstedtjenester & Service",
+            "label": "Bilservice",
+            "href": "/service/"
+          },
+          {
+            "label": "Feilsøking og diagnose",
+            "href": "/diagnose/"
+          },
+          {
+            "label": "Reparasjoner",
+            "href": "/reparasjoner/"
+          },
+          {
+            "label": "Bobilservice",
+            "href": "/bobilservice/"
+          },
+          {
+            "label": "Flåteavtale for bedrifter",
+            "href": "/flateavtale/"
+          },
+          {
+            "label": "Alle verkstedtjenester",
             "href": "/tjeneste/"
           },
           {
-            "label": "Priser & Oversikt",
+            "label": "Priser",
             "href": "/priser/"
           },
           {

@@ -1,0 +1,132 @@
+{
+  "slug": "diagnose",
+  "kind": "service",
+  "seo": {
+    "title": "Diagnose og feilsøking bil i Kolbotn | Sofiemyr Bil",
+    "description": "Motorlampe eller feilmelding? Sofiemyr Bil tilbyr diagnose og feilsøking i Kolbotn for Ford og flere andre bilmerker. Send en forespørsel med symptomene."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Feilsøking og bilens elektronikk",
+    "title": "Feilsøking når bilen varsler om feil",
+    "support": "En varsellampe, ulyd eller uvanlig oppførsel kan ha flere årsaker. Vi kan undersøke symptomene og bruke diagnoseutstyr som del av feilsøkingen – før nødvendige tiltak vurderes.",
+    "primaryCta": {
+      "label": "Send forespørsel om time",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle tjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Feilsøking når bilen varsler om feil",
+    "summary": "Diagnose av varsellamper og feil på bil, med videre tiltak etter avtale.",
+    "visible": true,
+    "order": 3
+  },
+  "faq": [
+    {
+      "question": "Betyr en feilkode at en del må byttes?",
+      "answer": "Nei. En feilkode gir informasjon om hvor feilsøkingen bør starte, men er ikke alltid en sikker diagnose av årsaken. Videre kontroll kan være nødvendig før reparasjon."
+    },
+    {
+      "question": "Kan jeg kjøre videre med varsellampe?",
+      "answer": "Det avhenger av symbolet og symptomene. Ved rød varsellampe eller tydelige tegn på alvorlig feil bør du stanse på et trygt sted og følge bilens instruksjonsbok. Kontakt veihjelp ved behov."
+    },
+    {
+      "question": "Hva koster feilsøking?",
+      "answer": "Kostnaden avhenger av omfanget. Beskriv symptomer, når feilen oppstår og bilens registreringsnummer, så kan verkstedet avklare oppdraget og gi informasjon om pris."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "diagnose-symptomer",
+      "eyebrow": "Når bør du ta kontakt?",
+      "heading": "Vanlige grunner til feilsøking",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Det er lurt å beskrive feilen så konkret som mulig. Skriv gjerne om den kommer ved kaldstart, under kjøring eller ved bremsing. Opplysningene gjør første vurdering enklere.",
+        "Diagnose innebærer ikke at en feilkode alene avgjør hvilke deler som eventuelt må skiftes."
+      ],
+      "items": [
+        {
+          "title": "Motorlampe og feilmeldinger",
+          "text": "Varsler i instrumentpanelet kan kreve kontroll av sensorer, motorstyring eller andre systemer.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Elektriske problemer",
+          "text": "Feil ved start, lading eller elektriske funksjoner kan ha flere mulige årsaker.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Ulyd eller ujevn gange",
+          "text": "Beskriv når symptomet oppstår, og om det er konstant eller kommer periodisk.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "diagnose-videre",
+      "eyebrow": "Fra spørsmål til tiltak",
+      "heading": "Først årsak – så avtalt reparasjon",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Vi tar utgangspunkt i bilens symptomer og aktuelle målinger. Hvilke tester som er nødvendige, vil variere med bil og feiltype.",
+        "Hvis det trengs reparasjon, avklares videre arbeid og kostnader før det settes i gang."
+      ],
+      "items": [
+        {
+          "title": "Beskriv feilen",
+          "text": "Registreringsnummer, varselsymboler og situasjonen der feilen oppstår er nyttig.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Feilsøkingsomfang",
+          "text": "Verkstedet avklarer aktuelle kontroller og omfanget av oppdraget.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Reparasjon etter avtale",
+          "text": "Du får grunnlag for å vurdere anbefalte tiltak før mer arbeid bestilles.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Reparasjon og vedlikehold",
+          "href": "/reparasjoner/"
+        },
+        {
+          "label": "Bestill forespørsel",
+          "href": "/bestilling/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}
