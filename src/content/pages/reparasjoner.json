@@ -1,0 +1,132 @@
+{
+  "slug": "reparasjoner",
+  "kind": "service",
+  "seo": {
+    "title": "Bilreparasjon på Kolbotn – Ford og flere merker | Sofiemyr Bil",
+    "description": "Bilreparasjoner og vedlikehold på Kolbotn. Sofiemyr Bil hjelper med mekaniske feil, bremser og slitedeler på Ford og andre merker. Be om prisoverslag."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Mekanisk arbeid og vedlikehold",
+    "title": "Reparasjon av bil og varebil på Kolbotn",
+    "support": "Trenger bilen nye slitedeler eller utbedring av en feil? Sofiemyr Bil reparerer Ford og andre bilmerker. Vi avklarer symptomer, arbeid og pris før reparasjonen avtales.",
+    "primaryCta": {
+      "label": "Send forespørsel om time",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle tjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Reparasjon av bil og varebil på Kolbotn",
+    "summary": "Bilreparasjoner, bremser og mekanisk vedlikehold på Kolbotn.",
+    "visible": true,
+    "order": 4
+  },
+  "faq": [
+    {
+      "question": "Reparerer dere andre bilmerker enn Ford?",
+      "answer": "Ja. Sofiemyr Bil har særlig erfaring med Ford, men utfører også reparasjoner på andre bilmerker. Oppgi bilens registreringsnummer og hva du trenger hjelp med."
+    },
+    {
+      "question": "Kan jeg få prisoverslag før reparasjon?",
+      "answer": "Ja, du kan be om prisoverslag før du avtaler reparasjon. Ved uavklart feil kan det være nødvendig med feilsøking før omfang og pris kan fastsettes."
+    },
+    {
+      "question": "Hva gjør jeg hvis bilen ikke er kjørbar?",
+      "answer": "Hvis bilen ikke kan kjøres forsvarlig, må du la den stå og kontakte veihjelp eller verkstedet for å avklare transport. Unngå videre kjøring hvis det kan være fare for trafikksikkerheten."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "reparasjoner-hjelp",
+      "eyebrow": "Hva gjelder det?",
+      "heading": "Typiske verkstedoppdrag",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Bremser, hjuloppheng og andre slitedeler påvirkes av bruk, alder og kjørelengde. Det som bør repareres, må vurderes ut fra bilens faktiske tilstand.",
+        "Verkstedet tilbyr også reparasjoner på varebiler innenfor oppgitt kjøretøyklasse."
+      ],
+      "items": [
+        {
+          "title": "Bremser",
+          "text": "Undersøkelse og eventuelt skifte av bremseklosser, bremseskiver og relevante komponenter.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Understell og hjuloppheng",
+          "text": "Kontroll og arbeid på aktuelle slitedeler når bilen har ulyd, vibrasjon eller annen feil.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Motor og mekanikk",
+          "text": "Feilsøking og reparasjoner vurderes etter bilmodell og hvilke symptomer bilen har.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "reparasjoner-avtale",
+      "eyebrow": "En ryddig prosess",
+      "heading": "Avklar arbeidet før du bestiller",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Beskriv feilen og oppgi gjerne om bilen har vært feilsøkt tidligere. Hvis omfanget er uklart, kan en undersøkelse være nødvendig før prisoverslag kan gis.",
+        "Ved arbeid som faller utenfor det som er avtalt, skal videre fremgangsmåte og eventuelle tillegg avklares."
+      ],
+      "items": [
+        {
+          "title": "Send bilopplysninger",
+          "text": "Registreringsnummer og beskrivelse av feilen gjør forespørselen enklere å vurdere.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Få avklart arbeidet",
+          "text": "Be om en beskrivelse av anbefalt tiltak og prisgrunnlag.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Avtal reparasjon",
+          "text": "Tidspunkt og arbeid bekreftes av verkstedet – skjemaet er en forespørsel.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Les om feilsøking",
+          "href": "/diagnose/"
+        },
+        {
+          "label": "Vedlikehold og bilservice",
+          "href": "/service/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}
