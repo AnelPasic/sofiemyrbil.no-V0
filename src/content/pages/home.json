@@ -109,7 +109,7 @@
         {
           "title": "Flåteavtaler for Bedrifter",
           "badge": "Bedriftsavtale",
-          "text": "Effektiv oppfølging og serviceavtaler for varebiler og firmabiler med prioritert håndtering og forutsigbare kostnader.",
+          "text": "Service- og vedlikeholdsavtaler for varebiler og firmabiler, med planlagt oppfølging etter avtale.",
           "href": "/tjeneste/",
           "label": "Firmabilavtaler",
           "boxVariant": "default",
@@ -141,7 +141,7 @@
         },
         {
           "title": "Ford-ekspertise & Alle merker",
-          "text": "Spesiell spisskompetanse på Ford-modeller, kombinert med full autorisasjon og erfaring på alle europeiske og asiatiske bilmerker.",
+          "text": "Særlig erfaring med Ford, samtidig som verkstedet utfører service og reparasjoner på mange andre bilmerker.",
           "href": "/#ekspertise",
           "boxVariant": "card",
           "surface": "soft"
