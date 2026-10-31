@@ -69,17 +69,15 @@ test('tone is default neutral and one CMS source', () => {
   assert.equal((read('.pages.yml').match(/name: contentTone/g)||[]).length,1);
 });
 
-test('native shared source reuses one JSON on two pages, local hide is independent',()=>{
-  const h=resolveSections(home,masters,pages,[],shared),s=resolveSections(service,masters,pages,[],shared);
-  const a=h.find(x=>x.type==='content'&&x.section.id==='felles-eksempel');
-  const b=s.find(x=>x.type==='content'&&x.section.id==='felles-eksempel');
-  assert.deepEqual(a?.section,b?.section);
-  assert.equal(a.section.body.length,3);
-  assert.equal(a.section.items.length,3);
-  assert.equal(a.section.layout,'three-columns');
-  const hidden={...service,sections:service.sections.map(x=>x._block==='sharedContent'?{...x,visibility:'hidden'}:x)};
-  assert.ok(!resolveSections(hidden,masters,pages,[],shared).some(x=>x.type==='content'&&x.section.id==='felles-eksempel'));
-  assert.ok(resolveSections(home,masters,pages,[],shared).some(x=>x.type==='content'&&x.section.id==='felles-eksempel'));
+test('native shared source stays reusable on service while the homepage uses focused content',()=>{
+ const sections=resolveSections(service,masters,pages,[],shared);
+ const reuse=sections.find(x=>x.type==='content'&&x.section.id==='felles-eksempel');
+ assert.ok(reuse);
+ assert.equal(reuse.section.body.length,3);
+ assert.equal(reuse.section.layout,'three-columns');
+ const hidden={...service,sections:service.sections.map(x=>x._block==='sharedContent'?{...x,visibility:'hidden'}:x)};
+ assert.ok(!resolveSections(hidden,masters,pages,[],shared).some(x=>x.type==='content'&&x.section.id==='felles-eksempel'));
+ assert.ok(!resolveSections(home,masters,pages,[],shared).some(x=>x.type==='content'&&x.section.id==='felles-eksempel'));
 });
 test('invalid, duplicate and colliding shared sources fail before publication',()=>{
   const source=json('src/content/global-content/felles-eksempel.json');
@@ -88,9 +86,9 @@ test('invalid, duplicate and colliding shared sources fail before publication',(
   assert.throws(()=>validateSharedContentEntries({'x.json':{...source,id:'x'},'y.json':{...source,id:'y'}}),/Duplicate shared content identity/);
   const missing={...home,sections:[...home.sections,{_block:'sharedContent',entry:'does-not-exist'}]};
   assert.throws(()=>resolveSections(missing,masters,pages,[],shared),/Missing shared source/);
-  const twice={...home,sections:[...home.sections,{_block:'sharedContent',entry:'felles-eksempel',visibility:'hidden'}]};
+  const twice={...home,sections:[...home.sections,{_block:'sharedContent',entry:'felles-eksempel'}, {_block:'sharedContent',entry:'felles-eksempel',visibility:'hidden'}]};
   assert.throws(()=>resolveSections(twice,masters,pages,[],shared),/Duplicate shared placement/);
-  const collision={...home,sections:[...home.sections,{_block:'content',id:'felles-eksempel',heading:'Collision',body:[]}]};
+  const collision={...home,sections:[...home.sections,{_block:'content',id:'hovedtjenester',heading:'Collision',body:[]}]};
   assert.throws(()=>resolveSections(collision,masters,pages,[],shared),/Duplicate rendered anchor/);
 });
 test('featured Hero proof cannot bypass shared approval, named permission or evidence',()=>{
@@ -277,4 +275,36 @@ test('dedicated services have distinct SEO, CMS paths, links and one reusable bo
  assert.equal(menu.href,'/tjeneste/');
  const foot=new Set(chrome.footer.groups.flatMap(g=>g.links.map(l=>l.href)));
  for(const slug of slugs)assert.ok(foot.has('/'+slug+'/'),'Footer missing '+slug);
+});
+
+test('Sofiemyr homepage emphasizes Ford without excluding other brands and uses real brand images',()=>{
+ const h=home.hero;
+ assert.match(h.title,/Ford/);
+ assert.match(h.title,/Alle bilmerker/);
+ assert.equal(h.primaryCta.href,'/bestilling/');
+ assert.equal(h.secondaryCta.href,'/eu-kontroll/');
+ assert.match(h.support,/1 450/);
+ assert.match(home.seo.description,/Ford/);
+ const header=json('src/content/site-chrome/header.json');
+ assert.equal(header.brand.name,'Sofiemyr Bil');
+ assert.ok(!header.brand.name.includes('AS'));
+ for(const asset of [header.logoLight,header.logoDark,'/images/brands/ford.svg']){
+   assert.ok(asset.startsWith('/images/brands/'));
+   assert.ok(existsSync(join(root,'public'+asset)),'Missing brand asset '+asset);
+ }
+ const heroMarkup=read('src/components/Hero.astro');
+ assert.match(heroMarkup,/isHome && <aside class="mws-home-ford-note"/);
+ assert.match(heroMarkup,/Ford-kompetanse/);
+ assert.match(heroMarkup,/Follo Autoco/);
+ const sections=resolveSections(home,masters,pages,[],shared);
+ assert.equal(home.sections.filter(s=>s._block==='content').length,2,'Avoid duplicate pre-form CTAs');
+ assert.equal(home.sections.filter(s=>s._block==='sharedContent'&&s.entry==='bestilling-skjema').length,1);
+ assert.equal(home.sections.filter(s=>s._block==='sharedContent'&&s.entry==='felles-eksempel').length,0);
+ const services=home.sections.find(x=>x.id==='hovedtjenester');
+ assert.equal(services.items.length,6);
+ assert.ok(services.items.every(x=>x.href && x.href.startsWith('/')));
+ assert.ok(services.items.some(x=>/Ford/.test(x.badge??'')));
+ const why=home.sections.find(x=>x.id==='hvorfor-sofiemyr-bil');
+ assert.ok(why.items.some(x=>x.text.includes('Follo Autoco AS')));
+ assert.ok(sections.some(x=>x.type==='content'&&'widget' in x.section&&x.section.widget==='bookingForm'));
 });

@@ -335,3 +335,8 @@ html[data-mws-theme-mode="dark"] .mws-chrome-footer-brand img[data-mws-logo-vari
 @media (max-width: 359px) {
   .mws-chrome-brand img[data-mws-logo-variant^="mobile"] { max-width: 38px; }
 }
+
+/* Customer's original Sofiemyr Bil marks (sourced from project Drive) should
+   remain legible on desktop and mobile; generic MWS stylesheet is unchanged. */
+.mws-chrome-header .mws-chrome-brand img[data-mws-logo-variant]{max-width:13.75rem;max-height:2.7rem;object-fit:contain;}
+@media(max-width:560px){.mws-chrome-header .mws-chrome-brand img[data-mws-logo-variant]{max-width:9.5rem;max-height:2.3rem;}}
