@@ -9,7 +9,7 @@
     "layout": "split-right",
     "eyebrow": "Godkjent kontrollverksted · PKK",
     "title": "EU-kontroll til fastpris kr. 1450,-",
-    "support": "Sofiemyr Bil AS er offentlig godkjent som PKK-kontrollsted av Statens vegvesen. Vi utfører periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg — effektivt, grundig og til en forutsigbar pris.",
+    "support": "Sofiemyr Bil AS er registrert som godkjent kontrollorgan for EU-kontroll. Vi utfører periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg — effektivt, grundig og til en forutsigbar pris.",
     "primaryCta": {
       "label": "Bestill EU-kontroll nå",
       "href": "/#bestilling-skjema"
@@ -42,15 +42,15 @@
     },
     {
       "question": "Hvor ofte må bilen min gjennom EU-kontroll?",
-      "answer": "Fra 2019 erstattet myndighetene det gamle systemet basert på siste siffer i registreringsnummeret. Nye biler kontrolleres først etter 4 år, deretter hvert 2. år. Sjekk din frist i vognkortet eller på Statens vegvesens nettsider."
+      "answer": "For vanlige personbiler er første kontroll normalt innen fire år etter førstegangsregistrering og deretter hvert andre år. Andre kjøretøy og bruktimporterte biler kan ha andre frister. Sjekk alltid datoen for bilen din på vegvesen.no/kontrollfrist."
     },
     {
       "question": "Hva skjer hvis bilen ikke består kontrollen?",
-      "answer": "Hvis bilen har mangler, får du en frist til å utbedre disse. Vi gir deg et uforpliktende pristilbud på reparasjonen. Utbedrer du mangelen hos oss, ordner vi rask etterkontroll til gunstig pris."
+      "answer": "Ved mangler med kode 2 eller 3 må bilen repareres og godkjennes på etterkontroll innen den opprinnelige fristen eller senest to måneder etter kontrollen, avhengig av hva som kommer først. Kode 3 gir umiddelbart bruksforbud. Vi kan gi prisoverslag på utbedring; etterkontroll avtales separat."
     },
     {
       "question": "Kan jeg levere bilen dagen før kontrollen?",
-      "answer": "Ja, vi har nøkkelinnkast for trygg levering utenom åpningstiden etter avtale. Ring oss på 66 81 37 00 for å avtale."
+      "answer": "Ta kontakt på 66 81 37 00 dersom du ønsker å levere bilen før eller etter ordinær åpningstid, så avtaler vi om det er mulig."
     },
     {
       "question": "Utfører dere EU-kontroll på bobiler?",
@@ -69,43 +69,37 @@
       "items": [
         {
           "title": "Bremser og hjuloppheng",
-          "text": "Kontroll av bremsekraft, bremseskiver og klosser, bremselinjer, støtdempere, hjullager og drivaksler.",
-          "href": "/",
+          "text": "Kontrollpunkter knyttet til blant annet bremser, hjul, hjuloppheng og tilstanden til relevante komponenter.",
           "boxVariant": "card",
           "surface": "default"
         },
         {
           "title": "Lys, sikt og signaler",
           "text": "Alle kjørelys, bremselys, blinklys, reflekser og vindusvisker. Siktforhold gjennom frontrute og speil.",
-          "href": "/",
           "boxVariant": "card",
           "surface": "default"
         },
         {
           "title": "Avgass og miljø",
-          "text": "Utslippsmåling (bensin og diesel), eksosanlegg, katalysator og OBD-avlesning for moderne motorer.",
-          "href": "/",
+          "text": "Kontroll av relevante miljøpunkter, som støy, avgasser og utslippsrelaterte komponenter der dette gjelder for kjøretøyet.",
           "boxVariant": "card",
           "surface": "default"
         },
         {
           "title": "Karosseri og understell",
-          "text": "Rustskader, bæringer, råte og strukturell integritet. Understellet sjekkes for korrosjon og slitasje.",
-          "href": "/",
+          "text": "Kontroll av relevante punkter på understell og bærende konstruksjoner. EU-kontrollen er ikke en full rust- eller tilstandsanalyse.",
           "boxVariant": "card",
           "surface": "default"
         },
         {
           "title": "Sikkerhetsutstyr",
-          "text": "Bilbelter, airbag-kontroll, nakkestøtter, barnelås og eventuelt faste barneseter.",
-          "href": "/",
+          "text": "Kontroll av relevante sikkerhetspunkter som bilbelter, varsellamper og annet utstyr som omfattes av kontrollinstruksen.",
           "boxVariant": "card",
           "surface": "default"
         },
         {
           "title": "Forstilling og styring",
           "text": "Kontroll av styreledd, styrepumpe/servostyring, sportstag og styrelager. Rattslark og spill i ledder.",
-          "href": "/",
           "boxVariant": "card",
           "surface": "default"
         }
@@ -124,28 +118,24 @@
         {
           "title": "Sjekk alle lyspærer",
           "text": "Slå på alle lys og gå rundt bilen. Defekte lyspærer er en vanlig grunn til anmerkning.",
-          "href": "/",
           "boxVariant": "card",
           "surface": "soft"
         },
         {
           "title": "Vindusviskerblader",
-          "text": "Slitte eller sprukne vindusviskere gir dårlig sikt og fører til underkjenning.",
-          "href": "/",
+          "text": "Slitte eller sprukne vindusviskere gir dårlig sikt og kan gi mangel på kontrollen.",
           "boxVariant": "card",
           "surface": "soft"
         },
         {
           "title": "Dekk og mønsterdybde",
-          "text": "Sjekk at alle dekk har minimum 1,6 mm mønsterdybde. Ujevn slitasje kan tyde på feil forstilling.",
-          "href": "/",
+          "text": "Kontroller mønsterdybden: minst 1,6 mm om sommeren og 3 mm i vinterperioden for biler opptil 3 500 kg. Dekkene må også gi tilstrekkelig veigrep.",
           "boxVariant": "card",
           "surface": "soft"
         },
         {
           "title": "Feillamper i dashbord",
           "text": "Lysende motorlys eller ABS-lampe kan føre til underkjenning. Få feilsøkt dette i forkant.",
-          "href": "/",
           "boxVariant": "card",
           "surface": "soft"
         }
