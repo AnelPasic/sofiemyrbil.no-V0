@@ -17,19 +17,39 @@
       "toggleLabel": "Vis tjenester",
       "links": [
         {
-          "label": "EU-kontroll – Fastpris kr 1 450,-",
+          "label": "EU-kontroll – kr 1 450,-",
           "href": "/eu-kontroll/",
-          "description": "Lovpålagt periodisk kjøretøykontroll for alle bilmerker"
+          "description": "Periodisk kontroll og etterkontroll"
         },
         {
-          "label": "Alle verkstedtjenester",
+          "label": "Bilservice",
+          "href": "/service/",
+          "description": "Ford, elbil og andre bilmerker"
+        },
+        {
+          "label": "Diagnose og feilsøking",
+          "href": "/diagnose/",
+          "description": "Varsellamper, motor og elektronikk"
+        },
+        {
+          "label": "Reparasjoner",
+          "href": "/reparasjoner/",
+          "description": "Bremser, mekanikk og slitedeler"
+        },
+        {
+          "label": "Bobilservice",
+          "href": "/bobilservice/",
+          "description": "Aktuelle bobiler opptil 3,5 tonn"
+        },
+        {
+          "label": "Firmabil og flåteavtale",
+          "href": "/flateavtale/",
+          "description": "Planlagt service for bedrifter"
+        },
+        {
+          "label": "Alle tjenester",
           "href": "/tjeneste/",
-          "description": "Service, diagnose, bremser, dekk og bobilservice"
-        },
-        {
-          "label": "Om Sofiemyr Bil",
-          "href": "/om/",
-          "description": "Autorisert verksted i Kolbotn siden 1997"
+          "description": "Samlet oversikt over verkstedet"
         }
       ]
     },
