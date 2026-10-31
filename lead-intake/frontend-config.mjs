@@ -6,7 +6,7 @@ export default {
   "PUBLIC_ORDERS_ENABLED": "false",
   "PRIVACY_APPROVED": "true",
   "TIMEZONE": "Europe/Oslo",
-  "ATTRIBUTION_MODE": "consent",
+  "ATTRIBUTION_MODE": "off",
   "CONSENT_COOKIE_NAME": "sofiemyr_attribution_permission",
   "HITCOUNT_ENABLED": "true",
   "HIT_PATHS_JSON": "[\"/\",\"/bestilling/\",\"/kontakt/\",\"/eu-kontroll/\",\"/tjeneste/\",\"/priser/\",\"/om/\",\"/personvern/\",\"/artikkel/\"]",
