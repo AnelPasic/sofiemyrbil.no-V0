@@ -20,7 +20,7 @@ const home=pages.find(p=>p.slug==='home'),service=pages.find(p=>p.slug==='tjenes
 const chrome = composeSiteChrome(json('src/content/site-chrome/header.json'),json('src/content/site-chrome/footer.json'),json('src/content/site-chrome/appearance.json'));
 test('one canonical page per actual route, no missing component', () => {
   assert.equal(new Set(pages.map(p=>publicPath(p.slug))).size,pages.length);
-  assert.equal(pages.length,10);
+  assert.equal(pages.length,15);
   assert.equal(pages.find(p=>p.slug==='home')?.kind,'home');
   assert.equal(pages.find(p=>p.slug==='404')?.kind,'utility');
   for(const path of ['src/components/BaseLayout.astro','src/components/PageView.astro','src/components/Hero.astro','src/components/SiteChromeHeader.astro','src/components/PageSections.astro']) assert.ok(existsSync(join(root,path)),path);
@@ -225,4 +225,54 @@ test('booking form uses Global Innhold and reuses one CMS source across pages',(
  assert.match(form,/method="post" action="\/bestilling\/"/,'No GET submission with personal data');
  assert.match(form,/event\.preventDefault\(\)/,'Implicit Enter submit is blocked without a backend');
  assert.doesNotMatch(form,/Takk for din bestillingsforespørsel/,'No fake success message');
+});
+
+
+test('dedicated services have distinct SEO, CMS paths, links and one reusable booking form',()=>{
+ const slugs=['service','diagnose','reparasjoner','bobilservice','flateavtale'];
+ const cms=YAML.parse(read('.pages.yml'));
+ const paths=new Set(pages.map(p=>publicPath(p.slug)));
+ const seenSeo=new Set();
+ const sharedRefs=new Set();
+ for(const slug of slugs){
+  const page=pages.find(p=>p.slug===slug);
+  assert.ok(page,'Missing service page: '+slug);
+  assert.equal(page.kind,'service');
+  assert.ok(page.seo.title.includes('Sofiemyr Bil'));
+  assert.ok(page.seo.description.length>=90 && page.seo.description.length<=170,'SEO description length: '+slug);
+  assert.ok(!seenSeo.has(page.seo.title),'SEO title duplicated: '+slug);
+  seenSeo.add(page.seo.title);
+  assert.equal(page.hero.primaryCta?.href,'/bestilling/');
+  assert.equal(page.faq.length,3,'No useful FAQ on '+slug);
+  const component=resolveSections(page,masters,pages,[],shared);
+  const widget=component.filter(x=>x.type==='content' && 'widget' in x.section && x.section.widget==='bookingForm');
+  assert.equal(widget.length,1,'Exactly one global booking form on '+slug);
+  const regular=page.sections.filter(x=>x._block==='content');
+  assert.ok(regular.length>=2,'At least two unique content sections on '+slug);
+  for(const sec of regular){
+   assert.ok(sec.body.length>=1 && sec.items?.length>=2);
+   for(const card of sec.items){
+    if(card.href?.startsWith('/'))assert.ok(paths.has(card.href),'Broken card href '+card.href+' on '+slug);
+   }
+   for(const link of sec.links??[])assert.ok(paths.has(link.href),'Broken CTA '+link.href+' on '+slug);
+  }
+  assert.ok(paths.has(page.hero.secondaryCta?.href));
+  const editor=cms.content.find(x=>x.path==='src/content/pages/'+slug+'.json');
+  assert.ok(editor,'Missing native Pages CMS editor '+slug);
+  assert.deepEqual(editor.fields.map(f=>f.name),['slug','seo','hero','sections','faq','listing','kind']);
+  sharedRefs.add(widget[0].section.id);
+ }
+ assert.deepEqual([...sharedRefs],['bestilling-skjema']);
+ const hub=pages.find(p=>p.slug==='tjeneste');
+ const linkSet=new Set(hub.sections.filter(s=>s._block==='content').flatMap(s=>
+   [...(s.items??[]).map(c=>c.href),...(s.links??[]).map(l=>l.href)]));
+ for(const slug of slugs)assert.ok(linkSet.has('/'+slug+'/'),'Service hub missing '+slug);
+ assert.ok(linkSet.has('/eu-kontroll/'));
+ assert.ok(resolveSections(hub,masters,pages,[],shared).some(s=>s.type==='content' &&
+   'widget' in s.section && s.section.widget==='bookingForm'),'Hub has booking form');
+ const menu=chrome.navigation.find(n=>n.id==='tjenester');
+ assert.equal(menu?.kind,'dropdown');
+ for(const slug of slugs)assert.ok(menu.links.some(l=>l.href==='/'+slug+'/'),'Nav missing '+slug);
+ const foot=new Set(chrome.footer.groups.flatMap(g=>g.links.map(l=>l.href)));
+ for(const slug of slugs)assert.ok(foot.has('/'+slug+'/'),'Footer missing '+slug);
 });
