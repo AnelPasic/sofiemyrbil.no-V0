@@ -2,16 +2,16 @@
   "_block": "content",
   "uid": "f4a35ce8-828d-4c62-ab14-7c3a56092532",
   "id": "felles-eksempel",
-  "name": "Verkstedgaranti og kvalitetsløfte",
-  "heading": "Vår kvalitetsgaranti – Trygt bilhold på Kolbotn",
+  "name": "Arbeid, service og kvalitetsdeler",
+  "heading": "Kvalitet og trygghet hos Sofiemyr Bil",
   "eyebrow": "KVALITET & TRYGGHET",
   "headingAlign": "center",
   "layout": "three-columns",
   "surface": "soft",
   "body": [
-    "Full garanti på alle deler og utført arbeid i henhold til forbrukerkjøpsloven.",
-    "Godkjente originaldeler sikrer at bilens fabrikkgaranti forblir 100 % intakt.",
-    "Elektronisk oppføring i serviceheftet og direkte innmelding til Statens vegvesen."
+    "Vi utfører verkstedarbeid fagmessig. Som forbruker har du rettigheter ved mangler etter håndverkertjenesteloven.",
+    "Service etter bilprodusentens vedlikeholdsprogram og dokumentasjon på arbeidet er viktig for å ivareta nybilgarantien.",
+    "Vi tilbyr EU-kontroll ved godkjent kontrollorgan og registrerer kontrollresultatet hos Statens vegvesen."
   ],
   "items": [
     {
@@ -22,13 +22,13 @@
     },
     {
       "title": "Kvalitetsdeler",
-      "text": "Vi benytter kun sertifiserte deler fra anerkjente europeiske leverandører.",
+      "text": "Reservedeler velges etter bilens behov og gjeldende kvalitetskrav. Du kan spørre oss hvilke deler som inngår i tilbudet.",
       "surface": "default",
       "boxVariant": "card"
     },
     {
-      "title": "Fagutdannede mekanikere",
-      "text": "Fast team med 5 erfarne bilmekanikere som kjenner bilen din.",
+      "title": "Erfarent verkstedteam",
+      "text": "Et lokalt verksted med fem ansatte, Ford-kompetanse og service på flere bilmerker.",
       "surface": "default",
       "boxVariant": "card"
     }

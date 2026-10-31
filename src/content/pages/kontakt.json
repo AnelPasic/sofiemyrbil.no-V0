@@ -21,11 +21,11 @@
   "faq": [
     {
       "question": "Hvor lang tid i forveien må jeg bestille?",
-      "answer": "Vi har normalt kort ventetid og kan ofte finne en ledig time i løpet av få dager. Ta kontakt så finner vi et tidspunkt som passer din timeplan."
+      "answer": "Ledig kapasitet varierer. Send en forespørsel eller ring 66 81 37 00, så kontakter vi deg for å avtale et tilgjengelig tidspunkt."
     },
     {
       "question": "Kan jeg levere bilen før åpningstid?",
-      "answer": "Ja, vi har nøkkelinnkast for trygg levering av bil og nøkler utenom ordinær åpningstid etter avtale."
+      "answer": "Kontakt verkstedet på forhånd dersom du ønsker å levere bilen utenom åpningstiden. Vi avklarer hvordan levering kan gjennomføres."
     }
   ],
   "sections": [
@@ -56,8 +56,8 @@
           "boxVariant": "card"
         },
         {
-          "title": "Nøkkelinnkast",
-          "text": "Har du behov for å levere bilen tidlig om morgenen eller kvelden før? Bruk vårt trygge nøkkelinnkast ved inngangen.",
+          "title": "Levering utenom åpningstid",
+          "text": "Ønsker du å levere bilen tidlig eller kvelden før? Ring på forhånd, så avtaler vi om og hvordan bilen kan leveres.",
           "surface": "default",
           "boxVariant": "card"
         }

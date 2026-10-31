@@ -9,7 +9,7 @@
     "layout": "centered-none",
     "eyebrow": "Bilhold & Råd",
     "title": "Når må bilen din på EU-kontroll? Dette må du vite om kontrollfristen",
-    "support": "Tidligere ble kontrollmåneden bestemt av det siste sifferet på bilskiltet. I dag beregnes kontrollfristen med et fast 2-års intervall.",
+    "support": "Tidligere ble kontrollmåneden bestemt av det siste sifferet på bilskiltet. I dag beregnes kontrollfristen med intervaller som avhenger av kjøretøytype og tidligere kontrollfrist.",
     "primaryCta": {
       "label": "Bestill EU-kontroll (kr 1 450,-)",
       "href": "/kontakt/"
@@ -31,7 +31,7 @@
       "id": "eu-regler-forklart",
       "eyebrow": "Regelverk fra Statens vegvesen",
       "heading": "Slik fungerer dagens kontrollintervall",
-      "body": "Nye personbiler skal til sin første EU-kontroll (periodisk kjøretøykontroll / PKK) innen fire år etter førstegangsregistrering. Deretter skal kjøretøyet kontrolleres hvert andre år.\n\nDu kan ta kontrollen når som helst før fristen utløper. Vi anbefaler å gjennomføre kontrollen 1–2 måneder i forveien, slik at du har god tid til eventuelle feilrettinger.",
+      "body": "Nye personbiler skal til sin første EU-kontroll (periodisk kjøretøykontroll / PKK) innen fire år etter førstegangsregistrering. Deretter skal kjøretøyet kontrolleres hvert andre år.\n\nDu kan ta kontrollen før fristen, men en kontroll mer enn to måneder før fristen flytter normalt neste frist frem. Ta den gjerne innenfor de siste to månedene før fristen, og sett av tid til eventuelle reparasjoner og etterkontroll. Sjekk alltid fristen på vegvesen.no/kontrollfrist.",
       "layout": "three-columns",
       "surface": "soft",
       "items": [
@@ -43,7 +43,7 @@
         },
         {
           "title": "Deretter: Hvert 2. år",
-          "text": "Neste kontrollfrist settes nøyaktig to år frem i tid fra datoen du sist fikk bilen godkjent.",
+          "text": "Vanlige personbiler har normalt to års intervall. Tar du kontrollen mer enn to måneder før fristen, beregnes neste frist fra kontrolltidspunktet.",
           "surface": "default",
           "boxVariant": "card"
         },

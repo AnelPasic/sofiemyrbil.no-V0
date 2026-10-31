@@ -8,8 +8,8 @@
   "hero": {
     "layout": "split-right",
     "eyebrow": "Autorisert bilverksted på Kolbotn",
-    "title": "Ditt lokale bilverksted i Skiveien – spesialist på Ford, godkjent for alle merker",
-    "support": "Hos Sofiemyr Bil AS får du personlig service fra 5 erfarne mekanikere. Vi utfører EU-kontroll til fastpris kr 1 450,-, periodisk service, feilsøking og bobilservice opptil 3,5 tonn.",
+    "title": "Ditt lokale bilverksted i Skiveien – Ford-kompetanse og service på flere merker",
+    "support": "Hos Sofiemyr Bil AS får du personlig service fra et erfarent verkstedteam. Vi utfører EU-kontroll til fastpris kr 1 450,-, periodisk service, feilsøking og bobilservice opptil 3,5 tonn.",
     "primaryCta": {
       "label": "Bestill time nå",
       "href": "/kontakt/"
@@ -39,7 +39,7 @@
     },
     {
       "question": "Beholder jeg nybilgarantien ved service hos dere?",
-      "answer": "Ja. Som godkjent offentlig verksted følger vi bilprodusentens serviceprogram og benytter originaldeler eller deler av tilsvarende kvalitet. Garantien din er 100 % trygg."
+      "answer": "Du kan normalt bruke et frittstående godkjent verksted uten å miste nybilgarantien, forutsatt at bilprodusentens vedlikeholdsprogram følges og arbeidet dokumenteres. Garantivilkårene gjelder fortsatt, og eventuelle feil må vurderes konkret."
     },
     {
       "question": "Reparerer dere også andre merker enn Ford?",
@@ -64,7 +64,7 @@
           "title": "EU-kontroll",
           "badge": "Fastpris",
           "price": "kr 1 450,-",
-          "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, grundig tilstandsrapport og konkurransedyktig prisoverslag ved behov for utbedring.",
+          "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, kontrollseddel med resultat og eventuelle mangler og konkurransedyktig prisoverslag ved behov for utbedring.",
           "href": "/priser/",
           "label": "Se kontrollvilkår",
           "boxVariant": "card",
@@ -73,7 +73,7 @@
         {
           "title": "Service & Vedlikehold",
           "badge": "Vedlikehold",
-          "text": "Intervallservice etter fabrikkens retningslinjer for Ford og alle øvrige bilmerker. Vi stempler i serviceheftet og bevarer nybilgarantien.",
+          "text": "Intervallservice etter fabrikkens retningslinjer for Ford og alle øvrige bilmerker. Vi følger bilprodusentens serviceprogram og dokumenterer arbeidet.",
           "href": "/tjeneste/",
           "label": "Les om bilservice",
           "boxVariant": "default",
@@ -109,7 +109,7 @@
         {
           "title": "Flåteavtaler for Bedrifter",
           "badge": "Bedriftsavtale",
-          "text": "Effektiv oppfølging og serviceavtaler for varebiler og firmabiler med prioritert håndtering og forutsigbare kostnader.",
+          "text": "Service- og vedlikeholdsavtaler for varebiler og firmabiler, med planlagt oppfølging etter avtale.",
           "href": "/tjeneste/",
           "label": "Firmabilavtaler",
           "boxVariant": "default",
@@ -134,24 +134,27 @@
       "items": [
         {
           "title": "Etablert i 1997",
-          "text": "Med over 27 års sammenhengende verksteddrift i nærområdet har vi opparbeidet en lojal kundekrets som verdsetter pålitelighet og grundighet.",
-          "href": "/#etablert",
+          "text": "Sofiemyr Bil ble etablert i 1997 og har lang erfaring med service og reparasjoner for bileiere i Kolbotn og omegn.",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         },
         {
           "title": "Ford-ekspertise & Alle merker",
-          "text": "Spesiell spisskompetanse på Ford-modeller, kombinert med full autorisasjon og erfaring på alle europeiske og asiatiske bilmerker.",
-          "href": "/#ekspertise",
+          "text": "Særlig erfaring med Ford, samtidig som verkstedet utfører service og reparasjoner på mange andre bilmerker.",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         },
         {
-          "title": "5 erfarne bilmekanikere",
-          "text": "Hos oss møter du fast personell med solid fagkompetanse. Du kan snakke direkte med mekanikeren som utfører arbeidet på din bil.",
-          "href": "/#erfaring",
+          "title": "Fem ansatte på verkstedet",
+          "text": "Sofiemyr Bil oppgir fem ansatte og legger vekt på personlig service fra et erfarent verkstedteam.",
+          "href": "/om/",
           "boxVariant": "card",
-          "surface": "soft"
+          "surface": "soft",
+          "label": "Les om verkstedet"
         }
       ],
       "visibility": "visible"
