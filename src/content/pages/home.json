@@ -2,27 +2,27 @@
   "slug": "home",
   "kind": "home",
   "seo": {
-    "title": "Sofiemyr Bil AS | Autorisert bilverksted på Kolbotn – Ford-spesialist",
-    "description": "Autorisert bilverksted i Skiveien 42, Kolbotn. EU-kontroll til fastpris kr 1 450,-, service, feilsøking og bobilservice for alle bilmerker. Ring 66 81 37 00."
+    "title": "Sofiemyr Bil | Ford-kompetanse og bilverksted for alle merker i Kolbotn",
+    "description": "Sofiemyr Bil på Kolbotn har Ford-kompetanse og tar service og reparasjoner på alle bilmerker. EU-kontroll til fastpris kr 1 450,-. Send en forespørsel om verkstedtime."
   },
   "hero": {
     "layout": "split-right",
-    "eyebrow": "Autorisert bilverksted på Kolbotn",
-    "title": "Ditt lokale bilverksted i Skiveien – Ford-kompetanse og service på flere merker",
-    "support": "Hos Sofiemyr Bil AS får du personlig service fra et erfarent verkstedteam. Vi utfører EU-kontroll til fastpris kr 1 450,-, periodisk service, feilsøking og bobilservice opptil 3,5 tonn.",
+    "eyebrow": "Lokalt bilverksted på Kolbotn · siden 1997",
+    "title": "Ford er spesialiteten vår. Alle bilmerker er velkomne.",
+    "support": "Hos Sofiemyr Bil i Skiveien 42 får du service, reparasjoner og feilsøking fra et erfarent verkstedteam. Vi kan Ford – og tar like gjerne imot bilen din uansett merke. EU-kontroll koster kr 1 450,-.",
     "primaryCta": {
-      "label": "Bestill time nå",
-      "href": "/kontakt/"
+      "label": "Send verkstedforespørsel",
+      "href": "/bestilling/"
     },
     "secondaryCta": {
-      "label": "Se priser og tjenester",
-      "href": "/priser/"
+      "label": "EU-kontroll kr 1 450,-",
+      "href": "/eu-kontroll/"
     },
     "visual": {
       "kind": "image",
       "image": {
         "src": "/images/pages/forside.jpg",
-        "alt": "Vårt verksted",
+        "alt": "Sofiemyr Bils verksted i Kolbotn",
         "positionX": 50,
         "positionY": 50
       }
@@ -35,27 +35,27 @@
   "faq": [
     {
       "question": "Hva koster EU-kontroll hos Sofiemyr Bil?",
-      "answer": "EU-kontroll har en fast pris på kr 1 450,- for personbiler og lette kjøretøy opptil 3 500 kg. Eventuelle feilrettinger avtales direkte med deg før arbeid utføres."
+      "answer": "EU-kontroll koster kr 1 450,- hos Sofiemyr Bil. Kontrollen gjelder aktuelle kjøretøy opptil 3 500 kg. Hvis bilen har mangler, avtaler vi eventuell utbedring med deg."
     },
     {
       "question": "Beholder jeg nybilgarantien ved service hos dere?",
-      "answer": "Du kan normalt bruke et frittstående godkjent verksted uten å miste nybilgarantien, forutsatt at bilprodusentens vedlikeholdsprogram følges og arbeidet dokumenteres. Garantivilkårene gjelder fortsatt, og eventuelle feil må vurderes konkret."
+      "answer": "Service hos et frittstående verksted kan normalt gjennomføres uten at nybilgarantien faller bort, når produsentens vedlikeholdskrav følges og arbeidet dokumenteres. Ta kontakt om garantivilkårene for akkurat din bil."
     },
     {
       "question": "Reparerer dere også andre merker enn Ford?",
-      "answer": "Absolutt. Selv om vi er anerkjent som Ford-spesialist med spisskompetanse, er vi et fullverdig godkjent bilverksted for alle bilmerker, inkludert elbiler, hybrider, bensin og diesel."
+      "answer": "Ja. Ford er et viktig kompetanseområde hos oss, men vi utfører service og reparasjoner på andre bilmerker også. Kontakt oss gjerne om bilen og arbeidet du trenger hjelp med."
     },
     {
       "question": "Tar dere service og EU-kontroll på bobil?",
-      "answer": "Ja, vi har bukk- og verkstedkapasitet for bobiler og campingbiler opptil 3,5 tonn."
+      "answer": "EU-kontroll koster kr 1 450,- hos Sofiemyr Bil. Kontrollen gjelder aktuelle kjøretøy opptil 3 500 kg. Hvis bilen har mangler, avtaler vi eventuell utbedring med deg."
     }
   ],
   "sections": [
     {
       "_block": "content",
       "id": "hovedtjenester",
-      "eyebrow": "Våre verkstedtjenester",
-      "heading": "Kvalitetsarbeid for et problemfritt bilhold",
+      "eyebrow": "EU-kontroll · Service · Reparasjoner",
+      "heading": "Verkstedtjenester for Ford og alle andre bilmerker",
       "headingAlign": "center",
       "layout": "three-columns",
       "surface": "default",
@@ -64,117 +64,92 @@
           "title": "EU-kontroll",
           "badge": "Fastpris",
           "price": "kr 1 450,-",
-          "text": "Periodisk kjøretøykontroll for alle bilmerker inntil 3 500 kg. Rask gjennomgang, kontrollseddel med resultat og eventuelle mangler og konkurransedyktig prisoverslag ved behov for utbedring.",
-          "href": "/priser/",
-          "label": "Se kontrollvilkår",
-          "boxVariant": "card",
-          "surface": "default"
-        },
-        {
-          "title": "Service & Vedlikehold",
-          "badge": "Vedlikehold",
-          "text": "Intervallservice etter fabrikkens retningslinjer for Ford og alle øvrige bilmerker. Vi følger bilprodusentens serviceprogram og dokumenterer arbeidet.",
-          "href": "/tjeneste/",
-          "label": "Les om bilservice",
-          "boxVariant": "default",
-          "surface": "base-200"
-        },
-        {
-          "title": "Diagnose & Feilsøking",
-          "badge": "Diagnose",
-          "text": "Moderne diagnoseverktøy for rask og nøyaktig identifisering av elektroniske og mekaniske feil, motorlamper og varsellys.",
-          "href": "/tjeneste/",
-          "label": "Les om diagnose",
+          "text": "Periodisk kjøretøykontroll for person- og varebiler opptil 3 500 kg. Eventuelle utbedringer avtaler vi med deg.",
+          "href": "/eu-kontroll/",
+          "label": "Les om EU-kontroll",
           "boxVariant": "card",
           "surface": "base-200"
         },
         {
-          "title": "Mekaniske Reparasjoner",
-          "badge": "Reparasjoner",
-          "text": "Skifte av bremser, hjuloppheng, fjærer, clutch, registerreim og eksosanlegg utført med presisjon og kvalitetsdeler.",
-          "href": "/tjeneste/",
-          "label": "Mekanisk arbeid",
-          "boxVariant": "default",
-          "surface": "base-300"
+          "title": "Service og vedlikehold",
+          "badge": "Ford-kompetanse",
+          "text": "Service etter bilprodusentens vedlikeholdsprogram, med dokumentert arbeid – på Ford og andre bilmerker.",
+          "href": "/service/",
+          "label": "Se våre servicetjenester",
+          "boxVariant": "card",
+          "surface": "base-100"
         },
         {
-          "title": "Bobilservice opptil 3,5t",
-          "badge": "Inntil 3,5 t",
-          "text": "Spesialisert service, forberedelse til sesongen og reparasjon av bobiler og campingbiler. Vi har riktig løfteutstyr og god plass.",
-          "href": "/tjeneste/",
-          "label": "Les om bobilservice",
-          "boxVariant": "default",
-          "surface": "base-300"
+          "title": "Diagnose og feilsøking",
+          "badge": "Finner feilen",
+          "text": "Vi undersøker feillamper, elektronikk og mekaniske problemer, og hjelper deg videre med riktig reparasjon.",
+          "href": "/diagnose/",
+          "label": "Les om feilsøking",
+          "boxVariant": "card",
+          "surface": "base-100"
         },
         {
-          "title": "Flåteavtaler for Bedrifter",
-          "badge": "Bedriftsavtale",
-          "text": "Service- og vedlikeholdsavtaler for varebiler og firmabiler, med planlagt oppfølging etter avtale.",
-          "href": "/tjeneste/",
-          "label": "Firmabilavtaler",
-          "boxVariant": "default",
-          "surface": "base-300"
+          "title": "Reparasjoner",
+          "badge": "Verkstedarbeid",
+          "text": "Bremser, understell, fjæring og annet mekanisk arbeid. Be om et prisoverslag før vi setter i gang.",
+          "href": "/reparasjoner/",
+          "label": "Les om reparasjoner",
+          "boxVariant": "card",
+          "surface": "base-100"
+        },
+        {
+          "title": "Bobil og varebil",
+          "badge": "Flere kjøretøytyper",
+          "text": "Service og vedlikehold for bobiler og varebiler. Kontakt oss om vekt og størrelse før du bestiller.",
+          "href": "/bobilservice/",
+          "label": "Se verkstedtjenester",
+          "boxVariant": "card",
+          "surface": "base-100"
+        },
+        {
+          "title": "Bedrift og bilflåte",
+          "badge": "Firmabiler",
+          "text": "Planlagt service og vedlikehold for firmabiler og flåter, tilpasset behovene i virksomheten.",
+          "href": "/flateavtale/",
+          "label": "Spør om flåteavtale",
+          "boxVariant": "card",
+          "surface": "base-100"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "felles-eksempel",
       "visibility": "visible"
     },
     {
       "_block": "content",
       "id": "hvorfor-sofiemyr-bil",
-      "eyebrow": "Trygghet & Erfaring",
-      "heading": "Hvorfor velge Sofiemyr Bil AS?",
+      "eyebrow": "Et verksted du kan komme tilbake til",
+      "heading": "Ford-erfaring, lokalt verksted og hjelp til alle bilmerker",
       "headingAlign": "center",
       "layout": "three-columns",
       "surface": "default",
       "items": [
         {
-          "title": "Etablert i 1997",
-          "text": "Sofiemyr Bil ble etablert i 1997 og har lang erfaring med service og reparasjoner for bileiere i Kolbotn og omegn.",
+          "title": "Ford-kunnskap fra Ford-miljøet i Ski",
+          "text": "Sofiemyr Bil er heleid av Follo Autoco AS. Vi har særlig erfaring med Ford, men du trenger ikke kjøre Ford for å bruke oss.",
           "href": "/om/",
+          "label": "Bli kjent med oss",
           "boxVariant": "card",
-          "surface": "soft",
-          "label": "Les om verkstedet"
+          "surface": "base-200"
         },
         {
-          "title": "Ford-ekspertise & Alle merker",
-          "text": "Særlig erfaring med Ford, samtidig som verkstedet utfører service og reparasjoner på mange andre bilmerker.",
+          "title": "Bilverksted siden 1997",
+          "text": "Vi har hjulpet bileiere i Kolbotn og Nordre Follo siden 1997, og holder til i Skiveien 42.",
           "href": "/om/",
+          "label": "Les om verkstedet",
           "boxVariant": "card",
-          "surface": "soft",
-          "label": "Les om verkstedet"
+          "surface": "base-100"
         },
         {
-          "title": "Fem ansatte på verkstedet",
-          "text": "Sofiemyr Bil oppgir fem ansatte og legger vekt på personlig service fra et erfarent verkstedteam.",
-          "href": "/om/",
+          "title": "Personlig kontakt med verkstedet",
+          "text": "Fem ansatte og et lokalt team som kan snakke med deg om bilen, jobben og et prisoverslag før arbeid utføres.",
+          "href": "/kontakt/",
+          "label": "Kontakt oss",
           "boxVariant": "card",
-          "surface": "soft",
-          "label": "Les om verkstedet"
-        }
-      ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "content",
-      "id": "bestill-kontakt",
-      "eyebrow": "Skiveien 42, Kolbotn",
-      "heading": "Klar for time på verkstedet?",
-      "headingAlign": "center",
-      "layout": "default",
-      "surface": "soft",
-      "links": [
-        {
-          "label": "Bestill time via skjema",
-          "href": "/kontakt/"
-        },
-        {
-          "label": "Se komplett prisliste",
-          "href": "/priser/"
+          "surface": "base-100"
         }
       ],
       "visibility": "visible"
