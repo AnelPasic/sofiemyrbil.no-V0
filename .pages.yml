@@ -271,6 +271,7 @@ components:
         - { name: "diagnose", label: "Diagnose og feilsøking bil i Kolbotn | Sofiemyr Bil" }
         - { name: "eu-kontroll", label: "EU-kontroll Kolbotn – Fastpris kr 1 450,- | Sofiemyr Bil AS" }
         - { name: "flateavtale", label: "Flåteavtale og firmabilservice Kolbotn | Sofiemyr Bil" }
+        - { name: "ford-verksted", label: "Ford-verksted Kolbotn | Service og reparasjon | Sofiemyr Bil" }
         - { name: "home", label: "Sofiemyr Bil | Ford-kompetanse og bilverksted for alle merker i Kolbotn" }
         - { name: "innsikt/artikkel", label: "Slik sjekker du fristen for EU-kontroll | Sofiemyr Bil AS" }
         - { name: "kontakt", label: "Kontakt oss & Bestill time | Sofiemyr Bil AS – Skiveien 42" }
@@ -822,6 +823,21 @@ content:
     label: Alle verkstedtjenester
     type: file
     path: src/content/pages/tjeneste.json
+    format: json
+    operations: { create: false, delete: false, rename: false }
+    fields:
+      - *rootSlug
+      - *rootSeo
+      - *rootHero
+      - { name: sections, component: builderSections }
+      - { name: faq, component: builderFaq }
+      - { name: listing, component: builderListing }
+      - { name: kind, label: Sidetype, type: string, required: true, readonly: true }
+
+  - name: starterFordVerksted
+    label: Ford-verksted
+    type: file
+    path: src/content/pages/ford-verksted.json
     format: json
     operations: { create: false, delete: false, rename: false }
     fields:

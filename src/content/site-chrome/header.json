@@ -18,6 +18,11 @@
       "toggleLabel": "Vis tjenester",
       "links": [
         {
+          "label": "Ford-verksted",
+          "href": "/ford-verksted/",
+          "description": "Ford-service, feilsøking og reparasjoner på Kolbotn"
+        },
+        {
           "label": "EU-kontroll – Fastpris kr 1 450,-",
           "href": "/eu-kontroll/",
           "description": "Lovpålagt periodisk kjøretøykontroll for alle bilmerker"

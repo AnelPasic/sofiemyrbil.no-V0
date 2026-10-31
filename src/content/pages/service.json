@@ -76,7 +76,12 @@
           "boxVariant": "card"
         }
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "Ford-service hos Sofiemyr Bil",
+          "href": "/ford-verksted/"
+        }
+      ],
       "visibility": "visible"
     },
     {
