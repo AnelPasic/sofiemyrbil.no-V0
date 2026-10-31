@@ -93,8 +93,8 @@
     {
       "_block": "content",
       "id": "informasjonskapsler",
-      "heading": "Sidevisninger og valgfri kildemåling",
-      "body": "Vi teller sidevisninger på serveren for å følge bruken av nettstedet. Disse summerte tallene inneholder ikke navn, e-postadresse, registreringsnummer eller en egen besøksidentitet. Sidevisninger er ikke det samme som unike besøkende.\n\nUnder «Valg for kildemåling» nederst på siden kan du tillate eller avslå at nettleseren husker trafikkilde og kampanje frem til en forespørsel. Ved tillatelse kan disse kildeopplysningene knyttes til forespørselen. Et enveis nettverkstreff kan også brukes til å anslå kilden når den ellers mangler; dette merkes som estimert. Rå IP-adresser lagres ikke i kampanjeminnet. Skjemaet virker også når du avslår. Du kan endre valget nederst på siden.",
+      "heading": "Sidevisninger og statistikk",
+      "body": "Vi teller sidevisninger på serveren for å følge bruken av nettstedet. Disse summerte tallene inneholder ikke navn, e-postadresse, registreringsnummer eller en egen besøksidentitet. Sidevisninger er ikke det samme som unike besøkende.\n\nDet tidligere valget for nettleserbasert kildemåling er deaktivert. Bestillingsskjemaet fungerer uten et slikt valg. Når du sender en forespørsel, behandles kontaktinformasjonen og opplysningene du har oppgitt slik det er beskrevet ovenfor.",
       "layout": "default",
       "surface": "soft",
       "items": [],

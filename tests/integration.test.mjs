@@ -380,3 +380,23 @@ test('service CTAs target the first visible booking section and never a hidden a
  assert.match(view,/<Hero hero=\{hero\}/);
  assert.match(read('src/components/BookingForm.astro'),/<section id="bestilling-skjema"/);
 });
+
+
+test('removes footer source-measurement choice without disrupting booking and anonymous hit counts',()=>{
+ const layout=read('src/components/BaseLayout.astro');
+ assert.match(layout,/<Attribution \/>/);
+ assert.doesNotMatch(layout,/<Attribution showChoice/);
+ assert.match(layout,/sofiemyr_attribution_permission=; Max-Age=0/,'Previously granted choice cookie is retired');
+ const site=json('lead-intake/site.config.json');
+ assert.equal(site.attribution.mode,'off');
+ const client=read('lead-intake/frontend-config.mjs');
+ assert.match(client,/"ATTRIBUTION_MODE": "off"/);
+ assert.match(client,/"HITCOUNT_ENABLED": "true"/,'Anonymous page counts remain on');
+ const privacy=json('src/content/pages/personvern.json');
+ const section=privacy.sections.find(x=>x.id==='informasjonskapsler');
+ assert.equal(section.heading,'Sidevisninger og statistikk');
+ assert.ok(!section.body.includes('Valg for kildemåling'));
+ assert.ok(!section.body.includes('Du kan endre valget nederst på siden'));
+ const booking=read('src/components/BookingForm.astro');
+ assert.match(booking,/submitLead\(payload/,'Booking delivery stays connected');
+});
