@@ -1,0 +1,146 @@
+{
+  "slug": "ford-verksted",
+  "kind": "service",
+  "seo": {
+    "title": "Ford-verksted Kolbotn | Service og reparasjon | Sofiemyr Bil",
+    "description": "Ford-verksted på Kolbotn med særlig Ford-erfaring. Service, feilsøking, reparasjoner og EU-kontroll på Ford – og hjelp til andre bilmerker. Send forespørsel."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Ford-kompetanse på Kolbotn",
+    "title": "Ford-verksted på Kolbotn – også for andre bilmerker",
+    "support": "Sofiemyr Bil er et lokalt bilverksted med særlig erfaring med Ford og tilknytning til Follo Autoco, Ford-miljøet i Ski. Vi hjelper med service, feilsøking, reparasjoner og EU-kontroll – også når bilen din har et annet merke.",
+    "primaryCta": {
+      "label": "Send verkstedforespørsel",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle verkstedtjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Ford-verksted på Kolbotn",
+    "summary": "Ford-service, diagnose og reparasjoner, med hjelp også til andre bilmerker.",
+    "visible": true,
+    "order": 1
+  },
+  "faq": [
+    {
+      "question": "Tar Sofiemyr Bil bare imot Ford?",
+      "answer": "Nei. Vi har særlig kompetanse og lang erfaring med Ford, men vi tilbyr også service, diagnose og reparasjoner på de fleste andre bilmerker. Beskriv bilen og arbeidet du ønsker hjelp med, så avklarer vi hva vi kan gjøre."
+    },
+    {
+      "question": "Når trenger jeg et autorisert Ford-verksted?",
+      "answer": "Ved garantiarbeid, tilbakekallinger og enkelte produsentspesifikke tiltak kan det være behov for et Ford-autorisert merkeverksted. For vanlig vedlikehold og mange reparasjoner kan man normalt velge et offentlig godkjent bilverksted som følger bilprodusentens krav og dokumenterer arbeidet. Kontakt oss hvis du er usikker på hva som gjelder for bilen din."
+    },
+    {
+      "question": "Utfører dere Ford-service etter bilens vedlikeholdsprogram?",
+      "answer": "Vi tilbyr service etter bilprodusentens vedlikeholdsprogram og dokumenterer arbeidet. Fortell oss hvilken Ford-modell og kilometerstand det gjelder, så vurderer vi aktuell service og pris."
+    },
+    {
+      "question": "Kan jeg sende en forespørsel om Ford-diagnose eller EU-kontroll?",
+      "answer": "Ja. Beskriv feilen eller tjenesten og oppgi registreringsnummer i skjemaet. EU-kontroll har godkjent fastpris kr 1 450,- for aktuelle kjøretøy inntil 3 500 kg. Verkstedet bekrefter tidspunkt og pris der dette er nødvendig."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "ford-verkstedtjenester",
+      "eyebrow": "Service, feilsøking og reparasjon",
+      "heading": "Dette hjelper vi Ford-eiere med",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Ford er et av verkstedets viktigste kompetanseområder. Enten du kjører en Ford Focus, Kuga, Transit eller en annen modell, kan du sende en forespørsel om vedlikehold eller reparasjon.",
+        "Vi tar utgangspunkt i bilens behov og avtaler arbeid og pris før oppdraget utføres. Ønsker du EU-kontroll, er fastprisen kr 1 450,- for aktuelle kjøretøy opptil 3 500 kg."
+      ],
+      "items": [
+        {
+          "title": "Service på Ford",
+          "badge": "Vedlikehold",
+          "text": "Service og kontrollpunkter etter bilens serviceprogram, med dokumentasjon på arbeidet.",
+          "href": "/service/",
+          "label": "Les om bilservice",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Ford-diagnose",
+          "badge": "Feilsøking",
+          "text": "Undersøkelse av varsellamper, elektronikk og mekaniske problemer for å finne riktig vei videre.",
+          "href": "/diagnose/",
+          "label": "Les om diagnose",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Reparasjoner og slitedeler",
+          "badge": "Verksted",
+          "text": "Bremser, fjæring, understell og annet mekanisk arbeid vurderes etter bilens behov.",
+          "href": "/reparasjoner/",
+          "label": "Les om reparasjoner",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Les om EU-kontroll til kr 1 450,-",
+          "href": "/eu-kontroll/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "ford-og-andre-bilmerker",
+      "eyebrow": "Samme verksted – flere bilmerker",
+      "heading": "Ford er spesialiteten. Du er velkommen med andre bilmerker.",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "base-200",
+      "body": [
+        "Sofiemyr Bil er en del av Follo Autoco-konsernet, som har lang historie med Ford i Ski. Det gir en tydelig Ford-tilknytning, men vi ønsker også deg som kjører et annet merke velkommen.",
+        "For service, reparasjoner og EU-kontroll er det bilens behov som avgjør hva vi kan hjelpe med. Trenger bilen garantiarbeid eller en særskilt produsentoppdatering, avklarer vi dette før du bestiller."
+      ],
+      "items": [
+        {
+          "title": "Sofiemyr Bil siden 1997",
+          "text": "Et lokalt verksted i Skiveien 42 på Kolbotn, med personlig kontakt og lang erfaring.",
+          "href": "/om/",
+          "label": "Om verkstedet",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Flere merker og drivlinjer",
+          "text": "Vi tar imot forespørsler om service og reparasjoner på bensin- og dieselbiler, hybrider og elbiler.",
+          "href": "/tjeneste/",
+          "label": "Alle tjenester",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Få avklart jobben først",
+          "text": "Send registreringsnummer, ønsket arbeid og eventuelle feil. Verkstedet kontakter deg for å avklare pris og tidspunkt.",
+          "href": "/bestilling/",
+          "label": "Send forespørsel",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}

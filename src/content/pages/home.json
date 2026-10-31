@@ -47,7 +47,7 @@
     },
     {
       "question": "Tar dere service og EU-kontroll på bobil?",
-      "answer": "EU-kontroll koster kr 1 450,- hos Sofiemyr Bil. Kontrollen gjelder aktuelle kjøretøy opptil 3 500 kg. Hvis bilen har mangler, avtaler vi eventuell utbedring med deg."
+      "answer": "Ja, vi tar imot forespørsler om service og EU-kontroll på bobiler som passer verkstedets godkjenninger og kapasitet, normalt kjøretøy opptil 3 500 kg. Oppgi registreringsnummer og bilens mål/vekt så avklarer vi mulighetene før du bestiller."
     }
   ],
   "sections": [
@@ -130,8 +130,8 @@
         {
           "title": "Ford-kunnskap fra Ford-miljøet i Ski",
           "text": "Sofiemyr Bil er heleid av Follo Autoco AS. Vi har særlig erfaring med Ford, men du trenger ikke kjøre Ford for å bruke oss.",
-          "href": "/om/",
-          "label": "Bli kjent med oss",
+          "href": "/ford-verksted/",
+          "label": "Ford-verksted og kompetanse",
           "boxVariant": "card",
           "surface": "base-200"
         },

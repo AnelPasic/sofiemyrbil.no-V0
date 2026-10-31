@@ -20,7 +20,7 @@ const home=pages.find(p=>p.slug==='home'),service=pages.find(p=>p.slug==='tjenes
 const chrome = composeSiteChrome(json('src/content/site-chrome/header.json'),json('src/content/site-chrome/footer.json'),json('src/content/site-chrome/appearance.json'));
 test('one canonical page per actual route, no missing component', () => {
   assert.equal(new Set(pages.map(p=>publicPath(p.slug))).size,pages.length);
-  assert.equal(pages.length,15);
+  assert.equal(pages.length,16);
   assert.equal(pages.find(p=>p.slug==='home')?.kind,'home');
   assert.equal(pages.find(p=>p.slug==='404')?.kind,'utility');
   for(const path of ['src/components/BaseLayout.astro','src/components/PageView.astro','src/components/Hero.astro','src/components/SiteChromeHeader.astro','src/components/PageSections.astro']) assert.ok(existsSync(join(root,path)),path);
@@ -307,4 +307,27 @@ test('Sofiemyr homepage emphasizes Ford without excluding other brands and uses 
  const why=home.sections.find(x=>x.id==='hvorfor-sofiemyr-bil');
  assert.ok(why.items.some(x=>x.text.includes('Follo Autoco AS')));
  assert.ok(sections.some(x=>x.type==='content'&&'widget' in x.section&&x.section.widget==='bookingForm'));
+});
+
+test('Ford workshop landing targets relevant intent without inventing Ford brand authorization',()=>{
+ const page=pages.find(x=>x.slug==='ford-verksted');
+ assert.ok(page);
+ assert.match(page.hero.title,/Ford-verksted/);
+ assert.match(page.hero.title,/andre bilmerker/);
+ assert.match(page.seo.title,/Ford-verksted Kolbotn/);
+ assert.equal(page.hero.primaryCta.href,'/bestilling/');
+ assert.ok(page.faq.some(q=>/autorisert Ford-verksted/.test(q.question)));
+ assert.ok(!page.hero.support.includes('Ford-autorisert'));
+ assert.ok(!page.seo.description.includes('Ford-autorisert'));
+ const menu=chrome.navigation.find(x=>x.id==='tjenester');
+ assert.ok(menu.kind==='dropdown'&&menu.links.some(x=>x.href==='/ford-verksted/'));
+ assert.ok(chrome.footer.groups.some(g=>g.links.some(l=>l.href==='/ford-verksted/')));
+ const homeFord=home.sections.find(x=>x.id==='hvorfor-sofiemyr-bil').items[0];
+ assert.equal(homeFord.href,'/ford-verksted/');
+ const s=pages.find(x=>x.slug==='service').sections.find(x=>x.id==='service-omfang');
+ assert.ok(s.links.some(x=>x.href==='/ford-verksted/'));
+ assert.ok(resolveSections(page,masters,pages,[],shared).some(x=>x.type==='content'&&'widget' in x.section&&x.section.widget==='bookingForm'));
+ assert.ok(read('.pages.yml').includes('src/content/pages/ford-verksted.json'));
+ const faq=home.faq.find(x=>x.question.includes('bobil'));
+ assert.match(faq.answer,/bobil/);
 });

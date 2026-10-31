@@ -6,6 +6,10 @@
         "heading": "Tjenester",
         "links": [
           {
+            "label": "Ford-verksted",
+            "href": "/ford-verksted/"
+          },
+          {
             "label": "EU-kontroll – fastpris",
             "href": "/eu-kontroll/"
           },
