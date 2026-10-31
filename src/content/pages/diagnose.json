@@ -11,7 +11,7 @@
     "title": "Feilsøking når bilen varsler om feil",
     "support": "En varsellampe, ulyd eller uvanlig oppførsel kan ha flere årsaker. Vi kan undersøke symptomene og bruke diagnoseutstyr som del av feilsøkingen – før nødvendige tiltak vurderes.",
     "primaryCta": {
-      "label": "Send forespørsel om time",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -44,6 +44,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "diagnose-symptomer",
@@ -121,11 +126,6 @@
           "href": "/bestilling/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
