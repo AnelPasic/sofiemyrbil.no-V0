@@ -11,7 +11,7 @@
     "title": "Verkstedtjenester på Kolbotn – Ford og andre bilmerker",
     "support": "Vi hjelper med EU-kontroll, bilservice, feilsøking og reparasjoner – samt aktuelt bobilvedlikehold og avtaler for firmabiler. Verkstedet ligger i Skiveien 42 på Kolbotn.",
     "primaryCta": {
-      "label": "Send bestillingsforespørsel",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -38,6 +38,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "tjenesteoversikt",
@@ -104,11 +109,6 @@
     {
       "_block": "sharedContent",
       "entry": "felles-eksempel",
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
