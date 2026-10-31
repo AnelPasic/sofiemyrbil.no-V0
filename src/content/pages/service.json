@@ -1,0 +1,132 @@
+{
+  "slug": "service",
+  "kind": "service",
+  "seo": {
+    "title": "Bilservice i Kolbotn – Ford og andre merker | Sofiemyr Bil",
+    "description": "Bilservice i Kolbotn for Ford og andre bilmerker. Service etter bilens vedlikeholdsprogram, dokumentasjon og prisoverslag. Send forespørsel til Sofiemyr Bil."
+  },
+  "hero": {
+    "layout": "centered-none",
+    "eyebrow": "Bilservice på Kolbotn",
+    "title": "Bilservice for Ford og andre bilmerker",
+    "support": "Få bilen vedlikeholdt etter produsentens serviceprogram. Sofiemyr Bil i Skiveien 42 har særlig Ford-erfaring og utfører også service på andre merker, inkludert elbiler og varebiler.",
+    "primaryCta": {
+      "label": "Send forespørsel om time",
+      "href": "/bestilling/"
+    },
+    "secondaryCta": {
+      "label": "Se alle tjenester",
+      "href": "/tjeneste/"
+    },
+    "visual": {
+      "kind": "none"
+    },
+    "titleEmphasis": "none"
+  },
+  "listing": {
+    "title": "Bilservice for Ford og andre bilmerker",
+    "summary": "Service etter bilens behov og vedlikeholdsprogram, med dokumentert arbeid.",
+    "visible": true,
+    "order": 2
+  },
+  "faq": [
+    {
+      "question": "Tar dere service på andre bilmerker enn Ford?",
+      "answer": "Ja. Sofiemyr Bil har særlig erfaring med Ford, men tilbyr service også på andre bilmerker. Oppgi registreringsnummer og hva du ønsker utført, så avklarer verkstedet mulighetene."
+    },
+    {
+      "question": "Mister jeg nybilgarantien om jeg bruker et frittstående verksted?",
+      "answer": "Normalt ikke. For å ivareta garantien må vedlikeholdet følge bilprodusentens krav og arbeidet kunne dokumenteres. Garantivilkårene og eventuelle feil vurderes konkret."
+    },
+    {
+      "question": "Hva koster bilservice?",
+      "answer": "Pris og innhold avhenger blant annet av modell, kilometerstand, motor og serviceintervall. Send registreringsnummer og ønsket service for å få et prisoverslag før arbeidet avtales."
+    }
+  ],
+  "sections": [
+    {
+      "_block": "content",
+      "id": "service-omfang",
+      "eyebrow": "Hva du kan bestille",
+      "heading": "Service tilpasset bilen",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Det er forskjell på en liten intervallservice og en større service med flere kontroll- og vedlikeholdspunkter. Derfor tar vi utgangspunkt i bilens modell, kilometerstand og produsentens program – ikke én standardpakke til alle.",
+        "Har du en Ford, en annen personbil eller en varebil, kan du sende en forespørsel med registreringsnummer. For elbil tilpasses kontrollpunktene biltypen."
+      ],
+      "items": [
+        {
+          "title": "Intervallservice",
+          "text": "Vedlikehold etter bilprodusentens anbefalte intervaller og spesifikasjoner.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Olje, filtre og væsker",
+          "text": "Aktuelle skift og kontroller avklares etter motor, bilmodell og serviceprogram.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Elbil og varebil",
+          "text": "Vi tilbyr service på elbiler og varebiler. Aktuelle punkter avhenger av kjøretøyet.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [],
+      "visibility": "visible"
+    },
+    {
+      "_block": "content",
+      "id": "service-praktisk",
+      "eyebrow": "Før besøket",
+      "heading": "Slik får du riktig pris og service",
+      "headingAlign": "left",
+      "layout": "three-columns",
+      "surface": "default",
+      "body": [
+        "Oppgi registreringsnummer, kilometerstand og gjerne dato for forrige service. Det gjør det enklere å avklare hva bilen trenger og gi et relevant prisoverslag.",
+        "Forespørselen er ikke en bekreftet time. Verkstedet kontakter deg for å avtale arbeid, pris og tidspunkt."
+      ],
+      "items": [
+        {
+          "title": "Oppgi bilen",
+          "text": "Registreringsnummer og kilometerstand hjelper verkstedet å finne riktig intervall.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Avklar omfang",
+          "text": "Gi beskjed om varsellamper, ulyder eller andre forhold du vil ha vurdert.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        },
+        {
+          "title": "Dokumenter arbeidet",
+          "text": "Be om dokumentasjon på utført vedlikehold, særlig når bilen er innenfor garantiperioden.",
+          "surface": "base-100",
+          "boxVariant": "card"
+        }
+      ],
+      "links": [
+        {
+          "label": "Har bilen varsellys? Les om diagnose",
+          "href": "/diagnose/"
+        },
+        {
+          "label": "Se priser og forespørsel",
+          "href": "/priser/"
+        }
+      ],
+      "visibility": "visible"
+    },
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    }
+  ]
+}
