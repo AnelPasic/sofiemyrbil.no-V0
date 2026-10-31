@@ -30,13 +30,13 @@
       "id": "historikk-og-folk",
       "eyebrow": "Vår historie",
       "heading": "Fra oppstart i 1997 til moderne verksted i Skiveien 42",
-      "body": "Sofiemyr Bil startet opp i mai 1997. I 2012 flyttet vi inn i dagens romslige og moderne verkstedlokaler i Skiveien 42 på Kolbotn.\n\nVerkstedet oppgir fem ansatte og lang erfaring med bilservice og reparasjoner. Vi har bred erfaring fra eldre klassiske biler til det aller nyeste innen elbil- og hybridteknologi.\n\nVi er primært kjent som spesialist på Ford, men våre mekanikere utfører alle typer vedlikehold og reparasjoner på samtlige bilmerker.",
+      "body": "Sofiemyr Bil startet opp i mai 1997. I 2012 flyttet vi inn i dagens romslige og moderne verkstedlokaler i Skiveien 42 på Kolbotn.\n\nVerkstedet oppgir fem ansatte og lang erfaring med bilservice og reparasjoner. Vi har erfaring med både eldre biler og nyere modeller, inkludert service på elbiler.\n\nVi er primært kjent som spesialist på Ford, men våre mekanikere utfører alle typer vedlikehold og reparasjoner på samtlige bilmerker.",
       "layout": "three-columns",
       "surface": "soft",
       "items": [
         {
           "title": "Direkte kontakt",
-          "text": "Hos oss får du snakke direkte med bilmekanikeren som skrur på bilen din. Ingen fordyrende mellomledd.",
+          "text": "Vi legger vekt på personlig dialog om bilen din, arbeidet som skal gjøres og hva det vil koste.",
           "surface": "default",
           "boxVariant": "card"
         },
