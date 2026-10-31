@@ -30,7 +30,7 @@
   "faq": [
     {
       "question": "Hvorfor velge et frittstående Ford-verksted?",
-      "answer": "Vi har samme dype ekspertise og spesialverktøy som merkeforhandlere, men med kortere ventetid, mer personlig oppfølging og ofte mer konkurransedyktige priser."
+      "answer": "Et frittstående verksted kan utføre service på Ford og andre bilmerker. Sofiemyr Bil har særlig Ford-erfaring. Be om prisoverslag og dokumentasjon på servicearbeidet dersom bilen har nybilgaranti."
     },
     {
       "question": "Må jeg bestille time til EU-kontroll på forhånd?",
@@ -57,7 +57,7 @@
         },
         {
           "title": "Intervallservice & Vedlikehold",
-          "text": "Full service etter produsentens intervall med stempel i serviceheftet og bevart nybilgaranti.",
+          "text": "Full service etter produsentens intervall med dokumentasjon av arbeidet. Nybilgarantien avhenger av at produsentens serviceprogram og øvrige garantivilkår følges.",
           "href": "/kontakt/",
           "label": "Bestill service",
           "surface": "default",
@@ -89,7 +89,7 @@
         },
         {
           "title": "Firmabil & Flåteavtale",
-          "text": "Forutsigbare driftsavtaler og prioritert service for lokale bedrifter med firmabiler og varebiler.",
+          "text": "Forutsigbare driftsavtaler og planlagt oppfølging for lokale bedrifter med firmabiler og varebiler.",
           "href": "/kontakt/",
           "label": "Ta kontakt om avtale",
           "surface": "default",
