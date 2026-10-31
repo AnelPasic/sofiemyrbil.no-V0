@@ -11,7 +11,7 @@
     "title": "Flåteavtale for bedrifter med firmabiler",
     "support": "Når flere biler brukes i jobben, er planlagt vedlikehold viktig. Sofiemyr Bil tilbyr flåteavtaler med oppfølging av service, EU-kontroll og annet avtalt vedlikehold for Ford og andre merker.",
     "primaryCta": {
-      "label": "Send forespørsel om time",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -44,6 +44,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "flateavtale-innhold",
@@ -121,11 +126,6 @@
           "href": "/kontakt/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
