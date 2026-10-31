@@ -9,7 +9,7 @@
     "layout": "centered-none",
     "eyebrow": "Transparente verkstedpriser",
     "title": "Priser og bestilling hos Sofiemyr Bil AS",
-    "support": "Hos oss får du forutsigbare priser og klare avtaler. EU-kontroll utføres til fastpris kr 1 450,- for alle kjøretøy opptil 3 500 kg.",
+    "support": "Hos oss får du forutsigbare priser og klare avtaler. EU-kontroll utføres til fastpris kr 1 450,- for personbiler og andre aktuelle kjøretøy opptil 3 500 kg.",
     "primaryCta": {
       "label": "Gå til timebestilling",
       "href": "/kontakt/"
@@ -26,7 +26,7 @@
   "faq": [
     {
       "question": "Er det noen skjulte kostnader på EU-kontroll?",
-      "answer": "Nei. Fastprisen på kr 1 450,- dekker hele den lovpålagte periodiske kjøretøykontrollen og innsending av godkjenning til Statens vegvesen."
+      "answer": "Fastprisen på kr 1 450,- gjelder den ordinære EU-kontrollen og registreringen av kontrollresultatet hos Statens vegvesen. Reparasjoner ved eventuelle mangler og etterkontroll avtales separat."
     },
     {
       "question": "Får jeg pristilbud før dere starter på en reparasjon?",
@@ -45,19 +45,19 @@
       "items": [
         {
           "title": "Statens vegvesen godkjenning",
-          "text": "Full elektronisk innmelding umiddelbart etter godkjent kontroll.",
+          "text": "Kontrollresultatet registreres elektronisk hos Statens vegvesen.",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Grundig rapport",
-          "text": "Du mottar en utfyllende tilstandsrapport med oversikt over eventuelle feil og slitasjepunkter.",
+          "text": "Du får en kontrollseddel med resultat, registrert kilometerstand, neste frist og eventuelle feil eller mangler. EU-kontroll er ikke en full tilstandsrapport.",
           "surface": "default",
           "boxVariant": "card"
         },
         {
           "title": "Rask etterkontroll",
-          "text": "Fikser vi anmerkningene hos oss, ordner vi rask og smidig etterkontroll til lav kostnad.",
+          "text": "Vi kan avtale etterkontroll etter at manglene er rettet. Pris og tidspunkt oppgis ved bestilling.",
           "surface": "default",
           "boxVariant": "card"
         }
@@ -75,7 +75,7 @@
       "items": [
         {
           "title": "Periodisk Service",
-          "text": "Inkluderer motorolje av riktig spesifikasjon, oljefilter, sikkerhetssjekk og stempel i serviceheftet. Bevarer garantien.",
+          "text": "Inkluderer motorolje av riktig spesifikasjon, oljefilter, sikkerhetssjekk og stempel i serviceheftet. Service dokumenteres i tråd med bilprodusentens krav.",
           "surface": "soft",
           "boxVariant": "card"
         },
