@@ -1,7 +1,8 @@
 {
   "brand": {
     "name": "Sofiemyr Bil",
-    "homeHref": "/"
+    "homeHref": "/",
+    "logoAlt": "Sofiemyr Bil"
   },
   "skipLabel": "Hopp til innhold",
   "navigationLabel": "Hovedmeny",
@@ -53,7 +54,7 @@
     }
   ],
   "primaryCta": {
-    "label": "Bestill time",
+    "label": "Send forespørsel",
     "href": "/bestilling/",
     "variant": "primary"
   },
@@ -74,5 +75,9 @@
   "search": {
     "label": "Søk",
     "mode": "pagefind"
-  }
+  },
+  "logoLight": "/images/brands/sofiemyr-bil-original.png",
+  "logoDark": "/images/brands/sofiemyr-bil-inverted.png",
+  "mobileLogoLight": "/images/brands/sofiemyr-bil-original.png",
+  "mobileLogoDark": "/images/brands/sofiemyr-bil-inverted.png"
 }
