@@ -11,7 +11,7 @@
     "title": "Bilservice for Ford og andre bilmerker",
     "support": "Få bilen vedlikeholdt etter produsentens serviceprogram. Sofiemyr Bil i Skiveien 42 har særlig Ford-erfaring og utfører også service på andre merker, inkludert elbiler og varebiler.",
     "primaryCta": {
-      "label": "Send forespørsel om time",
+      "label": "Bestill time",
       "href": "/bestilling/"
     },
     "secondaryCta": {
@@ -44,6 +44,11 @@
     }
   ],
   "sections": [
+    {
+      "_block": "sharedContent",
+      "entry": "bestilling-skjema",
+      "visibility": "visible"
+    },
     {
       "_block": "content",
       "id": "service-omfang",
@@ -126,11 +131,6 @@
           "href": "/priser/"
         }
       ],
-      "visibility": "visible"
-    },
-    {
-      "_block": "sharedContent",
-      "entry": "bestilling-skjema",
       "visibility": "visible"
     }
   ]
